@@ -1,0 +1,67 @@
+66.97.44.139
+TFcu4J8gNDYY
+
+
+168x 217
+
+Puesta en produccion
+cambiar la ruta en crudService function upload()
+
+background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(177,177,177,1) 100%, rgba(0,212,255,1) 100%);
+
+
+
+
+Ficha de Montaña: Bonete
+
+1) Características generales
+Altura: 6759
+Ubicación:  Cordillera de Los Andes
+Coordenadas: 28° 01´08´´ S / 68° 45´19 ´´ O
+Provincia: La Rioja
+País: Argentina
+Como llegar : Desde Alto Jagüe, La Rioja.
+Primeras ascensiones: 15/1/1970, Vicente Cicchitti y Cirilo Urriche. 
+
+2) Ascenso
+Cómo llegar : registrar ingreso en Reerva Provincial Laguna Brava.
+Permisos : Oficina guardaparque Alto Jagüe. 
+Temporadas: Noviembre a Marzo.
+Rutas: Ruta Normal, desde CB Penitentes. Ruta Original, desde CB Tambero.
+Refugios: Refugio Veladero. Refugio Mula Muertas.
+Equipo e Indumentaria: Equipamiento de Alta Montaña. Campera de pluma. Mitones de pluma. Bolsa de dormir de pluma. Botas dobles. Piqueta. Crampones. Casco. Botiquín. Handy. Calentador solvente o gas. 
+
+4) Videos
+Poner con la misma estética de los links de los artículos
+
+5) Mapas
+Un mapa general y otro máspuntual
+
+
+6) Google maps
+Poner un mapa que se pueda agrandar
+
+7) Galería
+10 imágenes con epígrafes
+
+necesito fortalezas y lamanga de mi buso para sobrevivir
+entrendando esta dando vueltas en mi cabeza 
+
+
+
+necesito fortalezas 
+y la magia de otro mundo para sobrevivir
+sos mi arma sos mi escudo 
+es
+es mi arma es mi escudo para sobrevivir
+
+
+
+Links:
+http://www.culturademontania.org.ar/Historia/HIS_primera-bonetechico-larioja.htm
+http://www.culturademontania.org.ar/Relatos/REL_bonete-larioja_032003.htm
+http://www.culturademontania.org.ar/Relatos/REL_laguna_brava_larioja_2006.htm
+http://www.culturademontania.org.ar/Relatos/expedicion-laguna-brava-1989-larioja.html
+http://www.culturademontania.org.ar/Relatos/expedicion-volcan-veladero-la-rioja.htm
+http://www.culturademontania.org.ar/Relatos/REL_veladero-larioja_092006.htm
