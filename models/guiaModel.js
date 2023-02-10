@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const guiaSchema = new Schema({
+const PortalSchema = new Schema({
     id:String,
     titulo: String,
     subtitulo: String, 
@@ -28,4 +28,4 @@ const guiaSchema = new Schema({
 )
 
 
-module.exports =  model('Guia', guiaSchema)
+module.exports =  model('Portal', PortalSchema)

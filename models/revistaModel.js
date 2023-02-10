@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 
 const revistaSchema = new Schema({
     
-     estado:Boolean,
+    estado:Boolean,
     fecha:String,
     fechaMod:String,
     marginLeft:Number,        
@@ -25,6 +25,10 @@ const revistaSchema = new Schema({
     art6:String,
     art7:String,
     art8:String,
+    art9:String,
+    art10:String,
+    art11:String,
+    art12:String,
     
     resultadoID:String,
     resultadoID2:String,
@@ -34,6 +38,10 @@ const revistaSchema = new Schema({
     resultadoID6:String,
     resultadoID7:String,
     resultadoID8:String,
+    resultadoID9:String,
+    resultadoID10:String,
+    resultadoID11:String,
+    resultadoID12:String,
 
     resultadoCategoria:String,
     resultadoCategoria2:String,
@@ -43,6 +51,10 @@ const revistaSchema = new Schema({
     resultadoCategoria6:String,
     resultadoCategoria7:String,
     resultadoCategoria8:String,
+    resultadoCategoria9:String,
+    resultadoCategoria10:String,
+    resultadoCategoria11:String,
+    resultadoCategoria12:String,
 
     resultadoImagen:String,
     resultadoImagen2:String,
@@ -52,6 +64,24 @@ const revistaSchema = new Schema({
     resultadoImagen6:String,
     resultadoImagen7:String,
     resultadoImagen8:String,
+    resultadoImagen9:String,
+    resultadoImagen10:String,
+    resultadoImagen11:String,
+    resultadoImagen12:String,
+
+    autor1: String,
+    autor2: String,
+    autor3: String,
+    autor4: String,
+    autor5: String,
+    autor6: String,
+    autor7: String,
+    autor8:String,
+    autor9:String,
+    autor10:String,
+    autor11:String,
+    autor12:String,
+          
 
 },
 {timestamps: true}

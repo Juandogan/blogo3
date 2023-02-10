@@ -34,14 +34,14 @@ app.use('/anunciante', require('./routers/routerAnunciante'))
 app.use('/carousel', require('./routers/routerCarousel'))  //nuevo
 app.use('/guia', require('./routers/routerGuia'))  //nuevo
 app.use('/upload', express.static(path.resolve('./subidas')))
-
+app.use('/portada', require('./routers/routerPortada'))  //nuevo
 
 app.post('/upload', multiPartMiddleware, (req,res)=>{
    
     var link = req.files['archivos'].path
       
 // var url = 'http://localhost:3000/upload/'+ link.slice(8) 
-var url = 'http://168.197.50.191/upload/'+ link.slice(8) 
+var url = 'http://localhost:3000/upload/'+ link.slice(8) 
 
 console.log({'url': url })
     res.json({'url':url });
@@ -51,7 +51,7 @@ console.log({'url': url })
 
 app.post('/upload2', multiPartMiddleware, (req,res)=>{   
     var link = req.files['upload'].path      
-    var url = 'http://localhost:3000/upload/'+ link.slice(8) 
+    var url = 'http://66.97.44.139:3000/upload/'+ link.slice(8) 
     console.log({'url': url })
     res.json({'url':url });
     

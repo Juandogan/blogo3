@@ -41,6 +41,12 @@ router.get('/' ,  async (req, res)=>{
   art6:req.body.art6,
   art7:req.body.art7,
   art8:req.body.art8,
+  art7:req.body.art7,
+  art8:req.body.art8,
+  art9:req.body.art9,
+  art10:req.body.art10,
+  art11:req.body.art11,
+  art12:req.body.art12,
 
   resultadoID:req.body.resultadoID,
   resultadoID2:req.body.resultadoID2,
@@ -50,6 +56,10 @@ router.get('/' ,  async (req, res)=>{
   resultadoID6:req.body.resultadoID6,
   resultadoID7:req.body.resultadoID7,
   resultadoID8:req.body.resultadoID8,
+  resultadoID9:req.body.resultadoID9,
+  resultadoID10:req.body.resultadoID10,
+  resultadoID11:req.body.resultadoID11,
+  resultadoID12:req.body.resultadoID12,
 
   resultadoCategoria:req.body.resultadoCategoria,
   resultadoCategoria2:req.body.resultadoCategoria2,
@@ -59,6 +69,13 @@ router.get('/' ,  async (req, res)=>{
   resultadoCategoria6:req.body.resultadoCategoria6,
   resultadoCategoria7:req.body.resultadoCategoria7,
   resultadoCategoria8:req.body.resultadoCategoria8,
+  resultadoCategoria7:req.body.resultadoCategoria7,
+  resultadoCategoria8:req.body.resultadoCategoria9,
+  resultadoCategoria9:req.body.resultadoCategoria10,
+  resultadoCategoria10:req.body.resultadoCategoria11,
+  resultadoCategoria11:req.body.resultadoCategoria12,
+  resultadoCategoria12:req.body.resultadoCategoria12,
+
 
   resultadoImagen:req.body.resultadoImagen,
   resultadoImagen2:req.body.resultadoImagen2,
@@ -68,8 +85,25 @@ router.get('/' ,  async (req, res)=>{
   resultadoImagen6:req.body.resultadoImagen6,
   resultadoImagen7:req.body.resultadoImagen7,
   resultadoImagen8:req.body.resultadoImagen8,
+  resultadoImagen7:req.body.resultadoImagen7,
+  resultadoImagen8:req.body.resultadoImagen8,
+  resultadoImagen9:req.body.resultadoImagen9,
+  resultadoImagen10:req.body.resultadoImagen10,
+  resultadoImagen11:req.body.resultadoImagen11,
+  resultadoImagen12:req.body.resultadoImagen12,
    
-     
+  autor1:req.body.autor1,
+  autor2:req.body.autor2,
+  autor3:req.body.autor3,
+  autor4:req.body.autor4,
+  autor5:req.body.autor5,
+  autor6:req.body.autor6,
+  autor7:req.body.autor7,
+  autor8:req.body.autor8,
+  autor9:req.body.autor9,
+  autor10:req.body.autor10,
+  autor11:req.body.autor11,
+  autor12:req.body.autor12,
         
 
     });
@@ -127,6 +161,10 @@ router.get('/:_id' , async(req,res) => {
   art6:req.body.art6,
   art7:req.body.art7,
   art8:req.body.art8,
+  art9:req.body.art9,
+  art10:req.body.art10,
+  art11:req.body.art11,
+  art12:req.body.art12,
 
   resultadoID:req.body.resultadoID,
   resultadoID2:req.body.resultadoID2,
@@ -136,6 +174,12 @@ router.get('/:_id' , async(req,res) => {
   resultadoID6:req.body.resultadoID6,
   resultadoID7:req.body.resultadoID7,
   resultadoID8:req.body.resultadoID8,
+  resultadoID7:req.body.resultadoID7,
+  resultadoID8:req.body.resultadoID8,
+  resultadoID9:req.body.resultadoID9,
+  resultadoID10:req.body.resultadoID10,
+  resultadoID11:req.body.resultadoID11,
+  resultadoID12:req.body.resultadoID12,
 
   resultadoCategoria:req.body.resultadoCategoria,
   resultadoCategoria2:req.body.resultadoCategoria2,
@@ -144,7 +188,11 @@ router.get('/:_id' , async(req,res) => {
   resultadoCategoria5:req.body.resultadoCategoria5,
   resultadoCategoria6:req.body.resultadoCategoria6,
   resultadoCategoria7:req.body.resultadoCategoria7,
-  resultadoCategoria8:req.body.resultadoCategoria8,
+  resultadoCategoria8:req.body.resultadoCategoria9,
+  resultadoCategoria9:req.body.resultadoCategoria10,
+  resultadoCategoria10:req.body.resultadoCategoria11,
+  resultadoCategoria11:req.body.resultadoCategoria12,
+  resultadoCategoria12:req.body.resultadoCategoria12,
 
   resultadoImagen:req.body.resultadoImagen,
   resultadoImagen2:req.body.resultadoImagen2,
@@ -154,7 +202,20 @@ router.get('/:_id' , async(req,res) => {
   resultadoImagen6:req.body.resultadoImagen6,
   resultadoImagen7:req.body.resultadoImagen7,
   resultadoImagen8:req.body.resultadoImagen8,
-   
+  resultadoImagen9:req.body.resultadoImagen9,
+  resultadoImagen10:req.body.resultadoImagen10,
+  resultadoImagen11:req.body.resultadoImagen11,
+  resultadoImagen12:req.body.resultadoImagen12,
+
+  autor1:req.body.autor1,
+  autor2:req.body.autor2,
+  autor3:req.body.autor3,
+  autor4:req.body.autor4,
+  autor5:req.body.autor5,
+  autor6:req.body.autor6,
+  autor7:req.body.autor7,
+  autor8:req.body.autor8
+        
      
               };
     
