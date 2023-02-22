@@ -26,6 +26,20 @@ const anuncianteSchema = new Schema({
     img19: String,
     img20: String,
 
+    
+    img21: String,
+    img22: String,
+    img23: String,
+    img24: String,
+    img25: String,
+    img26: String,
+    img27: String,
+    img28: String,
+    img29: String,
+    img30: String,
+
+
+
     link1: String,
     link2: String,
     link3: String,
@@ -47,6 +61,19 @@ const anuncianteSchema = new Schema({
     link18: String,
     link19: String,
     link20: String,
+
+    
+    link21: String,
+    link22: String,
+    link23: String,
+    link24: String,
+    link25: String,
+    link26: String,
+    link27: String,
+    link28: String,
+    link29: String,
+    link30: String,
+
     contador1: Number,
     contador2: Number,
     contador3: Number,
@@ -57,6 +84,7 @@ const anuncianteSchema = new Schema({
     contador8: Number,
     contador9: Number,
     contador10: Number,
+
     contador11: Number,
     contador12: Number,
     contador13: Number,
@@ -67,6 +95,18 @@ const anuncianteSchema = new Schema({
     contador18: Number,
     contador19: Number,
     contador20: Number,
+
+        
+    contador21: Number,
+    contador22: Number,
+    contador23: Number,
+    contador24: Number,
+    contador25: Number,
+    contador26: Number,
+    contador27: Number,
+    contador28: Number,
+    contador29: Number,
+    contador30: Number,
 
 
     

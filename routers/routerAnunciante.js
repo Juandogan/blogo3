@@ -28,6 +28,7 @@ router.get('/' ,  async (req, res)=>{
     link8:req.body.link8,
     link9:req.body.link9,
     link10:req.body.link10,
+
     link11:req.body.link11,
     link12:req.body.link12,
     link13:req.body.link13,
@@ -39,6 +40,20 @@ router.get('/' ,  async (req, res)=>{
     link19:req.body.link19,
     link20:req.body.link20,
 
+    
+    
+    link21:req.body.link21,
+    link22:req.body.link22,
+    link23:req.body.link23,
+    link24:req.body.link24,
+    link25:req.body.link25,
+    link26:req.body.link26,
+    link27:req.body.link27,
+    link28:req.body.link28,
+    link29:req.body.link29,
+    link30:req.body.link30,
+
+
     img1:req.body.img1,
     img2:req.body.img2,
     img3:req.body.img3,
@@ -48,6 +63,7 @@ router.get('/' ,  async (req, res)=>{
     img7:req.body.img7,
     img8:req.body.img8,
     img9:req.body.img9,
+
     img10:req.body.img10,
     img11:req.body.img11,
     img12:req.body.img12,
@@ -59,6 +75,19 @@ router.get('/' ,  async (req, res)=>{
     img18:req.body.img18,
     img19:req.body.img19,
     img20:req.body.img20,
+    
+    img21:req.body.img21,
+    img22:req.body.img22,
+    img23:req.body.img23,
+    img24:req.body.img24,
+    img25:req.body.img25,
+    img26:req.body.img26,
+    img27:req.body.img27,
+    img28:req.body.img28,
+    img29:req.body.img29,
+    img30:req.body.img30,
+
+ 
 
     contador1: req.body.contador1,
     contador2: req.body.contador2,
@@ -69,6 +98,7 @@ router.get('/' ,  async (req, res)=>{
     contador7: req.body.contador7,
     contador8: req.body.contador8,
     contador9: req.body.contador9,
+
     contador10: req.body.contador10,
     contador11: req.body.contador11,
     contador12: req.body.contador12,
@@ -80,7 +110,17 @@ router.get('/' ,  async (req, res)=>{
     contador18: req.body.contador18,
     contador19: req.body.contador19,
     contador20: req.body.contador20,
-
+    
+    contador21: req.body.contador21,
+    contador22: req.body.contador22,
+    contador23: req.body.contador23,
+    contador24: req.body.contador24,
+    contador25: req.body.contador25,
+    contador26: req.body.contador26,
+    contador27: req.body.contador27,
+    contador28: req.body.contador28,
+    contador29: req.body.contador29,
+    contador30: req.body.contador30,
              
 
     });
@@ -124,6 +164,7 @@ router.get('/:_id' , async(req,res) => {
     link8:req.body.link8,
     link9:req.body.link9,
     link10:req.body.link10,
+
     link11:req.body.link11,
     link12:req.body.link12,
     link13:req.body.link13,
@@ -135,6 +176,20 @@ router.get('/:_id' , async(req,res) => {
     link19:req.body.link19,
     link20:req.body.link20,
 
+    
+    link21:req.body.link21,
+    link22:req.body.link22,
+    link23:req.body.link23,
+    link24:req.body.link24,
+    link25:req.body.link25,
+    link26:req.body.link26,
+    link27:req.body.link27,
+    link28:req.body.link28,
+    link29:req.body.link29,
+    link30:req.body.link30,
+
+   
+
     img1:req.body.img1,
     img2:req.body.img2,
     img3:req.body.img3,
@@ -145,6 +200,7 @@ router.get('/:_id' , async(req,res) => {
     img8:req.body.img8,
     img9:req.body.img9,
     img10:req.body.img10,
+
     img11:req.body.img11,
     img12:req.body.img12,
     img13:req.body.img13,
@@ -156,6 +212,18 @@ router.get('/:_id' , async(req,res) => {
     img19:req.body.img19,
     img20:req.body.img20,
 
+    img21:req.body.img21,
+    img22:req.body.img22,
+    img23:req.body.img23,
+    img24:req.body.img24,
+    img25:req.body.img25,
+    img26:req.body.img26,
+    img27:req.body.img27,
+    img28:req.body.img28,
+    img29:req.body.img29,
+    img30:req.body.img30,
+
+ 
 
     
     contador1: req.body.contador1,
@@ -167,6 +235,7 @@ router.get('/:_id' , async(req,res) => {
     contador7: req.body.contador7,
     contador8: req.body.contador8,
     contador9: req.body.contador9,
+
     contador10: req.body.contador10,
     contador11: req.body.contador11,
     contador12: req.body.contador12,
@@ -178,6 +247,17 @@ router.get('/:_id' , async(req,res) => {
     contador18: req.body.contador18,
     contador19: req.body.contador19,
     contador20: req.body.contador20,
+
+    contador21: req.body.contador21,
+    contador22: req.body.contador22,
+    contador23: req.body.contador23,
+    contador24: req.body.contador24,
+    contador25: req.body.contador25,
+    contador26: req.body.contador26,
+    contador27: req.body.contador27,
+    contador28: req.body.contador28,
+    contador29: req.body.contador29,
+    contador30: req.body.contador30,
               };
     
        await anuncianteModel.findByIdAndUpdate(_id, {$set: anunciante}, {new: true});
