@@ -40,8 +40,7 @@ router.get('/' ,  async (req, res)=>{
     link19:req.body.link19,
     link20:req.body.link20,
 
-    
-    
+       
     link21:req.body.link21,
     link22:req.body.link22,
     link23:req.body.link23,

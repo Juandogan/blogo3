@@ -37,6 +37,7 @@ app.use('/upload', express.static(path.resolve('./subidas')))
 app.use('/portada', require('./routers/routerPortada'))  //nuevo
 app.use('/categorias', require('./routers/routerCategorias'))  //nuevo
 
+
 app.post('/upload', multiPartMiddleware, (req,res)=>{
    
     var link = req.files['archivos'].path
