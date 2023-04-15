@@ -1,0 +1,125 @@
+<div style="text-align: center;">
+  <div *ngIf="loader"
+    class="loadingio-spinner-dual-ring-xg1vnrf2b6o"
+    style="margin-top: 150px; min-height: 2000px">
+    <div class="ldio-z7fu6e1den">
+      <div></div>
+      <div><div></div></div>
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngIf="!loader" class="margenL margenR" style="background-color:orange ; border-left: 20px solid rgb(43, 43, 43);border-right: 20px solid rgb(44, 44, 44)">
+
+
+  <div class="quitar600" style="margin-right:25px; text-align: right;">
+<h6 style="font-size:14px; font-weight: 700; padding-top:10px">NRO.<span>{{this.articulos[0].numero}} </span><span style="margin-left:5px" style="text-transform:uppercase">MES: {{this.articulos[0].mes}} </span><span> </span><span>AÑO:2022</span><span></span>
+
+</h6>
+</div>
+    <div  class="portadaAcomoda">
+<app-portada  [data]="articulos[0]"></app-portada>
+</div>
+<div>
+
+    <h4 class="indice" style="text-transform:uppercase">ÍNDICE - {{this.articulos[0]?.mes}}</h4>
+<app-indice  [data]="articulos[0]"></app-indice>
+</div>
+
+<img (click)="sumarContadorAunciante(7)" src={{this.anuncios[0]?.img7}}  width="100%" alt="">
+
+
+<!-- EDITORIAL COMIEZA AQUI -->
+
+<div style="color: white;background-color: orange; margin-top:10px"   >
+  <h1 class="indice subefuente fuenteTest" style="margin-top:20px; text-transform: uppercase;" >EDITORIAL - NRO {{this.articulos[0].numero}} | {{this.articulos[0].mes}} {{this.articulos[0].anio}}</h1>
+  <div class="fondoEditorial" style="object-fit: cover; background-image: url('../../../assets/1.png'); ">
+  <div>
+     <img class="responsi" src="../../../assets/logonm.png" width="155px" alt="" style="margin-top: 10px;margin-left: 15px;">
+   <!-- <img class="responsi2" src="../../../assets/LogoCCAM_Entero.png" width="100px" alt="" style="margin-top: 10px;"> -->
+    <!-- <p class="editorialParrafo"
+     [innerHTML]=saltos2(this.articulos[0]) >  -->
+     <!-- </p> -->
+     <p class="editorialParrafo" >
+      <p class="editorialParrafo" style="padding-bottom: 15px;" [innerHTML]="this.articulos[0].editorial" >
+      <br>
+  <br>
+<br>
+
+<br><br>
+
+
+  </div>
+
+</div>
+<!-- <div class="poner600">
+  <img src="../../../assets/image 12.png" width="100%" height="200px" alt="" style="margin-top: 0px;">
+  </div> -->
+
+<div class="row quitar600" style="margin-top:30px;  padding-right:35px ">
+  <div class="col-4 xl-12 ">
+    <div >
+     <a href="http://www.culturademontania.org.ar/Suscripcion-form/suscripcion.html" target="_blank">
+       <img (click)="sumarContadorAunciante(8)"  src={{this.anuncios[0].img8}}  width="100%" height="500px" alt="" style="padding-left:20px"></a>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div >
+     <a href="http://www.culturademontania.org.ar/museo/2.htm" target="_blank">
+       <img (click)="sumarContadorAunciante(9)" src={{this.anuncios[0].img9}}  width="100%" height="500px" alt=""></a>
+    </div>
+  </div>
+
+  <div class="col-4" style="padding-right: 0px">
+    <div >
+     <a href="http://www.culturademontania.org.ar/Suscripcion-form/inscripcion-equipo.html" target="_blank">
+       <img (click)="sumarContadorAunciante(10)"  src="{{this.anuncios[0].img10}} " width="100%" height="500px"  alt=""></a>
+    </div>
+  </div>
+
+</div>
+<br>
+<div  class="quitar600" style="height:410px ; background-color: #3E2800;margin-top:30px; margin-left:20px; margin-right: 20px ;">
+  <br>
+  <div style="background-color: #8b5a00;">
+<h1 class="indice quitar600"  style="margin-left: 23px;margin-bottom: 15px;">Ediciones anteriores </h1>
+
+ <!--
+
+<div class="publiMobile">
+
+
+</div>
+
+</div> -->
+
+<!--
+<div class="quitar600" style="margin-left:20px; margin-right:20px">
+<app-carousel  [data]="articulos[0]"  ></app-carousel>
+</div> -->
+<!-- <app-carousel2 [items]="articulos" [data]="articulos"></app-carousel2>  -->
+</div>
+<div class="quitar600" style="margin-left:20px; margin-right:20px">
+  <app-carousel1  [items2]="items"  [items2]="items"></app-carousel1>
+  </div>
+
+  <br><br>
+      </div>
+
+
+
+      </div>
+
+      <div style="background-image: url('../../assets/fondo2.png'); height: 500px; margin-top:-100px">
+
+      </div>
+      <div style="background-color:black; text-align: center;min-height: 200px;" >
+        <img src="../../assets/logonm.png" alt="" width="100px" style="float: left">
+        <h6 style="color: orange;padding:10px">REVISTA DIGITAL NOTICIAS DE MONTAÑA 2022 - Todos los derechos reservados</h6>
+
+      </div>
+
+    </div>

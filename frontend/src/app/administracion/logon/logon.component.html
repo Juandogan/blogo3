@@ -1,0 +1,79 @@
+
+<app-navbar data="usuarios > Crear"></app-navbar>
+<div class="flex-container" style="height: 1000px;">
+
+
+
+    <div class="flex-items" style="margin-top:20px">
+
+<div>
+
+<div style="margin: 10px 10px 0% 5%">
+    <h6 style="margin-top:20px; text-align: left; width: 300px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="brown" class="bi bi-people-fill" viewBox="0 0 16 16">
+        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+        <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+      </svg>
+      Crear / Modificar / Usuario</h6>
+    <label>Usuario</label>
+   <div class="input-group mb-3">
+     <input [(ngModel)]="user.email" type="text" class="form-control inputSize" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" appAutofocus autocomplete="false">
+
+   </div>
+
+
+ </div>
+
+
+ <div style="margin: 10px 10px 0% 5%">
+    <label>Contraseña</label>
+   <div class="input-group mb-3">
+     <input [(ngModel)]="user.password" type="text" class="form-control inputSize" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1" autocomplete="false">
+   </div>
+
+
+   <label>role</label>
+   <div class="input-group mb-3">
+    <select class="input-group form-select" [(ngModel)]="user.role"name="" id="">
+      <option selected value="admin">Admin</option>
+      <option value="editor">Editor</option>
+      <option value="colaborador">Colaborador</option>
+
+
+    </select>
+
+
+   </div>
+
+   <!-- <div class="d-grid gap-2">
+
+
+
+   <button  (click)="loader=!loader; guardar()" class="btn btn-info btn-sm btn-block mt-3" type="button">
+    <img *ngIf="loader" src="../../../assets/loader.gif" alt="" width="20px" style="margin-top:-3px">
+    Guardar</button>
+
+</div> -->
+<!--
+   <p class="small mt-4 mb-2 pb-lg-2"><a class="text-muted" href="#!">Olvidaste tu contraseña?</a></p>
+   <p>Aun no tienes una cuenta? <a href="#!" class="link-info">Crear Cuenta </a></p> -->
+
+ </div>
+
+
+</div>
+
+    </div>
+
+
+ </div>
+
+ <div class="modal-footer" style="z-index: 1000;background-color: rgb(204, 204, 204);width: 100%; position: fixed; bottom:0px">
+
+ <div class="margenR">
+   <button class="btn btn-dark" (click)="back()" style="margin-top:-2px; margin-left: 10px;">Volver</button>
+   <button class="btn btn-danger" style="margin-top:-2px; margin-left:10px"   (click)="guardar()" >Guardar</button>
+ </div>
+ </div>
+

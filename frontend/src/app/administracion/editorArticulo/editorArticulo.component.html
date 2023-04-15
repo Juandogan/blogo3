@@ -1,0 +1,15 @@
+<app-navbar data="artículos > cuerpo"></app-navbar>
+<div class="margenL margenR">
+  <div style="text-align: center">
+
+    <div *ngIf="loader" class="loadingio-spinner-dual-ring-xg1vnrf2b6o " style=" margin-top: 150px;min-height: 500px;"><div class="ldio-z7fu6e1den">
+
+      <div></div><div><div></div></div>
+      </div></div>
+
+
+    </div>
+
+<app-editor *ngIf="!loader"  [data]="this.nota[0]" [art]='this.nota[0]?.nota' [id]='this.nota[0]?._id'></app-editor>
+</div>
+

@@ -1,0 +1,20 @@
+<div class="dsc-carousel" [ngStyle]="{'min-height': finalHeight}">
+    <div class="dsc-carousel__btns">
+        <i class="fa fa-chevron-circle-left" (click)="setBack()"style="z-index: 10000"></i>
+        <i class="fa fa-chevron-circle-right" (click)="setNext()" style="z-index: 10000"></i>
+    </div>
+
+    <div class="dsc-carousel__content">
+        <ng-container  *ngFor="let section of items;" style="width:100px">
+            <div  *ngIf="load" class="dsc-carousel__content-item" [ngStyle]="{'background-image': 'url(' + section?.subtitulo +')', 'margin-left': section.marginLeft + '%', 'object-fit':'fill', 'width':'200px', 'border-radius':'2px' }">
+                <!-- <h2 style="font-size:12px!important; padding-top:6px; margin-bottom:20px;"></h2> -->
+                <a href="{{section?.link}}" target="_blank" style="color:orange">
+                 <h1 class="truncar1" style="font-size: 15px; ">  {{section?.titulo}} </h1>
+                </a>
+                <p class="truncar">  </p>
+            </div>
+        </ng-container>
+
+    </div>
+
+</div>

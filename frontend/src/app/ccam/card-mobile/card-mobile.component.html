@@ -1,0 +1,22 @@
+<div style="background-color:rgb(80, 80, 80); min-height: 150px; margin-left: 10px; margin-right: 10px; border-radius: 4px;">
+    <div class="row" style="margin:0px; padding:0px">
+        <div class="col-4"style="margin:0px; padding:0px" >
+            <img src="{{data.imagen1}}"alt="" width="100%">
+        </div>
+        <div class="col-8" >
+            <div style="text-align:left">
+                <br>
+                <h6 class="categoria">{{cut(data?.categoria1)}}</h6>
+
+                <h1 class="robotoBlack " (click)="pasar()" routerLink="/articulo/{{data?._id}}" >{{data?.titulo1}} </h1>
+
+                <p class="truncar4">{{data?.subtitulo1}}
+                    <p>
+                        {{data?.autor}}
+                    </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>  <br>

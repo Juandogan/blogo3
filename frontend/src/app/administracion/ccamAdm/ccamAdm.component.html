@@ -1,0 +1,186 @@
+
+<app-navbar data="ARTíCULOS"></app-navbar>
+
+<div style="text-align: center">
+
+  <div *ngIf="loader"  class="loadingio-spinner-dual-ring-xg1vnrf2b6o " style=" margin-top: 150px;min-height: 1000px;"><div class="ldio-z7fu6e1den">
+
+    <div></div><div><div></div></div>
+    </div></div>
+
+
+  </div>
+<div >
+
+<!--
+  <app-editor [data]="this.crudService.unArticulo" [art]='this.crudService.unArticulo.nota' [id]='this.crudService.unArticulo._id'></app-editor>
+   -->
+
+  </div>
+
+
+<br>
+
+<div style="margin-left:10px; margin-right:10px">
+<div  *ngIf="!loader" class="margenL margenR">
+
+  <h6>Buscar</h6>
+  <input class="form-input" type="text" [(ngModel)]="this.buscar" >
+
+  <h5 class="textoChico" >en un total de {{this.cantArt}} Artículos</h5>
+
+  <table  class="table table-light"   style="margin-top:20px">
+    <thead class="thead-dark">
+      <tr >
+        <!-- <th scope="col">#</th> -->
+        <th scope="col" style="width:3%;">ID</th>
+        <th scope="col">Título</th>
+
+        <!-- (click)="filtro = !filtro -->
+        <th scope="col" style="width:15%; text-align: left;"><a style="cursor:pointer" (click)="CambiarFiltro('creacion');estadoFiltro = !estadoFiltro"(click)="estadoFiltro3 = !estadoFiltro3">Creación
+        <span *ngIf="estadoFiltro3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+          </svg>
+        </span>
+        <span *ngIf="!estadoFiltro3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+          </svg>
+        </span>
+</a>
+
+        </th>
+        <th scope="col" style="width:12%; text-align: left"><a style="cursor:pointer;">Mod
+            </a></th>
+
+        <th scope="col" style="width:3%;"class="text-center">Posición</th>
+        <th scope="col" style="width:3%;"class="text-center">Cabecera</th>
+        <th scope="col" style="width:3%;"class="text-center">Artículo</th>
+        <th scope="col" style="width:5%;"class="text-center">Borrar</th>
+
+        <th scope="col" style="width:10%;cursor: pointer;"
+        class="text-center" (click)="CambiarFiltro('vistas')" (click)="estadoFiltro = !estadoFiltro" >Vistas
+
+
+
+        </th>
+
+
+
+        <th scope="col" style="width:5%;"class="text-center">Prev.</th>
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- |buscar:filterPost |filtrarFecha:filtro  -->
+      <tr *ngFor="let articulo of notas|buscar:buscar |filtroFecha:filtro :estadoFiltro " >
+        <!-- <th scope="row">1</th> -->
+
+        <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
+        <!-- <td class="textoTableTitulo" > {{articulo?.titulo | truncate:'100'}}</td> -->
+        <td class="textoTableTitulo" style="width:40% ;"> {{articulo?.titulo}}</td>
+
+        <td style="text-align:left; font-size: 14px;"> {{articulo?.fecha| date: 'dd/MM/yy hh:mm' }}</td>
+
+        <td  style="text-align: left;font-size: 14px;">{{articulo?.fechaMod| date: 'dd/MM/yy hh:mm'}}</td>
+        <td style="text-align: center;">
+         <p style="margin-top:0px">{{articulo?.posicion}}</p>
+
+        </td>
+        <td class="text-center">
+          <!-- (click)="editar()" -->
+        <a >
+          <!-- data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true" -->
+          <!-- routerLink="../editorCabecera/{{articulo?._id}}" -->
+       <mat-icon style="cursor:pointer" (click)="loading()" routerLink="../editorCabecera/{{articulo?._id}}" >edit</mat-icon>
+      </a></td>
+
+
+        <td class="text-center">
+          <!-- <a  (click)="id = articulo._id" (click)='editarArticulo(articulo)'(click)="this.crudService.cambioPantalla = false" > <mat-icon  style="color: green; cursor:pointer">article</mat-icon>
+          </a> </td>
+         -->
+         <mat-icon style="cursor:pointer"(click)="loading()"  routerLink="../editorArticulo/{{articulo?._id}}" >description</mat-icon>
+          <td class="text-center">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="id = articulo._id">
+              <div>
+               <mat-icon style="cursor:pointer; ">delete</mat-icon>
+              </div>
+
+
+              </a>
+
+              <td class="text-center">{{articulo?.vistas}}</td>
+              <!-- routerLink="../articulo/{{this.articulo?._id}}" target="_blank" -->
+              <td class="text-center"><a  routerLink="/articulo/{{articulo?._id}}" target="_blank" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-easel2-fill" viewBox="0 0 16 16">
+                  <path d="M8.447.276a.5.5 0 0 0-.894 0L7.19 1H2.5A1.5 1.5 0 0 0 1 2.5V10h14V2.5A1.5 1.5 0 0 0 13.5 1H8.809L8.447.276Z"/>
+                  <path fill-rule="evenodd" d="M.5 11a.5.5 0 0 0 0 1h2.86l-.845 3.379a.5.5 0 0 0 .97.242L3.89 14h8.22l.405 1.621a.5.5 0 0 0 .97-.242L12.64 12h2.86a.5.5 0 0 0 0-1H.5Zm3.64 2 .25-1h7.22l.25 1H4.14Z"/>
+                </svg>
+              </a></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<div>
+
+
+
+
+
+<div class="modal fade modal-open " id="exampleModalCenter" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+style="overscroll-behavior:inherit">
+  <div class="modal-dialog modal-dialog-centered modal-open " role="document">
+    <div class="modal-content modal-open ">
+      <div class="modal-header ">
+        <h5 class="texto mt-1" id="exampleModalLabel">Eliminar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <h4>Esta seguro que desea eliminar el artículo?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="eliminarArticulo(id); this.loader = true"  data-dismiss="modal">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade " tabindex="-1" data-bs-backdrop="static" id="exampleModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Eliminar {{this.id}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Esta seguro que desea eliminar el artículo?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="eliminarArticulo(id); this.loader = true; this.borrando = true" data-bs-dismiss="modal">Borrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer" style="z-index: 1000;background-color: rgb(204, 204, 204);width: 100%; position: fixed; bottom:0px">
+
+<div class="margenR">
+  <span class="badge bg-warning"  *ngIf="borrando" style="color:black; margin-right:20px">Eliminando...</span>
+  <span class="badge bg-warning" *ngIf="borrado" style="color:black;margin-right:20px">Eliminado!</span>
+  <span class="badge bg-warning" *ngIf="copiado" style="color:black;margin-right:20px">Copiado!</span>
+
+  <button class="btn btn-dark" routerLink="../" style="margin-top:-2px; margin-left: 10px;">Volver</button>
+  <button class="btn btn-danger" style="margin-top:-2px; margin-left:10px; margin-right: 5px;" (click)=loading()  routerLink="../editorCabecera/62902088b69caf0a51c7e023" >Crear Artículo</button>
+</div>
+</div>

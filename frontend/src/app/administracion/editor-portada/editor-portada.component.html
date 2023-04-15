@@ -1,0 +1,96 @@
+<app-navbar data="CCAM PORTADA"></app-navbar>
+<div class="margenL margenR" style="min-height: 120vh;">
+
+    <div class="row" style="margin-left:0px">
+        <div class="col-6" style="padding-right: 40px;">
+          <h4>Portada</h4>
+    <hr>
+     <select  [(ngModel)]="this.seleccion" (change)="selectChange()" class="form-select form-control-sm" style="width: 100%; height: 38px;">
+        <h4>Carrousel</h4>
+    <option value=1 selected >1er Carousel</option>
+    <option value=2>2do Carousel</option>
+    <option value=3>3er Carousel</option>
+    <option value=4>4to Carousel</option>
+    <option value=5>5to Carousel</option>
+    <option value=6>6to Carousel</option>
+    <option value=7>4mo Carousel</option>
+    <option value=8>8vo Carousel</option>
+    <option value=9>9no Carousel</option>
+    <option value=10>10mo Carousel</option>
+    <hr>
+    <option value=11>1er Vertical</option>
+    <option value=12>2do Vertical</option>
+    <hr>
+    <option value=13>1er Horizontal </option>
+    <option value=14>2do Horizontal </option>
+    <option value=15>3er Horizontal </option>
+
+  
+     </select>
+     <div style="text-align:right">
+     <a data-bs-toggle="modal" data-bs-target="#staticBackdrop2" >
+<button class="btn btn-danger mt-4" >Buscar</button>
+       </a>
+    </div>
+        </div>
+
+        <div class="col-6" style="padding-right: 40px;">
+            <h4>Vista previa</h4>
+            <hr>
+            <label for=""   >Categoria</label>
+            <input  [(ngModel)]="this.categoria" name="titulo" type="text"  id="titulo" class="form-control">
+
+            
+            <label for="" style="margin-top:7px;">Titulo</label>
+          <input  [(ngModel)]="this.titulo" name="titulo" type="text"  id="titulo" class="form-control">
+                    <label for="" style="margin-top:7px;" >Subtitulo</label>
+          <textarea  class="form-control" [(ngModel)]="this.subtitulo" name="titulo" type="text"  id="titulo" class="form-control" cols="30" rows="4"></textarea>
+          <label for="" style="margin-top:7px;">ID</label>
+          <input  [(ngModel)]="this.titulo2" name="titulo2" type="text"  id="titulo" class="form-control">
+          <h6 for=""  style="margin-top:7px;">Image:</h6>
+          <img *ngIf="this.imagen" src="{{this.imagen}}" width="270px">
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<div  style=" left:0px;  z-index: 1000;background-color: rgb(204, 204, 204);width: 100%;  position: fixed;
+    bottom: 0px;border-top: 1px solid gainsboro;">
+  <div style=" margin-right: 15%; text-align: right;margin-top: 15px;margin-bottom: 20px">
+    <button 
+      class="btn btn-dark" (click)="volver()" style="margin-top: -2px; margin-left: 10px">
+      Volver
+    </button>
+    <button class="btn btn-danger" (click)="guardar()" style="margin-top: -2px; margin-left: 10px;">
+      Guardar
+    </button>
+  </div>
+</div>
+<!-- footer con opcionmes -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Ingrese numero de ID</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group" >
+            <input  [(ngModel)]="this.busqueda"  id="busqueda" type="text" class="form-control" placeholder="Número de ID del articulo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+       
+            <div class="input-group-append">
+              <button   (click)="pedirUnArticulo()"class="btn btn-danger" type="button"data-bs-dismiss="modal" >Buscar</button> 
+            </div>
+           </div>
+        </div>
+        <div class="modal-footer">
+   
+          <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+        </div>
+      </div>
+    </div>
+   </div>
+   

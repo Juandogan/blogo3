@@ -1,0 +1,92 @@
+<div style="margin-left: 10px; margin-right:10px">
+
+
+    <br>
+    <h1  *ngIf="this.nota[0]"  class="titulo" [ngClass]="{'correccionTitulo':!estado}" style="margin-left:0px;margin-bottom: 0px; color:orange; border-left: 4px solid orange;padding-left: 7px;">ARTÍCULOS RELACIONADOS</h1>
+
+    <br>
+
+
+    <div class="row" >
+
+      <div  *ngIf="this.nota[0]" class="card col-4" [ngClass]="{'col-sm-6 col-sm-6 col-md-12 col-lg-12 col-xl-12	col-xxl-12':!estado, 'col-12':!estado}">
+        <a routerLink="../../articulo/{{this.nota[0]}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{this.nota[4]}}" alt="" height="200px" style="object-fit: cover;">
+          </a>
+         <div class="card-body" >
+            <h6 class="categoria"><b>{{cut(nota[1])}}</b></h6>
+            <a routerLink="../../articulo/{{this.nota[0]}}"  target="_blank">
+            <h1 class="card-title titulo" >{{nota[2]}}</h1>
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+
+          </div>
+      </div>
+
+      <div *ngIf="this.nota[5]"  class="card col-4" [ngClass]="{'col-sm-6 col-sm-6 col-md-12 col-lg-12	col-xl-12	col-xxl-12':!estado, 'col-12':!estado}">
+        <a routerLink="../../articulo/{{this.nota[5]}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{this.nota[9]}}" alt="" height="200px" style="object-fit: cover;">
+          </a>
+          <div class="card-body">
+              <h6 class="categoria"><b>{{cut(this.nota[6])}}</b></h6>
+              <a routerLink="../../articulo/{{this.nota[5]}}"  target="_blank">
+            <h1 class="card-title titulo" >{{this.nota[7]}}</h1>
+          </a>
+          </div>
+      </div>
+
+      <div *ngIf="this.nota[10]"  class="card col-4" [ngClass]="{'col-sm-6 col-sm-6 col-md-12 col-lg-12	col-xl-12	col-xxl-12':!estado, 'col-12':!estado}">
+        <a routerLink="../../articulo/{{this.nota[10]}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota[14]}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{cut(nota[11])}}</b></h6>
+               <a routerLink="../../articulo/{{this.nota[10]}}"  target="_blank">
+            <h1 class="card-title titulo" >{{nota[12]}}</h1>
+            </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+
+          </div>
+      </div>
+      <div *ngIf="this.nota[15]" class="card col-4"  [ngClass]="{'col-sm-6 col-sm-6 col-md-12 col-lg-12	col-xl-12	col-xxl-12':!estado, 'col-12':!estado}">
+        <a routerLink="../../articulo/{{this.nota[15]}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota[19]}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{cut(nota[16])}}</b></h6>
+               <a routerLink="../../articulo/{{nota[15]}}"  target="_blank" >
+            <h1 class="card-title titulo" >{{nota[17]}}</h1>
+                </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+
+          </div>
+      </div>
+      <div *ngIf="this.nota[20]"  class="card col-4" [ngClass]="{'col-sm-6 col-sm-6 col-md-12 col-lg-12	col-xl-12	col-xxl-12':!estado, 'col-12':!estado}">
+        <a routerLink="../../articulo/{{this.nota[20]}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota[24]}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{cut(nota[21])}}</b></h6>
+               <a routerLink="../../articulo/{{this.nota[20]}}"  target="_blank">
+            <h1 class="card-title titulo" >{{nota[22]}}</h1>
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+
+          </div>
+      </div>
+      <div *ngIf="this.nota[25]" class="card col-4" [ngClass]="{'col-sm-6 col-sm-6 col-md-12 col-lg-12	col-xl-12	col-xxl-12':!estado, 'col-12':!estado}" >
+        <a routerLink="../../articulo/{{this.nota[25]}}"  target="_blank">
+          <img class="card-img-top sombra"src="{{nota[29]}}" alt="" height="200px" style="object-fit: cover;">
+        </a>
+          <div class="card-body">
+               <h6 class="categoria"><b>{{cut(nota[26])}}</b></h6>
+               <a routerLink="../../articulo/{{nota[25]}}" fragment="ayudaDiv" target="_blank">
+            <h1 class="card-title titulo" >{{nota[27]}}</h1>
+          </a>
+            <!-- <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>           -->
+
+          </div>
+      </div>
+
+       </div>
+      </div>

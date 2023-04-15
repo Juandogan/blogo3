@@ -1,0 +1,149 @@
+
+<app-navbar></app-navbar>
+<div class="margenL margenR " >
+
+  <div  class="alturaDocu" style="text-align: center;">
+    <div
+      *ngIf="loader"
+      class="loadingio-spinner-dual-ring-xg1vnrf2b6o"
+      style="margin-top: 150px; min-height: 500px">
+      <div class="ldio-z7fu6e1den">
+        <div></div>
+        <div><div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+    <div *ngIf="!loader" class="row colorFondo " style="padding:0px; margin:0px"  >
+              <div class="col-12 col-sm-12 col-md-9 col-lg-9	col-xl-9 margenMobileDocu"  >
+                    <div>
+
+                        <h5 class="categoria" >{{cut(nota[0]?.categoria)}}</h5>
+                        <h1 class="titulo" >{{nota[0]?.titulo}}</h1>
+
+                        <h2 class="subtitulo">{{nota[0]?.subtitulo}}</h2>
+
+
+                      <app-footer-card [data]="nota"></app-footer-card>
+                        <hr style="margin-top: -10px;">
+                        <br>
+                        <!-- <p class="capital" >{{saltos(nota[0]?.nota)|sanetizer}}</p> para ver contenido html-->
+                         <h3  [innerHTML]=saltos(nota[0]?.nota)|sanetizer ></h3>
+
+                       <div *ngIf="nota">
+
+                       </div>
+
+<div class="clasePrincipal"  >
+  <div>
+     <!-- <div class="primerIcon" >
+         <mat-icon  class="mr-corre mr-2 ml-2  stilo">alarm</mat-icon>
+          <div>
+          <h3 class="subtituloResposive2  fecha">00/59/22</h3>
+          </div>
+     </div> -->
+ </div>
+ </div>
+                    </div>
+             </div>
+             <div class="col-3 quitar900">
+                <div style="margin-top:20px">
+                  <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link11}}" (click)="sumarContadorAunciante(11)">
+                    <img src="{{this.anuncios[0]?.img11}}" width="100%"  alt="">
+                  </a>
+                    <hr>
+                    <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link12}}" (click)="sumarContadorAunciante(12)">
+                    <img src="{{this.anuncios[0]?.img12}}"  width="100%"  alt=""
+                      style="margin-top:10px; object-fit: cover;">
+                    </a>
+                      <hr>
+                      <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link13}}" (click)="sumarContadorAunciante(13)">
+                    <img src="{{this.anuncios[0]?.img13}}" width="100%"  alt=""
+                      style="margin-top:10px; object-fit: cover;">
+                    </a>
+                </div>
+                <hr>
+                <app-articulo-relacionado  [data]="dataRelacionado" [estado]="false"></app-articulo-relacionado>
+            </div>
+
+<div class="col-12">
+
+
+  <div style="margin-left:-5px; margin-left: -5px;">
+
+
+  
+
+    <app-comentarios [data]="nota[0]" [tipo]="'articulo'"></app-comentarios>
+    <br>
+    <img *ngIf="this.anuncios[0]?.img14" src="{{this.anuncios[0]?.img14}}" width="100%"  alt="">
+</div>
+
+  <!-- col-sm-12 col-sm-12 col-md-4 col-lg-3	col-xl-3	col-xxl-3 -->
+    <app-articulo-relacionado *ngIf="loader2" class="quitar600"  [data]="this.dataRelacionado" [estado]="true"></app-articulo-relacionado>
+
+    <app-articulo-relacionado  *ngIf="loader2"class="poner600" [data]="this.dataRelacionado" [estado]="false"></app-articulo-relacionado>
+
+<div style="background-color: rgb(255, 255, 255);">
+  <div class="row">
+    <div class="col-9">
+    <h2  class="titulo" style="margin-left:0px;margin-bottom: 10px; color:orange; font-size: 28px; ">| ULTIMAS NOVEDADES</h2>
+
+      <app-carousel [items]="dataRelacionado" [data]="dataRelacionado" [height]="200"></app-carousel>
+    </div>
+    <div class="col-3" >
+      <div style="margin-top: 38px;">
+        <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link13}}" (click)="sumarContadorAunciante(13)">
+      <img src="{{this.anuncios[0]?.img13}}" width="100%"  alt="" 
+      style="margin-top:10px; object-fit: cover; " height="499px">
+      </a>
+    </div>
+
+    </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div style="text-align: left ; margin-top:10px" >
+
+<button (click)="subir()" class="btn "  style="margin-right:10px; border-radius:5px; background-color: rgba(255, 166, 0, 0.719);;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+  </svg>
+
+  Subir</button>
+
+
+
+<button (click)="volver()" class="btn " style="border-radius:5px; background-color: rgba(255, 166, 0, 0.719);"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+</svg>
+
+  Volver</button>
+  <br><br>
+  <br><br>
+</div>
+
+
+
+
+    </div>
+
+<!-- <footer></footer> -->
+<div *ngIf="!loader  "  style="background-color: rgb(32, 32, 32); width: 100%; text-align: left ;
+  background-image: url('../../../assets/articuloFooter.png');
+background-size: 1421px;
+filter:saturate(1);
+
+
+
+">
+<app-footer></app-footer>
+
+</div>
+<!-- <footer></footer> -->
+</div>
+
+

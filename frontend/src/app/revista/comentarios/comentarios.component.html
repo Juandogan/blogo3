@@ -1,0 +1,198 @@
+<div style="margin-left: 10px; margin-right: 20px;  ">
+  <br />
+
+  <h1 *ngIf="!this.nota.comentarios" class="titulo">| COMENTARIOS(0)</h1>
+  <hr *ngIf="!this.nota.comentarios" />
+  <h4
+    *ngIf="!this.nota.comentarios"
+    class="titulo"
+    style="margin-left: 10px; font-size: 16px; color: gray"
+  >
+    No hay comentarios aún, sé el primero!
+  </h4>
+  <hr *ngIf="!this.nota.comentarios" />
+
+  <h1 *ngIf="this.nota.comentarios" class="titulo">
+    | COMENTARIOS({{ this.comentarios.length - 1 }})
+  </h1>
+  <hr *ngIf="this.comentarios[1]" />
+  <h5
+    *ngIf="this.comentarios[1]"
+    class="comentarios"
+    [innerHTML]="this.comentarios[1]"
+  ></h5>
+  <hr *ngIf="this.comentarios[2]" />
+  <h5
+    *ngIf="this.comentarios[2]"
+    class="comentarios"
+    [innerHTML]="this.comentarios[2]"
+  ></h5>
+  <hr *ngIf="this.comentarios[3]" />
+  <h5
+    *ngIf="this.comentarios[3]"
+    class="comentarios"
+    [innerHTML]="this.comentarios[3]"
+  ></h5>
+
+  <div *ngIf="verMas">
+    <hr *ngIf="this.comentarios[4]" />
+    <h5
+      *ngIf="this.comentarios[4]"
+      class="comentarios"
+      [innerHTML]="this.comentarios[4]"
+    ></h5>
+
+    <hr *ngIf="this.comentarios[5]" />
+    <h5
+      *ngIf="this.comentarios[5]"
+      class="comentarios"
+      [innerHTML]="this.comentarios[5]"
+    ></h5>
+
+    <hr *ngIf="this.comentarios[6]" />
+    <h5
+      *ngIf="this.comentarios[6]"
+      class="comentarios"
+      [innerHTML]="this.comentarios[6]"
+    ></h5>
+
+    <hr *ngIf="this.comentarios[7]" />
+    <h5
+      *ngIf="this.comentarios[7]"
+      class="comentarios"
+      [innerHTML]="this.comentarios[7]"
+    ></h5>
+    <hr *ngIf="this.comentarios[8]" />
+    <h5
+      *ngIf="this.comentarios[8]"
+      class="comentarios"
+      [innerHTML]="this.comentarios[8]"
+    ></h5>
+
+    <hr *ngIf="this.comentarios[9]" />
+    <h5
+      *ngIf="this.comentarios[9]"
+      class="comentarios"
+      [innerHTML]="this.comentarios[9]"
+    ></h5>
+  </div>
+
+  <!-- <h5 class="comentarios" [innerHTML]=this.comentarios[3]></h5>
+<hr *ngIf="this.comentarios[3]">
+<h5 class="comentarios" [innerHTML]=this.comentarios[4]></h5>
+<hr *ngIf="this.comentarios[4]"> -->
+
+  <hr *ngIf="this.nota.comentarios" />
+  <div style="text-align: right">
+    <h6
+      *ngIf="this.nota.comentarios"
+      style="
+        color: orange;
+        margin-right: 10px;
+        float: right;
+        margin-top: 3px;
+        cursor: pointer;
+      "
+      (click)="verMas = !verMas"
+    >
+      <span *ngIf="!verMas">Ver más</span>
+      <span *ngIf="verMas">Ver menos</span>
+    </h6>
+  </div>
+  <span
+    (click)="formulario = !formulario; btnComentar = !btnComentar"
+    class="mt-2"
+    style="
+      margin-top: -10px;
+      color: orange;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 10px;
+    "
+  >
+    <svg
+      *ngIf="!this.loading"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi bi-chat-right-dots-fill"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+      />
+    </svg>
+    <img
+      *ngIf="this.loading"
+      src="../../../assets/loader.gif"
+      width="30px"
+      alt=""
+    />
+    <span *ngIf="!formulario"> Comentar</span>
+    <span *ngIf="formulario"> Cerrar</span>
+  </span>
+
+
+
+  <div *ngIf="formulario" class="form" [@inOutAnimation]>
+
+    <h6 class="descripcionInput">Nombre*</h6>
+    <div class="input-group ajusteAncho">
+      <input
+        [(ngModel)]="this.nombre"
+        type="text"
+        class="form-control"
+        placeholder="Nombre"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+        autofocus
+      />
+    </div>
+    <h6 class="descripcionInput mt-2">Email*</h6>
+    <div class="input-group ajusteAncho">
+      <input
+        [(ngModel)]="this.email"
+        type="email"
+        class="form-control"
+        placeholder="Email"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+    </div>
+    <br />
+
+    <h6 class="descripcionInput">Comentarios*</h6>
+    <div class="input-group ajusteAncho">
+      <textarea
+        [(ngModel)]="this.comentario"
+        type="text"
+        class="form-control"
+        placeholder="Tu mensaje aquí"
+        rows="5"
+      >
+      </textarea>
+    </div>
+    <h6 style="color: brown; font-size: 12px; margin-top: 5px">
+      *todos los campos obligatorios
+    </h6>
+    <!-- <h6 *ngIf=""" style="color:red"> Falta completar nombre y el mensaje</h6> -->
+    <div class="mt-2">
+      <button
+        (click)="btnComentar = true; agregarPublicacion()"
+        class="btn mt-2"
+        style="font-size: 10px; background-color: orange"
+      >
+        ENVIAR
+      </button>
+
+      <button
+        (click)="formulario = false; btnComentar = true"
+        class="btn mt-2"
+        style="margin-left: 5px; background-color: orange; font-size: 10px"
+      >
+        CANCELAR
+      </button>
+    </div>
+  </div>
+</div>

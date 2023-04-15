@@ -1,0 +1,289 @@
+<div class="fondo"  >
+    <div class="row quitar600 "   >
+      <div class="col-6 col-sm-0" style="transform: rotate(-2deg); max-height: 800px;min-height: 900px;;">
+        <div style="margin-left: 35px; ">
+          <div >
+            <img   class="imagen" src="{{link}}" width="100%" alt="" style="border-radius: 10px">
+
+            <div class="tituloBox" style="border-radius: 10px;box-shadow: 1px 1px 2px black">
+              <a routerLink="articulos/{{this.ruta}}"
+              target="_blank">
+               <h1 class="titulo truncar3" style="font-size: 30px;line-height: 35px; color:white;margin-top:10px; text-shadow: 2px 2px 2px black; padding-bottom:0px;    margin-left: -10px;
+                line-height: 35px;margin-left:0px">{{titulo}}</h1>
+            </a>
+            <a routerLink="articulos/{{this.ruta}}"  target="_blank">
+            <p  class="descripcion truncar4" style="color:black; margin-top:-2px;">{{descripcion}}<span></span></p>
+            
+          </a>
+
+            <!-- <button class="btn btn-dark">Ingresar</button> -->
+
+            <br>
+          </div>
+          </div>
+
+        </div>
+
+      </div>
+       <div class="col-6" style="margin-top:0px!important">
+      <div class="row">
+    <!-- <div class="col-1">
+    <div>
+ <h1 class="marg" style="color: #665622;margin-top:10px">》</h1>
+    <h1 class="marg" style="color: #a73b0a; margin-top:-13px">》</h1>
+    <h1 class="marg" style="color:  #7C5100;margin-left:-5px; ">》</h1>
+    <h1 class="marg" style=" color:#536800; margin-top:-4px ">》</h1>
+    <h1 class="marg" style="color: #3E2800;margin-left:-5px;margin-top:-4px">》</h1>
+
+  </div>
+  </div>   -->
+
+  <div class="col-12" style="padding:0px; margin:0px; padding-left:10px; margin-top: 20px;" >
+
+
+    <div class="hov margenes" style=" background-color:orange; box-shadow: 1px 1px 3px rgb(57, 57, 57);" (mouseover)="cambioImagen1()">
+      <a  target="_blank" href="revista/articuloRevista/{{this.ruta}}" >
+            <p class="titulo" style="margin-top:15px; margin-left:10px">{{this.data?.art1}} </p>
+            <p style="margin: 0px; padding: 0px; padding-bottom: 10px;padding-left: 17px; color:black; margin-top:-24px ;">Por:{{data.autor1}}</p>
+      </a>
+    </div>
+
+
+    <div class="hov margenes "  style="background-color: orange ;box-shadow: 1px 1px 3px rgb(57, 57, 57);"(mouseover)="cambioImagen2()">
+      <a   target="_blank" href="/articulos/{{this.ruta}}" target="_blank">
+    <p class="titulo">{{ this.data?.art2}}</p>
+    <p style="margin: 0px; padding: 0px; padding-bottom: 10px;padding-left: 17px; color:black; margin-top:-24px ;">Por:{{data.autor2}}</p>
+      </a>
+
+    </div>
+
+  <div class=" hov margenes"  style="background-color:orange;box-shadow: 1px 1px 3px rgb(57, 57, 57);" (mouseover)="cambioImagen3()">
+    <a routerLink="/articulo/{{this.ruta}}"
+      target="_blank">
+  <p class="titulo ">
+    {{this.data?.art3}}</p>
+        <p style="margin: 0px; padding: 0px; padding-bottom: 10px;padding-left: 17px; color:black; margin-top:-24px ;">Por:{{data.autor3}}</p>
+
+  </a>
+  <!-- <p class="autor">Por: {{data[2]?.autor}}</p> -->
+  </div>
+
+  <div  class="hov margenes"  style="background-color:orange;box-shadow: 1px 1px 3px rgb(57, 57, 57); " (mouseover)="cambioImagen4()">
+    <a routerLink="/articulo/{{this.ruta}}"
+      target="_blank">
+  <p class="titulo" >{{this.data?.art4}}</p>
+  <p style="margin: 0px; padding: 0px; padding-bottom: 10px;padding-left: 17px; color:black; margin-top:-24px ;">Por:{{data.autor4}}</p>
+  </a>
+  <!-- <p class="autor">Por: {{data[3]?.autor}}</p> -->
+  </div>
+  <div class="hov margenes"  style="background-color:orange;box-shadow: 1px 1px 3px rgb(57, 57, 57); "(mouseover)="cambioImagen5()">
+    <a routerLink="/articulo/{{this.ruta}}"
+      target="_blank">
+  <p class="titulo" >{{this.data?.art5}}</p>
+  <p style="margin: 0px; padding: 0px; padding-bottom: 10px;padding-left: 17px; color:black; margin-top:-24px ;">Por:{{data.autor5}}</p>
+</a>
+  <!-- <p class="autor">Por: {{data[4]?.autor}}</p> -->
+  </div>
+  <div class="hov margenes"  style="background-color:orange; box-shadow: 1px 1px 3px rgb(57, 57, 57);"(mouseover)="cambioImagen6()">
+    <a routerLink="/articulo/{{this.ruta}}"
+    target="_blank">
+    <p class="titulo"  >{{this.data?.art6}}</p>
+    <p style="margin: 0px; padding: 0px; padding-bottom: 10px;padding-left: 17px; color:black; margin-top:-24px ;">Por:{{data.autor6}}</p>
+    </a>
+    <!-- <p class="autor">Por: {{data[4]?.autor}}</p> -->
+    </div>
+    <div class="hov margenes"  style="background-color: orange; box-shadow: 1px 1px 3px rgb(57, 57, 57);"(mouseover)="cambioImagen7()">
+      <a routerLink="/articulo/{{this.ruta}}"
+      target="_blank">
+      <p class="titulo" >{{this.data?.art7}}</p>
+      <p style="margin: 0px; padding: 0px; padding-bottom: 10px;padding-left: 17px; color:black; margin-top:-24px ;">Por:{{data.autor7}}</p>
+      </a>
+      <!-- <p class="autor">Por: {{data[4]?.autor}}</p> -->
+      </div>
+      <div class="hov margenes"  style="background-color: orange; box-shadow: 1px 1px 3px rgb(57, 57, 57);"(mouseover)="cambioImagen8()">
+        <a routerLink="/articulo/{{this.ruta}}"
+        target="_blank">
+        <p class="titulo">{{this.data?.art8}}</p>
+        <p style="margin: 0px; padding: 0px; padding-bottom: 10px;padding-left: 17px; color:black; margin-top:-24px ;">Por:{{data.autor8}}</p>
+        </a>
+        <!-- <p class="autor">Por: {{data[4]?.autor}}</p> -->
+        </div>
+
+
+
+  </div>
+
+  </div>
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+<!-- SOLO EN DISPOSITIVOS MOBILES -->
+    <div class="poner600" style="margin-top: 10px;">
+      <div class="row">
+      <div class="col-5">
+        <a  routerLink="/articulo/{{this.data?.resultadoID}}" >
+        <img  class="img" src="{{this.data?.resultadoImagen}}" width="100%" alt="" style="height: 100px!important;">
+        </a>
+      </div>
+
+        <div  class="col-7" style=" background-color:#66562273;padding:0px" (click)="cambioImagen1()">
+          <a routerLink="/articulo/{{this.data?.resultadoID}}">
+          <p class="titulo truncar3" >{{this.data?.art1}}          
+            <p style="font-size: 12px; margin-left: 10px; color: wheat; margin-top:-10px ;">Por: {{this.data?.autor1}}</p>
+            </a> 
+        </div>
+
+      </div>
+
+      <div class="row  ">
+        <div class="col-5">
+          <a routerLink="/articulo/{{this.data?.resultadoID2}}">
+       <img  class="img" src="{{data?.resultadoImagen2}}" width="100%" alt="" height="100%">
+       </a>
+       </div>
+
+
+
+          <div  class="col-7" style=" background-color:#66562273;" (click)="cambioImagen2()">
+            <a routerLink="/articulo/{{this.data?.resultadoID2}}">
+            <p class="titulo" style="margin-left:0px">{{this.data?.art2}}</p>   
+            <p style="font-size: 12px; margin-left: 0px; color: wheat; margin-top:-10px ;">Por: {{this.data?.autor2}}</p>         
+            </a>
+            
+
+          </div>
+        </div>
+
+        <div class="row ">
+          <div class="col-5">
+            <a routerLink="/articulo/{{this.data?.resultadoID3}}">
+         <img class="img" src="{{data?.resultadoImagen3}}" width="100%" alt="" height="100%">
+        </a>
+            </div>
+
+
+
+            <div  class="col-7" style=" background-color:#66562273;" (click)="cambioImagen3()">
+              <a routerLink="/articulo/{{this.data?.resultadoID3}}">
+            <p class="titulo"style="margin-left:0px">{{this.data?.art3}}</p>
+            <p style="font-size: 12px; margin-left: 0px; color: wheat; margin-top:-10px ;">Por: {{this.data?.autor3}}</p>       
+    </a>
+
+
+            </div>
+          </div>
+
+
+        <div class="row ">
+          <div class="col-5">
+          <a routerLink="/articulo/{{this.data?.resultadoID4}}">
+          <img class="img" src="{{data?.resultadoImagen4}}" width="100%" alt="" height="100%">
+        </a>
+
+            </div>
+
+
+
+            <div  class="col-7" style=" background-color:#66562273;" (click)="cambioImagen4()">
+              <a routerLink="/articulo/{{this.data?.resultadoID4}}">
+      <p class="titulo"style="margin-left:0px">{{data?.art4}}</p>
+                  <p style="font-size: 12px; margin-left: 0px; color: wheat; margin-top:-10px ;">Por: {{this.data?.autor4}}</p>       
+    </a>
+
+
+            </div>
+          </div>
+
+
+        <div class="row ">
+          <div class="col-5">
+            <a routerLink="/articulo/{{this.data?.resultadoID5}}">
+         <img class="img" src="{{data?.resultadoImagen5}}" width="100%" height="100%" alt="">
+     </a>
+            </div>
+
+
+
+            <div  class="col-7" style=" background-color:#66562273;" (click)="cambioImagen5()">
+              <a routerLink="/articulo/{{this.data?.resultadoID5}}">
+      <p class="titulo"style="margin-left:0px">{{data?.art5}}</p>
+      <p style="font-size: 12px; margin-left: 0px; color: wheat; margin-top:-10px ;">Por: {{this.data?.autor5}}</p>   
+        </a>
+
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-5">
+              <a routerLink="/articulo/{{this.data?.resultadoID6}}">
+           <img class="img" src="{{data?.resultadoImagen6}}" width="100%" height="100%"alt="">
+          </a>
+              </div>
+
+
+
+              <div  class="col-7" style=" background-color:#66562273;" (click)="cambioImagen6()">
+                <a routerLink="/articulo/{{this.data?.resultadoID6}}">
+        <p class="titulo"style="margin-left:0px">{{data?.art6}}</p>
+        <p style="font-size: 12px; margin-left: 0px; color: wheat; margin-top:-10px ;">Por: {{this.data?.autor6}}</p>  
+        
+        </a>
+
+
+              </div>
+            </div>
+
+
+            <div class="row ">
+              <div class="col-5">
+                <a routerLink="/articulo/{{this.data?.resultadoID7}}">
+             <img class="img" src="{{data?.resultadoImagen7}}" width="100%" height="100%"alt="">
+             </a>
+
+                </div>
+
+
+
+                <div  class="col-7" style=" background-color:#66562273;" (click)="cambioImagen7()">
+                  <a routerLink="/articulo/{{this.data?.resultadoID7}}">
+          <p class="titulo"style="margin-left:0px"> {{data?.art7}}</p>
+          <p style="font-size: 12px; margin-left: 0px; color: wheat; margin-top:-10px ;">Por: {{this.data?.autor7}}</p>  
+          </a>
+
+
+                </div>
+              </div>
+
+
+              <div class="row ">
+                <div class="col-5" style="margin-bottom: 20px;">
+                  <a routerLink="/articulo/{{this.data?.resultadoID8}}">
+               <img class="img" src="{{data?.resultadoImagen8}}" width="100%" height="100%" alt="" >
+                      </a>
+                  </div>
+
+
+
+                  <div  class="col-7" style=" background-color:#66562273;margin-bottom: 20px;" (click)="cambioImagen8()">
+                    <a routerLink="/articulo/{{this.data?.resultadoID8}}">
+                   <p class="titulo"style="margin-left:0px">{{data.art8}}</p>
+                   <p style="font-size: 12px; margin-left: 0px; color: wheat; margin-top:-10px ;">Por: {{this.data?.autor8}}</p>  
+            </a>
+
+
+                  </div>
+                </div>
+
+
+    </div>
+
+
+  </div>

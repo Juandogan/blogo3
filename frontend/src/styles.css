@@ -1,0 +1,166 @@
+
+.blue-snackbar {
+  background-color: rgb(139, 11, 11);
+  color:white;
+  font-size: 10px!important;
+  text-transform: uppercase;
+
+}
+
+
+body {
+  padding-right:0 !important;
+}
+
+.modal-open {
+  overflow:auto;
+  padding-right:0 !important;
+}
+
+::ng-deep .mat-snack-bar-container {
+  margin-top: 250px !important;
+}
+simple-snack-bar span {
+  margin:auto;
+  text-align: center;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.modal-backdrop {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden;
+}
+
+.modal-backdrop.show {
+  overflow: hidden;
+  padding-right: 0px !important;
+}
+
+@media (max-width: 3000px) {
+  .margenL {
+    margin-left: 33%;
+  }
+  .margenR {
+    margin-right: 33%;
+  }
+}
+
+@media (max-width: 2666px) {
+  .margenL {
+    margin-left: 25%;
+  }
+  .margenR {
+    margin-right: 25%;
+  }
+}
+
+@media (max-width: 2402px) {
+  .margenL {
+    margin-left: 24%;
+  }
+  .margenR {
+    margin-right: 24%;
+  }
+}
+
+@media (max-width: 2200px) {
+  .margenL {
+    margin-left: 20%;
+  }
+  .margenR {
+    margin-right: 20%;
+  }
+}
+
+@media (max-width: 2000px) {
+  .margenL {
+    margin-left: 18%;
+  }
+  .margenR {
+    margin-right: 18%;
+  }
+}
+
+@media (max-width: 1800px) {
+  .margenL {
+    margin-left: 15%;
+  }
+  .margenR {
+    margin-right: 15%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .margenL {
+    margin-left: 13%;
+  }
+  .margenR {
+    margin-right: 13%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .margenL {
+    margin-left: 8%;
+  }
+  .margenR {
+    margin-right: 8%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .margenL {
+    margin-left: 4%;
+  }
+  .margenR {
+    margin-right: 4%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .margenL {
+    margin-left: 2%;
+  }
+  .margenR {
+    margin-right: 2%;
+  }
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+@media (max-width: 800px) {
+  .margenL {
+    margin-left: 0%;
+  }
+  .margenR {
+    margin-right: 0%;
+  }
+
+
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

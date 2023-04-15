@@ -1,0 +1,43 @@
+<div *ngIf="this.existir" class="barra barraTexto"  [ngClass]="{'margenL':estado,'margenR':estado, 'margen':estado }" >
+  <div [ngClass]="{'margen':estado}">
+     <div class="flex-container">
+        <h4  [ngClass]="{'margenL':!estado}">
+        <a><b class="suscribirse"> SUSCRIBIRSE</b></a> |
+        <a><b class="contactar">CONTACTAR</b></a></h4>
+
+        <div style="margin-top:10px">
+        <h4 class="margenL quitar800 quienesSomos quitar675">✉ ¿QUIÉNES SOMOS?</h4>
+        <h4 class="margenL quitar800 formarParte quitar675" >✉ ¿CÓMO FORMAR PARTE DEL CCAM?</h4>
+             <h4 class="margenL quitar800 ccam2 quitar829" (click)="estado = false" routerLink="" >| CCAM </h4>
+             <h4 class="margenL quitar800 revista quitar829" (click)="estado = true" routerLink="revista" >REVISTA DIGITAL</h4>
+    </div>
+
+     <div [ngClass]="{'margenR':!estado}" class="quitar800" style="margin-top:4px ; ">
+        <!--  -->
+        <div>
+          <input *ngIf="!estado" [ngClass]="{'input2':estado}" [(ngModel)]="this.buscar" (click)=loading()  routerLink="/buscador" class="input margenR quintarInput"  placeholder="Buscar"
+                  (keyup)="pasar($event)" type="text" >
+                </div>
+                  <div  class="redes">
+                    <span  *ngIf="!estado"class="material-icons quintarInput"  style="margin-right: 170px;" >search</span>
+                    <a href="https://www.youtube.com/c/CentroCulturalArgentinodeMonta%C3%B1a" target="_blank">
+                       <img src="../../../assets/fa_youtube.png" alt=""  width="20px" style="margin-top: -16px;">
+                    </a>
+
+                    <a href="https://www.instagram.com/ccam_arg/?hl=es-la" target="_blank" >
+                       <img src="../../../assets/icoInsta.png" alt=""  width="29px" style="margin-left:2px; margin-top:-12px">
+                    </a>
+
+                    <a href="https://web.facebook.com/ccamontania" target="_blank">
+                        <span class="material-icons" style="color:white; font-size: 26px;margin-top: 2px;">facebook</span>
+                    </a>
+
+                    </div>
+
+      </div>
+   </div>
+
+</div>
+
+</div>
+

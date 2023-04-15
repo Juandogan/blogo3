@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="margenL margenR" >
+  <div class="margen">
+  <br>
+<h2 class="buscar">BUSCAR({{nota?.length}})  <span>
+<input class="invisibleInput" [(ngModel)]="this.aux" type="text"></span> </h2>
+   <div class="row" data-masonry='{"percentPosition": true }'>
+<div *ngFor="let not of nota|buscar:this.aux" class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3"  >
+  <br>
+  <div  class="card" >
+      <img class="card-img-top sombra"src="{{not.imagen1}}" alt="" height="200px" style="object-fit: cover;">
+      <div class="card-body">
+          <h6 class="categoria"><b>{{cut(not?.categoria)}}</b></h6>
+          <a style="color:brown" routerLink="../articulo/{{not?._id}}">
+        <h2 class="card-title titulo">{{not?.titulo}}</h2></a>
+        <p class="card-text truncar5" style="font-size: 16px; line-height: 22px;">{{not?.subtitulo}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+</div>

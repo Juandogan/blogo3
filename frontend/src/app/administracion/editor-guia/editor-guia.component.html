@@ -1,0 +1,404 @@
+<app-navbar data="Guía de Montañas > Editor"></app-navbar>
+
+<div style="text-align: center">
+
+  <div *ngIf="loader" class="loadingio-spinner-dual-ring-xg1vnrf2b6o " style=" margin-top: 150px;min-height: 500px;"><div class="ldio-z7fu6e1den">
+
+    <div></div><div><div></div></div>
+    </div></div>
+
+
+  </div>
+<br>
+<div *ngIf="!loader" style="margin-left:15px">
+
+<div class ="row margenL margenR" >
+  <div class="col-6" style="margin-left: -20px;">
+
+
+            <h1>CREAR |<span> GUIA</span></h1>
+            <hr>
+
+                <div class="form-group">
+                  <h5 class="textoInput" style="margin-top:18px">Título</h5>
+                  <input [(ngModel)]="this.guiaModel.titulo" class="form-control" id="titulo">
+                       <!-- <div  class="textoInputBajo" >
+                     {{this.titulo.length}} de 200 Máx.
+                  </div>  -->
+                </div>
+                <!-- <div class="form-group">
+                  <h5 class="textoInput">Título Alternativo / Noticias / Relacionados</h5>
+                  <input  [(ngModel)]="this.tituloAlt" class="form-control" id="tituloAlt">
+
+                </div> -->
+                <div class="form-group">
+                  <h5 class="textoInput">Subtítulo</h5>
+                  <textarea [(ngModel)]="this.guiaModel.subtitulo" rows="2" class="form-control" id="message-text"></textarea>
+                  <!-- <div  class="textoInputBajo" >
+                    {{this.subtitulo.length}} de 200 Máx.
+                  </div>  -->
+                </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <h5 class="textoInput">Coordenadas</h5>
+            <input [(ngModel)]="this.guiaModel.latitud" class="form-control" id="message-text" >
+          </div>
+      </div>
+
+
+
+        <div class="col-6">
+          <div class="form-group">
+            <h5 class="textoInput">Altura</h5>
+            <input [(ngModel)]="this.guiaModel.altura" class="form-control" id="message-text">
+
+
+         </div>
+
+
+  </div>
+  <div class="col-12">
+    <div class="form-group">
+      <h5 class="textoInput">Como llegar:</h5>
+      <input [(ngModel)]="this.guiaModel.longitud"class="form-control" id="message-text">
+   </div>
+  </div>
+
+
+
+  <div class="col-6">
+    <div class="form-group">
+      <h5 class="textoInput">Provincia</h5>
+        <select  [(ngModel)]="this.guiaModel.provincia"class="form-select form-control-sm"  id="message-text">
+        <option value="Buenos Aires">Buenos Aires</option>
+        <option value="Buenos Aires Capital">Buenos Aires Capital</option>
+        <option value="Catamarca">Catamarca</option>
+        <option value="Chaco">Chaco</option>
+        <option value="Chubut">Chubut</option>
+        <option value="Cordoba">Cordoba</option>
+        <option value="Corrientes">Corrientes</option>
+        <option value="Entre Rios">Entre Rios</option>
+        <option value="Formosa">Formosa</option>
+        <option value="Jujuy">Jujuy</option>
+        <option value="La Pampa">La Pampa</option>
+        <option value="La Rioja">La Rioja</option>
+        <option value="Mendoza">Mendoza</option>
+        <option value="Misiones">Misiones</option>
+        <option value="Neuquen">Neuquen</option>
+        <option value="Rio Negro">Rio Negro</option>
+        <option value="Salta">Salta</option>
+        <option value="San Juan">San Juan</option>
+        <option value="San Luis">San Luis</option>
+        <option value="Santa Cruz">Santa Cruz</option>
+        <option value="Santa Fe">Santa Fe</option>
+        <option value="Santiago del Estero">Santiago del Estero</option>
+        <option value="Tierra del Fuego">Tierra del Fuego</option>
+        <option value="Tucuman">Tucuman</option>
+        </select>
+
+   </div>
+</div>
+
+
+<div class="col-6">
+  <div class="form-group">
+    <h5 class="textoInput">Ubicación</h5>
+    <input [(ngModel)]="this.guiaModel.pais" class="form-control" id="message-text">
+ </div>
+</div>
+
+<div class="col-12">
+  <div class="form-group">
+    <h5 class="textoInput">Primeras ascensiones</h5>
+    <input [(ngModel)]="this.guiaModel.googleMaps" class="form-control" id="message-text">
+ </div>
+</div>
+
+  <div class="col-12">
+     <div style="margin-top:10px">
+   <div style=" max-width:100%;" >
+        <div style="margin-left:0px; min-height: 91px;">
+
+         <h6  class="textoInput" style ="text-align: left;margin-bottom: 0px;">IMAGEN DE PORTADA 1200X600</h6>
+          <div class="input-group"  >
+              <input class="form-control" type="file" id="formFile"  type="file"  style="  overflow: none"  (change)="onFileChange($event); " width="100%">
+              <div class="input-group-append">
+
+
+          <button class="btn btn-danger btn-upload" (click)="this.loadingSubir=false" (click)="onUpload()" style="margin-top:0px" [disabled]=this.SubirEstado>
+
+             <img *ngIf="loadingSubir" src="../../../assets/loader.gif" alt="" width="20px">
+
+            <svg *ngIf="loadingSubir" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
+              <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2z"/>
+            </svg>
+            Subir</button>
+
+        </div>
+
+
+      </div>
+      <h3 *ngIf="this.guiaModel.imagen" class="textoInput">Imagen: {{this.guiaModel.imagen}}</h3>
+      <h3 *ngIf="!this.guiaModel.imagen" class="textoInput" style="margin-left:3px;margin-top:15px; color:rgb(124, 0, 0)">Sin Imagen</h3>
+        </div>
+         <div *ngIf="this.loading2" >
+                 <div style="text-align: left;">
+                    <img src="../../../assets/loading4.gif"  width="50px" alt="" style="margin-top:-41px; margin-left:40px">
+
+                </div>
+             </div>
+
+         <div *ngIf="this.loading3">
+          <h6 style="  margin-left: -351px;    margin-top: -26px;color:green; font-size: 15px;">✓ Subida! </h6>
+            </div>
+       </div>
+
+     </div>
+
+
+
+
+  </div>
+
+
+              <h4></h4>
+        <br><br><br><br><br>
+          </div>
+
+
+
+
+
+        <!-- Modal -->
+
+
+          </div>
+
+          <div class="col-6" style="padding-right:0px">
+<!--
+            <h1><h1>ARTÍCULOS |<span> RELACIONADOS</span></h1></h1> -->
+            <h1> RELACIONADOS</h1>
+
+            <hr>
+  <!-- <h5 class="textoInput" style="margin-left:25px" >Buscar</h5>
+  <div class="input-group" >
+    <input  [(ngModel)]="this.busqueda" id="busqueda" style="margin-left:20px;" type="text" class="form-control" placeholder="Número de ID del articulo" aria-label="Recipient's username" aria-describedby="basic-addon2"   >
+    <div class="input-group-append">
+      <button class="btn btn-danger" type="button" (click)="pedirUnArticulo()">Buscar</button>
+    </div>
+  </div> -->
+
+    <!-- comiexo1  -->
+  <h5 class="textoInput">Artículos Relacionados</h5>
+  <select  [(ngModel)]="this.select1"  (change)="actualizar()" class="form-select form-control-sm" style="width: 100%; height: 38px;">
+    <option value="1" selected>1er Artículo relacionado </option>
+    <option value="2">2er Artículo relacionado </option>
+    <option value="3">3er Artículo relacionado </option>
+    <option value="4">4er Artículo relacionado </option>
+    <option value="5">5er Artículo relacionado </option>
+    <option value="6">6er Artículo relacionado </option>
+
+
+
+  </select>
+
+  <div  class="form-group" style="margin-top:35px" >
+              <div class="input-group"  >
+              <input  [(ngModel)]="resultadoTitulo" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput}}" autocomplete="false">
+              <div class="input-group-append">
+
+                <button class="btn btn-danger" type="button" style="margin-right:5px" [disabled]='this.bt1Borrar' (click)="resultadoTitulo = ''" >
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                  </svg>
+
+                </button>
+                <button class="btn btn-danger" type="button"  (click)="selection()"   (click)="openInput=!openInput; openInputBuscar=false"  style="margin-right:5px" [disabled]="bt1Editar">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>
+
+                </button>
+                <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <button [disabled]="bt1Buscar" class="btn btn-danger ml-1" type="button"  (click)="openInput2=true;openInputBuscar=true; this.aux = 1">
+                    <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                                 <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">
+
+                     </button>
+                </a>
+              </div>
+            </div>
+              <div style="float:left">
+              <h1 style="color:brown;   margin-top:-40px">{{this.select1}}</h1>
+            </div>
+  </div>
+    <!--final 1  -->
+
+
+      <!-- comiexo2  -->
+  <!-- <h5 class="textoInput">Videos Relacionados</h5>
+  <select  [(ngModel)]="this.select2" class="form-select form-control-sm" style="width: 100%; height: 38px;">
+    <option value="1" >1er Artículo relacionado </option>
+    <option value="2">2er Artículo relacionado </option>
+    <option value="3">3er Artículo relacionado </option>
+    <option value="4">4er Artículo relacionado </option>
+    <option value="5">5er Artículo relacionado </option>
+    <option value="6">6er Artículo relacionado </option>
+
+
+
+  </select>
+     <div  class="form-group" style="margin-top:35px" >
+              <div class="input-group"  >
+              <input  [(ngModel)]="resultadoTitulo" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput}}" autocomplete="false">
+              <div class="input-group-append">
+
+                <button class="btn btn-danger" type="button" style="margin-right:5px" [disabled]='this.bt1Borrar' (click)="resultadoTitulo = ''" >
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                  </svg>
+
+                </button>
+                <button class="btn btn-danger" type="button"  (click)="selection(1)"   (click)="openInput=!openInput; openInputBuscar=false"  style="margin-right:5px" [disabled]="bt1Editar">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>
+
+                </button>
+                <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <button [disabled]="bt1Buscar" class="btn btn-danger ml-1" type="button"  (click)="openInput2=true;openInputBuscar=true; this.aux = 1">
+                    <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                                 <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">
+
+                     </button>
+                </a>
+              </div>
+            </div>
+              <div style="float:left">
+              <h1 style="color:brown;   margin-top:-40px">{{this.select2}}</h1>
+            </div>
+    </div> -->
+       <!-- final2  -->
+
+
+
+           <!-- <h5 class="textoInput">Imagenes Relacionadas</h5>
+           <select  [(ngModel)]="this.select3" class="form-select form-control-sm" style="width: 100%; height: 38px;">
+             <option>1er Artículo relacionado </option>
+             <option>2er Artículo relacionado </option>
+             <option>3er Artículo relacionado </option>
+             <option>4er Artículo relacionado </option>
+             <option>5er Artículo relacionado </option>
+             <option>6er Artículo relacionado </option>
+
+
+
+           </select> -->
+           <!-- comiexo1  -->
+                    <!-- <div  class="form-group" style="margin-top:35px" >
+                       <div class="input-group"  >
+                       <input  [(ngModel)]="resultadoTitulo" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput}}" autocomplete="false">
+                       <div class="input-group-append">
+
+                         <button class="btn btn-danger" type="button" style="margin-right:5px" [disabled]='this.bt1Borrar' (click)="resultadoTitulo = ''" >
+
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                             <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                           </svg>
+
+                         </button>
+                         <button class="btn btn-danger" type="button"  (click)="selection(1)"   (click)="openInput=!openInput; openInputBuscar=false"  style="margin-right:5px" [disabled]="bt1Editar">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                           </svg>
+
+                         </button>
+                         <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                           <button [disabled]="bt1Buscar" class="btn btn-danger ml-1" type="button"  (click)="openInput2=true;openInputBuscar=true; this.aux = 1">
+                             <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                             </svg>
+                                          <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">
+
+                              </button>
+                         </a>
+                       </div>
+                     </div>
+                       <div style="float:left">
+                       <h1 style="color:brown;   margin-top:-40px">{{this.select3}}</h1>
+                     </div>
+                    </div> -->
+
+
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+
+        <div class="modal-footer" style="z-index: 1000;background-color: rgb(204, 204, 204);width: 100%; position: fixed; bottom:0px">
+
+          <button (click)="loader=true" type="button" class="btn btn-danger" data-dismiss="modal" routerLink="../../../administracion/guia">Volver</button>
+          <div class="margenR">
+            <div style="margin-right: 10px;">
+          <button [disabled]="btnGuardar" type="button" class="btn btn-danger"  (click)="agregarPublicacion()">Guardar</button>
+        </div>
+        <!--   -->
+      </div>
+        </div>
+   <br><br><br>
+   <br><br><br>
+
+   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="staticBackdropLabel" style="margin-top:5px">Ingrese nro. de ID</h3>
+          <a  data-bs-dismiss="modal" aria-label="Close" style="margin-top:-20px; cursor:pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="modal-body">
+
+   <div class="input-group" style="margin-left: -15px" >
+     <input  [(ngModel)]="this.busqueda" id="busqueda" style="margin-left:20px;" type="text" class="form-control" placeholder="Número de ID del articulo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+     <div class="input-group-append">
+
+       <button class="btn btn-danger" type="button" (click)="pedirUnArticulo() "  data-bs-dismiss="modal" aria-label="Close" >
+        <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+      </button>
+
+
+
+     </div>
+   </div>
+        </div>
+        <div class="modal-footer">
+
+          <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+

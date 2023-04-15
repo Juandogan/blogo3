@@ -1,0 +1,32 @@
+ 
+<swiper *ngIf="carga" [config]="config"  class="principal">
+  <div>
+  
+  <!-- <img src="../../../assets/NM blanco.png" alt="" width="70px" style="float: right; margin-right: 10px;">  -->
+ 
+
+  </div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngIf="slideData.img21" style=" border-radius: 10px;">                           
+      <img  [src]="slideData.img21" style="width: 100%;  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.219); border-radius: 4px; "/>      
+    </div>
+    
+    <div class="swiper-slide"  *ngIf="slideData.img22" style="  border-radius: 10px;">                           
+        <img  [src]="slideData.img22" style="width: 100%;  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.219); border-radius: 4px; "/>      
+      </div>
+      <div class="swiper-slide" *ngIf="slideData.img23" style="width: 100%;   border-radius: 10px; ">                           
+        <img  [src]="slideData.img23" style="width: 100%;  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.219); border-radius: 4px;"/>      
+      </div>
+     
+ 
+
+
+
+    </div>
+     <!-- <div class="swiper-pagination" style="margin-top: 70px;"></div>  -->
+    <div class="swiper-button-next" style="margin-right: 20px;">
+          
+    </div>
+    <div class="swiper-button-prev" style="margin-left: 20px;"></div>
+    
+  </swiper>

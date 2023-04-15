@@ -1,0 +1,106 @@
+<app-navbar data="USUARIOS"></app-navbar>
+
+
+<div style="text-align: center">
+
+<div *ngIf="loader" class="loadingio-spinner-dual-ring-xg1vnrf2b6o " style=" margin-top: 150px;min-height: 600px;"><div class="ldio-z7fu6e1den">
+
+  <div></div><div><div></div></div>
+  </div></div>
+
+
+</div>
+
+
+
+<div class="margenL margenR">
+
+<br>
+
+<table class="table table-light ">
+  <thead class="thead-dark" style="margin-left:20px; border:none; margin-bottom: 0px;">
+    <tr >
+      <!-- <th scope="col">#</th> -->
+
+      <th scope="col" style="width:20%;">Usuario</th>
+      <th scope="col"style="width:15%; ">Role</th>
+      <th scope="col"style="width:15%; ">Clave</th>
+      <th scope="col"style="width:15%; ">Creado</th>
+      <th scope="col"style="width:15%; ">UltMod</th>
+
+      <th scope="col" style="width:10%; text-align: center;" >Editar</th>
+      <th scope="col" style="width:10%;"class="text-center">Borrar</th>
+
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+       <tr *ngFor="let articulo of articulos">
+
+
+
+
+      <td class="textoTableTitulo" >{{articulo?.email}}</td>
+      <td class="textoTableTitulo" >{{articulo?.role}}</td>
+      <td class="textoTableTitulo" >{{articulo?.password}}</td>
+      <td class="textoTableTitulo" >{{articulo?.createdAt  | date:'dd/MM/yy'}}</td>
+      <td class="textoTableTitulo" >{{articulo?.updatedAt  | date:'dd/MM/yy'}}</td>
+
+
+        <td class="text-center">
+          <a >
+            <mat-icon style="cursor:pointer"  routerLink="../logon/{{articulo?._id}}" (click)="loaderS()">edit</mat-icon>
+          </a>
+        </td>
+
+        <td class="text-center">
+          <a>
+           <mat-icon style="cursor:pointer; color:black"  (click)="eliminarUsuario(articulo?._id)" >delete</mat-icon>
+          </a>
+        </td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+</div>
+
+
+
+
+<!-- Button trigger modal -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal-footer" style="z-index: 1000;background-color: rgb(204, 204, 204);width: 100%; position: fixed; bottom:0px">
+
+  <div class="margenR">
+    <button class="btn btn-dark" routerLink="../" style="margin-top:-2px; margin-left: 10px;">Volver</button>
+    <button class="btn btn-danger" style="margin-top:-2px; margin-left:10px"   (click)="crearNuevoUsuario()" >Crear nuevo Usuario</button>
+  </div>
+  </div>

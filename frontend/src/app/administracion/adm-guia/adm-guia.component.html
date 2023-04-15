@@ -1,0 +1,174 @@
+
+<app-navbar data="GUIA MONTAÑAS"></app-navbar>
+<div class=" margenL margenR">
+
+  <app-teste-mensajes></app-teste-mensajes>
+   <div >
+
+      <div style="text-align: center;">
+           <div *ngIf="loader2" class="loadingio-spinner-dual-ring-xg1vnrf2b6o " style=" margin-top: 150px;min-height: 500px;"><div class="ldio-z7fu6e1den">
+
+       <div></div><div><div></div></div>
+       </div></div>
+
+
+
+<div  *ngIf="!loader2" style="text-align:left;">
+   <br>
+
+<!--
+     <button   >Crear una nueva Edición</button>
+     <button routerLink="../" class="btn btn-dark" style="margin-left: 10px;">Cerrar</button> -->
+
+
+</div>
+<div  *ngIf="!loader2" >
+<br>
+<table   *ngIf="table" class="table table-light"   >
+   <thead class="thead-dark" style="margin-left:20px; border:none; margin-bottom: 0px;">
+     <tr>
+       <!-- <th scope="col">#</th> -->
+       <th scope="col" style="width:3%;">Link</th>
+       <th scope="col" style="width:7%;">Titulo</th>
+
+       <th scope="col"style="width:7%; ">Creación</th>
+       <th scope="col"style="width:7%;">Ult. Mod.</th>
+       <th scope="col"style="width:7%; ">Cabecera</th>
+       <th scope="col" style="width:7%;">Articulo</th>
+       <th scope="col" style="width:5%;"class="text-center">Borrar</th>
+       <th scope="col" style="width:5%;"class="text-center">Vistas</th>
+       <th scope="col" style="width:5%;"class="text-center">Vista previa</th>
+
+
+     </tr>
+   </thead>
+   <tbody>
+
+     <!-- <tr *ngFor="let articulo of articulos|filtroRevista:'revista'"> -->
+        <tr *ngFor="let articulo of articulos">
+       <!-- <th scope="row">1</th> -->
+       <td style="cursor:pointer" (click)="copyToClipboard('http://localhost:4200/promo/' + articulo?._id)" > <span >
+        <mat-icon style="color:gainsboro">file_copy</mat-icon>
+       </span></td>
+       <td > <span>{{articulo?.titulo}}</span></td>
+       <td> {{this.articulo.createdAt | date:'dd/MM/yy'}}</td>
+       <td> {{articulo.updatedAt | date:'dd/MM/yy'}}</td>
+       <td class="text-center">
+        <a >
+          <!-- data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true" -->
+
+       <mat-icon (click)="loader2=true" style="cursor:pointer"  routerLink="../editorguia/{{articulo?._id}}">create_icon</mat-icon>
+      </a></td>
+      <td class="text-center">
+       <a >
+         <!-- data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true" -->
+      <mat-icon (click)="loader2=true" style="cursor:pointer"  routerLink="../guiaArticulos/{{articulo?._id}}">description</mat-icon>
+     </a></td>
+
+
+
+         <td class="text-center">
+           <a data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+             <div *ngIf="loader">
+              <mat-icon style="cursor:pointer;" (click)="this.id = this.articulo?._id; ">delete</mat-icon>
+             </div>
+             <div *ngIf="!loader">
+               <img src="../../../assets/loader.gif" alt="" width="30px">
+             </div>
+
+             </a>
+
+             <td class="text-center">{{this.articulo.vistas}}</td>
+             <td>
+
+             <a  routerLink="../../guias/{{this.articulo._id}}" target="_blank">
+
+
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-easel2-fill" viewBox="0 0 16 16">
+                   <path d="M8.447.276a.5.5 0 0 0-.894 0L7.19 1H2.5A1.5 1.5 0 0 0 1 2.5V10h14V2.5A1.5 1.5 0 0 0 13.5 1H8.809L8.447.276Z"/>
+                   <path fill-rule="evenodd" d="M.5 11a.5.5 0 0 0 0 1h2.86l-.845 3.379a.5.5 0 0 0 .97.242L3.89 14h8.22l.405 1.621a.5.5 0 0 0 .97-.242L12.64 12h2.86a.5.5 0 0 0 0-1H.5Zm3.64 2 .25-1h7.22l.25 1H4.14Z"/>
+                 </svg>
+
+             </a>
+           </td>
+     </tr>
+
+   </tbody>
+ </table>
+</div>
+
+
+</div>
+
+
+<!-- modal -->
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h5 class="modal-title" id="staticBackdropLabel">Ingrese numero de ID</h5>
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     </div>
+     <div class="modal-body">
+       <div class="input-group" >
+         <input  [(ngModel)]="this.busqueda" id="busqueda" type="text" class="form-control" placeholder="Número de ID del articulo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+         <div class="input-group-append">
+           <button class="btn btn-danger" type="button" (click)="pedirUnArticulo()" data-bs-dismiss="modal" >Buscar</button>
+         </div>
+        </div>
+     </div>
+     <div class="modal-footer">
+
+       <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+     </div>
+   </div>
+ </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">  <div class="modal-dialog modal-dialog-centered">
+ <div class="modal-content">
+   <div class="modal-header">
+     <h5 class="modal-title" id="staticBackdropLabel">Eliminar</h5>
+     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+
+<div class="modal-body">
+<h4>Esta seguro que desea eliminar el artículo?</h4>
+</div>
+<div class="modal-footer">
+ <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
+ <button type="button"  class="btn btn-danger" (click)="eliminarArticulo(this.id); this.loader2 = true" (click)="activo = !activo" data-bs-dismiss="modal">Eliminar</button>
+</div>
+
+
+ </div>
+</div>
+
+
+</div>
+<!-- footer con opcionmes -->
+
+<div style="left:0px; z-index: 100;background-color: rgb(204, 204, 204);height: 7%; width: 100%; position: fixed; bottom:0px; border-top: 1px solid  rgb(216, 216, 216);">
+
+  <div class="margenR" style="text-align: right; margin-bottom: 10px; margin-top: 10px; ">
+    <button routerLink='../'
+    class="btn btn-dark" style="margin-right: 10px; " > Volver</button>
+
+
+    <button class="btn btn-danger "
+    routerLink="../editorguia/630cb822b81ffa377f529886"
+     *ngIf="!nuevo"  (click)="loader=true; table=false; nuevaEdicion();">
+    Crear nueva edición
+    </button>
+  </div>
+  </div>
+
+<!-- footer con opcionmes -->
+
+
+

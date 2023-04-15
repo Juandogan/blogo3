@@ -1,0 +1,28 @@
+<br>
+<swiper *ngIf="carga" [config]="config"  class="principal">
+  <div>
+  
+  <!-- <img src="../../../assets/NM blanco.png" alt="" width="70px" style="float: right; margin-right: 10px;">  -->
+  <div style="margin-top: 14px;">
+  <h1>Números Anteriores</h1>
+</div>
+
+  </div>
+    <div class="swiper-wrapper">
+        <div *ngFor="let image of slideData"  class="swiper-slide" style="padding: 10px!important; border-radius: 10px;">
+          <a href={{image.link}} target="_blank">
+            <p>{{image.titulo}}</p>
+         
+      <img  [src]="image.subtitulo" style="width: 100%;  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.219); border-radius: 4px;"/>   
+    </a>
+    </div>
+
+
+    </div>
+     <!-- <div class="swiper-pagination" style="margin-top: 70px;"></div>  -->
+    <div class="swiper-button-next" style="margin-right: 20px;">
+          
+    </div>
+    <div class="swiper-button-prev" style="margin-left: 20px;"></div>
+    <br>
+  </swiper>

@@ -1,0 +1,86 @@
+
+<app-navbar [data]="'Comentarios '"></app-navbar>
+<div class ="row margenL margenR" >
+  <div style="text-align: center">
+
+    <div *ngIf="loader"  class="loadingio-spinner-dual-ring-xg1vnrf2b6o " style=" margin-top: 150px;min-height: 1000px;"><div class="ldio-z7fu6e1den">
+
+      <div></div><div><div></div></div>
+      </div></div>
+
+
+    </div>
+
+
+
+
+  <div class="col-12" style="margin-left: -5px; margin-right: -5px;">
+
+
+    <table  class="table table-light"   style="margin-top:20px">
+      <thead class="thead-dark">
+        <tr >
+          <!-- <th scope="col">#</th> -->
+          <th scope="col" style="width:1%;">ID</th>
+          <th scope="col" style="width:65%;">Título</th>
+
+
+          <!-- (click)="filtro = !filtro -->
+          <th scope="col"><a style="cursor:pointer;width:1%;" >Fecha</a></th>
+
+          <th scope="col" style="width:1%;"class="text-center"  >Revisar</th>
+
+
+
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- |buscar:filterPost |filtrarFecha:filtro  -->
+        <tr *ngFor="let articulo of comentarios" >
+          <!-- <th scope="row">1</th> -->
+
+          <td > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
+          <!-- <td class="textoTableTitulo" > {{articulo?.titulo | truncate:'100'}}</td> -->
+          <td class="textoTableTitulo" > {{articulo?.titulo}}</td>
+
+          <td> {{articulo?.fecha| date: 'dd/MM/yy  mm:ss'}}</td>
+
+
+
+          <td class="text-center">
+            <!-- (click)="editar()" -->
+          <a >
+            <!-- data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true" -->
+            <!-- routerLink="../editorCabecera/{{articulo?._id}}" -->
+         <mat-icon (click)="loader=true" style="cursor:pointer"  routerLink="../editorComentarios/{{articulo?._id}}" >edit</mat-icon>
+        </a></td>
+
+
+
+            <!-- <a  (click)="id = articulo._id" (click)='editarArticulo(articulo)'(click)="this.crudService.cambioPantalla = false" > <mat-icon  style="color: green; cursor:pointer">article</mat-icon>
+            </a> </td>
+           -->
+
+
+                <!-- routerLink="../articulo/{{this.articulo?._id}}" target="_blank" -->
+
+        </tr>
+
+      </tbody>
+    </table>
+    <h6 *ngIf="pendientes" style="margin-left: 5px;height: 1000px;" >No hay pendientes</h6>
+
+
+
+    </div>
+  </div>
+
+  <div class="modal-footer" style="z-index: 1000;background-color: rgb(204, 204, 204);width: 100%; position: fixed; bottom:0px">
+
+    <div class="margenR">
+      <button class="btn btn-dark" routerLink="../" style="margin-top:-2px; margin-left: 10px;">Volver</button>
+
+    </div>
+    </div>
+

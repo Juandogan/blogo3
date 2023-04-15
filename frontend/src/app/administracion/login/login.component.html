@@ -1,0 +1,51 @@
+<app-navbar data="Login"></app-navbar>
+
+<div class="flex-container" >
+
+
+
+    <div class="flex-items" style="margin-top:20px">
+<div>
+<div style="margin: 10px 10px 0% 5%">
+    <label>Usuario <span *ngIf="this.errorUsuario" style="color:brown;margin-left:5px">Usuario o contraeseña incorrectas</span></label>
+   <div class="input-group mb-3">
+     <input [(ngModel)]="user.email" type="text" (click)='user.email=""' (focus)="this.errorUsuario= false"
+     class="form-control inputSize" placeholder="Usuario"
+     aria-label="Username" aria-describedby="basic-addon1" appAutofocus
+     >
+     <!-- (click)="evaristo()" -->
+   </div>
+</div>
+
+ <div style="margin: 10px 10px 0% 5%">
+    <label>Contraseña  <span *ngIf="this.errorPassword" style="color:brown;margin-left:5px">Password incorrecta</span></label>
+   <div class="input-group mb-3">
+     <input [(ngModel)]="user.password" type="password" (click)='user.password=""' (focus)="this.errorPassword= false" class="form-control inputSize"
+     placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1" >
+   </div>
+   <div class="d-grid gap-2">
+   <button (click)="loader=!loader; signIn()" class="btn btn-danger btn-sm btn-block mt-3" type="button">
+    <img *ngIf="loader" src="../../../assets/loader.gif" alt="" width="20px" style="margin-top:-3px">
+    Ingresar</button>
+ </div>
+
+   <p class="small mt-4 mb-2 pb-lg-2"><a class="link-danger text-muted"  >Olvidaste tu contraseña?</a></p>
+   <p>Aun no tienes una cuenta? <a routerLink="../logon" class="link-danger">Crear Cuenta </a></p>
+
+ </div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
+
+</div>
+
+    </div>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+
+
+ </div>
+
+

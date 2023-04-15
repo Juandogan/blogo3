@@ -1,0 +1,333 @@
+.fondo{background-color: hsla(0, 0%, 100%, 0);margin:0px; padding:0px; }
+
+
+.margenL{ margin-left: 33%; }
+.margenR{margin-right: 33%; }
+
+
+
+.document-editor {
+    border: 1px solid var(--ck-color-base-border);
+    border-radius: var(--ck-border-radius);
+
+    /* Set vertical boundaries for the document editor. */
+    max-height: 600px!important;
+
+    /* This element is a flex container for easier rendering. */
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.document-editor__toolbar {
+    /* Make sure the toolbar container is always above the editable. */
+    z-index: 1;
+
+    /* Create the illusion of the toolbar floating over the editable. */
+    box-shadow: 0 0 5px hsla( 0,0%,0%,.2 );
+
+    /* Use the CKEditor CSS variables to keep the UI consistent. */
+    border-bottom: 1px solid var(--ck-color-toolbar-border);
+}
+
+/* Adjust the look of the toolbar inside the container. */
+.document-editor__toolbar .ck-toolbar {
+    border: 0;
+    border-radius: 0;
+}
+
+.document-editor__editable-container {
+    padding: calc( 2 * var(--ck-spacing-large) );
+    background: var(--ck-color-base-foreground);
+    background-color: rgb(110, 110, 110);
+    /* Make it possible to scroll the "page" of the edited content. */
+    /* font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 300;
+
+    font-size: 18px;
+    color:rgb(255, 0, 0); */
+    overflow-y:none;
+
+}
+
+
+
+
+.document-editor__editable-container .ck-editor__editable {
+    /* Set the dimensions of the "page". */
+    width: 100%;
+    min-height: 10cm;
+
+    /* Keep the "page" off the boundaries of the container. */
+    padding: 1cm 2cm 2cm;
+
+    border: 1px hsl( 0,0%,82.7% ) solid;
+    border-radius: var(--ck-border-radius);
+    background: white;
+
+    /* The "page" should cast a slight shadow (3D illusion). */
+    box-shadow: 0 0 5px hsla( 0,0%,0%,.1 );
+
+    /* Center the "page". */
+    margin: 0 auto;
+}
+
+.document-editor .ck-content,
+.document-editor .ck-heading-dropdown .ck-list .ck-button__label {
+    font: 16px/1.6  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+document-editor .ck-heading-dropdown .ck-list .ck-button__label {
+    line-height: calc( 1.7 * var(--ck-line-height-base) * var(--ck-font-size-base) );
+    min-width: 6em;
+}
+
+/* Scale down all heading previews because they are way too big to be presented in the UI.
+Preserve the relative scale, though. */
+.document-editor .ck-heading-dropdown .ck-list .ck-button:not(.ck-heading_paragraph) .ck-button__label {
+    transform: scale(0.8);
+    transform-origin: left;
+}
+
+/* Set the styles for "Heading 1". */
+.document-editor .ck-content h1,
+.document-editor .ck-heading-dropdown .ck-heading_heading1 .ck-button__label {
+    /* font-size: 1.18em;
+    font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important; */
+color:#0a0a0a
+
+}
+
+
+
+.document-editor .ck-content h2 {
+    line-height: 1.37em;
+    padding-top: .342em;
+    margin-bottom: .142em;
+}
+
+/* Set the styles for "Heading 2". */
+.document-editor .ck-content h3,
+.document-editor .ck-heading-dropdown .ck-heading_heading2 .ck-button__label {
+
+    font-size: 1.75em;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:orange
+
+
+}
+
+.document-editor .ck-heading-dropdown .ck-heading_heading2.ck-on .ck-button__label {
+    color: var(--ck-color-list-button-on-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Set the styles for "Heading 2". */
+.document-editor .ck-content h3 {
+    line-height: 1.86em;
+    padding-top: .171em;
+    margin-bottom: .357em;
+}
+
+/* Set the styles for "Heading 3". */
+.document-editor .ck-content h4,
+.document-editor .ck-heading-dropdown .ck-heading_heading3 .ck-button__label {
+    font-size: 1.31em;
+    font-weight: bold;
+
+}
+
+.document-editor .ck-content h4 {
+    line-height: 1.24em;
+    padding-top: .286em;
+    margin-bottom: .952em;
+
+}
+
+/* Set the styles for "Paragraph". */
+.document-editor .ck-content p {
+    font-size: 1em;
+    line-height: 1.63em;
+    padding-top: .5em;
+    margin-bottom: 1.13em;
+}
+.document-editor .ck-content blockquote {
+    font-family: Georgia, serif;
+    margin-left: calc( 2 * var(--ck-spacing-large) );
+    margin-right: calc( 2 * var(--ck-spacing-large) );
+}
+
+h4{color:red!important}
+
+
+
+@keyframes ldio-z7fu6e1den {
+  0% { transform: rotate(0) }
+  100% { transform: rotate(360deg) }
+}
+.ldio-z7fu6e1den div { box-sizing: border-box!important }
+.ldio-z7fu6e1den > div {
+  position: absolute;
+  width: 83px;
+  height: 83px;
+  top: 8.5px;
+  left: 8.5px;
+  border-radius: 50%;
+  border: 13px solid #000;
+  border-color: #0a0a0a transparent #0a0a0a transparent;
+  animation: ldio-z7fu6e1den 1s linear infinite;
+}
+.ldio-z7fu6e1den > div:nth-child(2) { border-color: transparent }
+.ldio-z7fu6e1den > div:nth-child(2) div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+.ldio-z7fu6e1den > div:nth-child(2) div:before, .ldio-z7fu6e1den > div:nth-child(2) div:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  top: -13px;
+  left: 22px;
+  background: #0a0a0a;
+  border-radius: 50%;
+  box-shadow: 0 70px 0 0 #0a0a0a;
+}
+.ldio-z7fu6e1den > div:nth-child(2) div:after {
+  left: -13px;
+  top: 22px;
+  box-shadow: 70px 0 0 0 #0a0a0a;
+}
+.loadingio-spinner-dual-ring-xg1vnrf2b6o {
+  width: 84px;
+  height: 84px;
+  display: inline-block;
+  overflow: hidden;
+  background: none;
+}
+.ldio-z7fu6e1den {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(0.84);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-z7fu6e1den div { box-sizing: content-box; }
+/* generated by https://loading.io/ */
+
+
+@media (max-width:2890px)
+{.margenL{ margin-left: 31%; }
+.margenR{margin-right: 31%; }
+}
+
+
+
+
+
+@media (max-width:2666px)
+{.margenL{ margin-left: 24%; }
+.margenR{margin-right: 24%; }
+}
+
+@media (max-width:2402px)
+{.margenL{ margin-left: 27%; }
+.margenR{margin-right: 27%; }
+}
+
+@media (max-width:2200px)
+{.margenL{ margin-left: 21%; }
+.margenR{margin-right: 21%; }
+}
+
+@media (max-width:2000px)
+{.margenL{ margin-left: 19%; }
+.margenR{margin-right: 19%; }
+}
+
+@media (max-width:1800px)
+{.margenL{ margin-left: 16%; }
+.margenR{margin-right: 16%; }
+}
+
+@media (max-width:1600px)
+{.margenL{ margin-left: 14%; }
+.margenR{margin-right: 14%; }
+}
+
+@media (max-width:1400px)
+{.margenL{ margin-left: 9%; }
+.margenR{margin-right: 9%; }
+}
+
+@media (max-width:1200px)
+{.margenL{ margin-left: 5%; }
+.margenR{margin-right: 5%; }
+}
+
+
+@media (max-width:1000px)
+{.margenL{ margin-left: 0px; }
+.margenR{margin-right: 0px; }
+}
+
+
+/* //Cambio de dimensiones de la hoja */
+:host ::ng-deep .ck-editor__editable_inline { height: 650px; width: 960px;}
+
+:host ::ng-deep .ck-content h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -1px;
+    font-size: 30px!important;
+    color: orange;
+    margin-bottom: 10px;
+}
+
+
+
+:host ::ng-deep .ck-content h2 {
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 28px;
+  letter-spacing: -1px;
+  font-size: 20px!important;
+  color: rgb(75, 75, 75);
+  margin-bottom: 5px;
+
+
+}
+
+
+:host ::ng-deep .ck-content h4 {
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 22px;
+  letter-spacing: 0px;
+  font-size: 14px!important;
+  color: rgb(43, 43, 43);
+  margin-bottom: 5px;
+  text-align: center;
+
+
+}
+
+
+:host ::ng-deep .ck-content strong {
+
+
+ font-weight: 700;
+
+
+
+
+}
+
+

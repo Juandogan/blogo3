@@ -1,0 +1,111 @@
+
+
+<app-navbar></app-navbar>
+
+<div style="text-align: center;">
+  <div
+    *ngIf="loader"
+    class="loadingio-spinner-dual-ring-xg1vnrf2b6o"
+    style="margin-top: 150px; min-height: 110vh">
+    <div class="ldio-z7fu6e1den">
+      <div></div>
+      <div><div></div></div>
+
+    </div>
+
+  </div>
+  <!-- <p style="margin-top: -410px; margin-left:10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Cargando Info..</p> -->
+</div>
+
+<div *ngIf="!loader" class="margenL margenR" >
+
+
+<div class="row mt-2"  style="margin-left: 0px;" >
+
+
+    <div  class="col-12	col-sm-12	col-md-9 col-lg-9	col-xl-9 fondoCol ">
+      <h1 class=" titulo mt-3">{{this.categoria}} ({{this.categoria.length}})</h1>
+     <hr>
+ 
+     <div class="row">
+      <app-carousel
+      [items]="articulos"
+      [data]="articulos"
+      [height]="200"></app-carousel>
+
+
+ 
+
+     </div>
+ <br>
+     <app-card-bajopublix3  [data]="articulos"></app-card-bajopublix3>
+    
+    </div>
+
+
+    <div  *ngIf="loader2" class="col-3 quitar768" style=" margin-top: 0px;">
+    <div *ngIf="!loader"   style="margin-top: 0px; padding-right: 0px;">
+      <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0]?.link1}}">
+        <img src="{{ this.anuncios[0]?.img1 }}"
+        (click)="sumarContadorAunciante(1)"
+          width="100%"
+          height="245px"
+          alt=""
+          style="margin-top: 20px;object-fit: cover;  "
+        />
+      </a>
+
+      <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link2}}">
+        <img src="{{ this.anuncios[0]?.img2 }}"
+        (click)="sumarContadorAunciante(2)"
+          width="100%"
+          height="245px"
+          alt=""
+          style="margin-top: 20px;object-fit: cover;  "
+        />
+      </a>
+      <div style="margin-top: 20px;">
+      <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link3}}">
+        <img src="{{ this.anuncios[0]?.img3 }}"
+        (click)="sumarContadorAunciante(3)"
+          width="100%"
+          alt=""
+          style="margin-top: 0px; object-fit: cover; height: 439px"
+        />
+      </a>
+    </div>
+    <div style="margin-top: 20px;">
+      <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link5 }}">
+        <img src="{{ this.anuncios[0]?.img5 }}"
+        (click)="sumarContadorAunciante(5)"
+          width="100%"
+          alt=""
+          style="margin-top: 0px; object-fit: cover; height: 439px"
+        />
+      </a>
+    </div>  
+           
+        </div>
+  <!--
+        <img src="../../../assets/image 26.png" width="100%" height="200px" alt=""
+          style="margin-top:10px; object-fit: cover;"> -->
+
+
+
+      </div>
+
+
+    </div>
+
+    <div class="margenRCorreccion">
+
+</div>
+
+<br>
+ 
+</div>
+<div *ngIf="!loader" class="margenL margenR">
+  <div style="margin-left: 0px; padding-left: 0px;">
+  <app-footer></app-footer>
+</div>
+</div>

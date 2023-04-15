@@ -1,0 +1,16 @@
+<div class="card" style="min-height:490px" >
+    <img class="card-img-top" src={{data?.imagen}} alt="Card image cap">
+    <div class="card-body">
+        <div>
+            <h5 class="categoria">{{cut(data?.categoria2)}}</h5>
+        </div>
+        <a routerLink="../articulo/{{data?._id}}" class="robotoBlack">
+        <h1 class="titulo" >{{data?.titulo2}}</h1>
+    </a>
+        <p class="card-text parrafo truncar4">
+
+            {{data?.subtitulo2}}
+        </p>
+
+    </div>
+</div>

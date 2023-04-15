@@ -1,0 +1,23 @@
+ 
+<div class="card " style="min-height:490px" >
+    <div class="marcoFoto">
+    <img *ngIf="data.imagen1" class="imgEffect" src={{data?.imagen1}} alt="Card image cap">
+</div>
+<div class="marcoFoto">
+    <img *ngIf="data.imagen" class="imgEffect" src={{data?.imagen}} alt="Card image cap">
+    </div>
+    <div class="card-body">
+        <div style="margin-top: 3px;">
+            <h5 class="categoria">{{cut(data?.categoria1)}}</h5>
+            <h5 class="categoria">{{cut(data?.categoria)}}</h5>
+        </div>
+        <a routerLink="../articulo/{{data?.titulo2}}" class="robotoBlack">
+        <h1 class="titulo" >{{data?.titulo1}}</h1>
+    </a>
+        <p class="card-text parrafo truncar4">
+
+            {{data?.subtitulo1}}
+        </p>
+
+    </div>
+</div>

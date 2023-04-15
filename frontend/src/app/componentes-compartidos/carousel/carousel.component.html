@@ -1,0 +1,36 @@
+<div class="dsc-carousel" [ngStyle]="{'min-height': finalHeight}">
+    <div *ngIf="this.estado" class="dsc-carousel__btns">
+        <i class="fa fa-chevron-circle-left" (click)="setBack()" style="z-index: 11111111111111111; color:orange"></i>
+            <i class="fa fa-chevron-circle-right" (click)="setNext()" style="z-index: 11111111111111111;color:orange"></i>
+    </div>
+    <div class="dsc-carousel__content">
+        <ng-container *ngFor="let section of data;" style="width:100px">
+            <div class="dsc-carousel__content-item" [ngStyle]="{'background-image': 'url(' + section.imagen1 + ')', 'margin-left': section.marginLeft + '%', 'object-fit':'cover'}">
+                <h2 *ngIf="section.categoria1" class="categoria">{{section.categoria1}}</h2>
+                <h2 *ngIf="section.categoria" class="categoria">{{section.categoria}}</h2>
+
+                    <h1 *ngIf="section.titulo2" class="truncar2"><a (click)="pasar()" 
+                        routerLink="/articulo/{{section?.titulo2}}"   style="color:rgb(253, 226, 226);  "
+                        > {{section.titulo1}}    </a></h1>
+
+
+                        <h1 *ngIf="section.titulo" class="truncar2"><a (click)="pasar()" 
+                            routerLink="/articulo/{{section?._id}}"   style="color:rgb(253, 226, 226);  "
+                            > {{section.titulo}}    </a></h1>
+
+
+                <p  *ngIf="section.subtitulo1" class="truncar2 600"> {{section.subtitulo1}} </p>
+                <p *ngIf="section.subtitulo" class="truncar2 600"> {{section.subtitulo}} </p>
+
+
+            </div>
+        </ng-container>
+    </div>
+    <!-- <div class="dsc-carousel__steps">
+        <div
+            class="dsc-carousel__steps-step
+            dsc-carousel__steps-step-{{currentPosition === item.id ? 'active': ''}}"
+            *ngFor="let item of items" (click)="setCurrentPosition(item.id)">
+        </div>
+    </div> -->
+</div>

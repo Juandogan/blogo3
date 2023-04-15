@@ -1,0 +1,186 @@
+.titular{
+    margin-top:-5px;
+    text-shadow: 1px 1px 3px #000000;
+    margin-left:20px;
+    color:white;
+    text-align: left;
+    font-size: 30px;
+
+
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-weight: 800;
+    line-height: 40px;
+    min-height: 100% ;
+   }
+   /* img{transition:1s; object-fit: cover ; z-index: -10000000;}
+
+   img:hover{transform: scale(1.1);
+            transform: rotate(4deg)
+
+            }
+            */
+
+
+
+   .titular2{
+    margin-top:-5px;
+    text-shadow: 1px 1px 3px #000000;
+    margin-left:20px;
+    color:white;
+    text-align: left;
+    font-size: 35px;
+
+       /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-weight: 800;
+    line-height: 40px;
+    min-height: 100% ;
+   }
+   .categoria{
+     text-align: left;
+     color:orange;
+     margin-left: 20px;
+     margin-top:14px;
+     text-shadow: 5px 5px 20px black;
+
+
+   }
+
+   .imagenPortada{
+       padding:20px;
+       padding-left:20px;
+       margin-top:-30px;
+       object-fit: cover;
+   }
+
+
+   .imgLogo{
+       position:absolute;
+       top:-15px;
+       left:2%;
+       filter: drop-shadow(2px 4px 3px black)
+
+
+
+    }
+
+    .logo{       width:250px;
+    }
+
+    /* Estilos del logo */
+   .h1Logo{
+    font-size: 21px;
+    margin-left: 2px;
+    margin-top:269px;
+    color:white;
+    text-shadow: 1px 1px 3px black;
+    background-color: orange;
+    border-radius: 6px;
+    padding: 5px;
+    padding-left:10px;
+    padding-right: 10px;
+}
+
+/* posicion del logo png */
+.lugarLogo{
+    position:absolute;
+    top:-115px;
+    left:3%;
+    }
+
+    .fade-in-image {
+        animation: fadeIn 2s;
+        -webkit-animation: fadeIn 2s;
+        -moz-animation: fadeIn 2s;
+        -o-animation: fadeIn 2s;
+        -ms-animation: fadeIn 2s;
+      }
+      @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+
+      @-moz-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+
+      @-webkit-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+
+      @-o-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+
+      @-ms-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+      }
+
+
+    /* Recuadro negro de la portada */
+    .cuadroTitulo{
+        position:absolute;
+        min-height: 167px;
+        top: 383px;
+
+        left:20px;
+        right:20px;
+
+        background-color: rgba(0, 0, 0, 0.603);
+
+    }
+    @media (max-width:1300px){
+
+  }
+
+  @media (max-width:1000px){
+    .quitar1300{display: none;}
+  }
+    @media (max-width:600px){
+      .titular2{font-size: 25px; line-height: 28px; margin-left:10px}
+      .quitar{display:none}
+      .categoria{font-size:12px; margin-left:10px}
+
+      .logo{width: 160px; margin-top:20px;
+      margin-left:-5x;
+      }
+
+      .cuadroTitulo{
+        position:absolute;
+        min-height: 123px;
+        top:248px;
+
+        left:0px;
+        right:0px;
+
+        background-color: rgba(0, 0, 0, 0.603);
+      }
+
+      .titular{
+
+        font-size: 26px;
+        line-height: 28px;
+        margin-left:10px;
+      }
+
+      /* .imgLogo{
+        top:-15px;
+        left:2%;
+        width: 30px;
+     } */
+
+
+
+   .imagenPortada{
+    padding:0px;
+    padding-left:0px;
+    margin-top:0px;
+    padding-top:0px!important;
+    object-fit: cover;
+    height: 370px;
+}
+
+    }
