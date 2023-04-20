@@ -6,10 +6,12 @@
       <h4>Anunciantes</h4>
 <hr>
 <select  [(ngModel)]="this.seleccion" (change)="selectChange()" class="form-select form-control-sm" style="width: 100%; height: 38px;">
-  <option value=1 selected >1er CCAM LATERAL Corto 245X200</option>
-  <option value=2>2do CCAM - LATERAL Corto 245X200</option>
+  <option value=1 selected >1er CCAM LATERAL largo (revista)400X500</option>
+  <!-- <option value=2>2do CCAM - LATERAL Corto 245X200</option> -->
   <option value=3>3er CCAM - LATERAL Largo  245X200</option>
-  <option value=4>4er CCAM - ANCHO  270x450</option>
+  <option value=4>4er CCAM - ANCHO  </option>
+  <option value=2>4er CCAM - ANCHO DOBLE*</option>
+  
   <option value=5>5er CCAM - LATERAL Largo  1200x400</option>
   <option value=6>6er CCAM - LATERAL Largo  270x390</option>
   <hr>
@@ -79,6 +81,8 @@
           <input [(ngModel)]="this.link" class="form-control" type="input" id="formFile" type="input" style="
           overflow: none"  width="100%">
       </div>
+
+      <button class="btn btn-sm btn-dark" (click)="borrar()">Borrar</button>
 
   </div>
 

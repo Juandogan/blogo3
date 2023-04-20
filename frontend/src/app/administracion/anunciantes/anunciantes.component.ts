@@ -692,16 +692,31 @@ export class AnunciantesComponent implements OnInit {
     }
 
 
-console.log(this.anuncianteService.unAnunciante,'milanesa')
+
     this.anuncianteService.modify('63e413bfa70e22831eb6cb33',
         this.anuncianteService.unAnunciante
       )
       .subscribe((res) => {
-        this.crudService.snack('Modificado!');
+        alert('Modificado!');
         location.reload()
       });
   }
 
+
+  borrar(){  
+    this.anuncianteService.unAnunciante.contador2 = null
+    this.anuncianteService.unAnunciante.link2 = null
+    this.anuncianteService.unAnunciante.img2 = null
+
+    this.anuncianteService.modify('63e413bfa70e22831eb6cb33',
+        this.anuncianteService.unAnunciante 
+      )
+      .subscribe((res) => {
+        alert('Modificado!');
+        location.reload()
+      });
+    }
+  
   onUpload() {
 
     let formData = new FormData();

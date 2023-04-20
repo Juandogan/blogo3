@@ -1,40 +1,24 @@
-
-  <div style="text-align: center;">
-    <div
-      *ngIf="loader"
-      class="loadingio-spinner-dual-ring-xg1vnrf2b6o"
-      style="margin-top: 150px; min-height: 110vh">
-      <div class="ldio-z7fu6e1den">
+<div style="text-align: center;">
+  <div *ngIf="loader" class="loadingio-spinner-dual-ring-xg1vnrf2b6o" style="margin-top: 150px; min-height: 110vh">
+    <div class="ldio-z7fu6e1den">
+      <div></div>
+      <div>
         <div></div>
-        <div><div></div></div>
-
       </div>
 
     </div>
-    <!-- <p style="margin-top: -410px; margin-left:10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Cargando Info..</p> -->
+
   </div>
+  <!-- <p style="margin-top: -410px; margin-left:10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Cargando Info..</p> -->
+</div>
 
-<div class="fondo margenL margenR" style="text-align: center; margin-top: 10px;" >
-
-  <!-- <div *ngIf="aux" style="display: block; margin: auto; margin-top: 100px">
-    <h1>Cargando...</h1>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-  </div> -->
-
-
-  <div *ngIf="!aux && !loader" class="row fondoRow"  style="margin: 0px; padding:0px ">
-    <div
-
-      class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 fondoCol"
-    >
+<div class="fondo margenL margenR" style="text-align: center; margin-top: -1px;">
+  <div *ngIf="!aux && !loader" class="row fondoRow" style="margin: 0px; padding:0px ">
+    <div class="col-12 col-sm-12 col-md-9 col-lg-8 col-xl-8 fondoCol">
 
       <!-- CARROUSLE -->
       <div class="margenRCorreccion">
-        <app-carousel
-          [items]="portadaCarousel"
-          [data]="portadaCarousel"
-          [height]="200"
-        ></app-carousel>
+        <app-carousel [items]="portadaCarousel" [data]="portadaCarousel" [height]="200"></app-carousel>
 
         <!-- <h3 style="margin-top: 20px;">Artículos de Montaña</h3> -->
 
@@ -42,13 +26,9 @@
           <app-card-mobile [data]="articulo"></app-card-mobile>
           <br />
         </div>
-        <div class="onlyMobile " [ngClass]="{'margenTop':this.anuncios[0]?.img15 }" >
-          <img *ngIf="this.anuncios[0]?.img15"
-            src="{{this.anuncios[0]?.img15}}"
-            (click)="sumarContadorAunciante(15)"
-            alt=""
-            style="object-fit: cover; width: 99%"
-          />
+        <div class="onlyMobile " [ngClass]="{'margenTop':this.anuncios[0]?.img15 }">
+          <img *ngIf="this.anuncios[0]?.img15" src="{{this.anuncios[0]?.img15}}" (click)="sumarContadorAunciante(15)"
+            alt="" style="object-fit: cover; width: 99%" />
         </div>
         <div style="margin-top:60px ;">
 
@@ -57,107 +37,91 @@
             <br />
           </div>
           <div class="onlyMobile" style="margin-top: -25px">
-            <img
-            (click)="sumarContadorAunciante(16)"
-              src="{{this.anuncios[0].img16}}"
-              alt=""
-              style="object-fit: cover; width: 99%"
-            />
+            <img (click)="sumarContadorAunciante(16)" src="{{this.anuncios[0].img16}}" alt=""
+              style="object-fit: cover; width: 99%" />
           </div>
 
         </div>
 
       </div>
-      <div class="row row2 correccion" style="margin-left: -20px; margin-top: -40px;" >
-        <div
-        *ngFor="let porta of portada  | filtrox2"
-        class="col-6 quitar600  "
-        style="padding-right: 0px; padding-left: 20px"
-      >
+      <div class="row row2 correccion" style="margin-left: -20px; margin-top: -40px;">
+        <div *ngFor="let porta of portada  | filtrox2" class="col-6 quitar600  "
+          style="padding-right: 0px; padding-left: 20px">
 
-        <app-card-bajo-portada [data]="porta"></app-card-bajo-portada>
-      </div>
+          <app-card-bajo-portada [data]="porta"></app-card-bajo-portada>
+        </div>
 
       </div>
     </div>
 
-
-    <div *ngIf="!loader" class="col-3 quitar810" style="margin-top: 0px; padding-right: 20px;">
+    <div *ngIf="!loader" class="col-4 quitar810" style="margin-top: 0px; padding-right: 20px;">
       <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link1}}">
-        <img src="{{ this.anuncios[0]?.img1 }}"
-        (click)="sumarContadorAunciante(1)"
-          width="100%"
-          height="245px"
-          alt=""
-          style="margin-top: 20px;object-fit: cover;  "
-        />
+        <img src="{{ this.anuncios[0]?.img1 }}" (click)="sumarContadorAunciante(1)" width="100%" height="500px" alt=""
+          style="margin-top: 20px;object-fit: fill;  " />
       </a>
 
-      <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link2}}">
-        <img src="{{ this.anuncios[0]?.img2 }}"
-        (click)="sumarContadorAunciante(2)"
-          width="100%"
-          alt=""
-          style="margin-top: 10px; object-fit: cover; height: 245px"
-        />
-      </a>
+      <!-- <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link2}}">
+        <img src="{{ this.anuncios[0]?.img2 }}" (click)="sumarContadorAunciante(2)" width="100%" alt=""
+          style="margin-top: 10px; object-fit: cover; height: 245px" />
+      </a> -->
 
       <div style="margin-top: 20px; text-align: left">
         <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link3}}">
-          <img src="{{ this.anuncios[0]?.img3 }}"
-          (click)="sumarContadorAunciante(3)"
-            width="100%"
-            alt=""
-            style="margin-top: 0px; object-fit: cover; height: 489px"
-          />
+          <img src="{{ this.anuncios[0]?.img3 }}" (click)="sumarContadorAunciante(3)" width="100%" alt=""
+            style="margin-top: 0px; object-fit: fill; height: 490px" />
         </a>
       </div>
       <!--
         <img src="../../../assets/image 26.png" width="100%" height="200px" alt=""
           style="margin-top:10px; object-fit: cover;"> -->
     </div>
- 
-    <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link4}}" style="margin-bottom: 20px;">
-    <img
-      class="quitar600 imagenAnuncio"
-      *ngIf="!loader"
-      src="{{ this.anuncios[0]?.img4}}"
-      (click)="sumarContadorAunciante(4)"
-      alt=""
-      style="height: 100%; "
 
-    />
-  </a>
-  
-  <app-carousel-revista *ngIf="!loader"></app-carousel-revista>
+<app-carousel-revista *ngIf="!loader"></app-carousel-revista>
+
+<!-- fragmento publicidad ancha que varia a de 1 a dos  -->
+<div *ngIf="this.anuncios[0].img2" style="display: flex; margin-bottom: 20px;">
+  <div>
+<a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link4}}" style="margin-bottom: 20px;">
+  <img class="quitar600 imagenAnuncio" *ngIf="!loader" src="{{ this.anuncios[0]?.img4}}"
+    (click)="sumarContadorAunciante(4)" alt="" style="height: auto; " />
+</a>
+</div>
+<div>
+<a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link2}}" style="margin-bottom: 20px;">
+  <img class="quitar600 imagenAnuncio" *ngIf="!loader" src="{{ this.anuncios[0]?.img2}}"
+    (click)="sumarContadorAunciante(4)" alt="" style="height: auto; " />
+</a>
+
+</div>
+</div>
+<!-- fragmento publicidad ancha que varia a de 1 a dos  -->
+
+<!-- Publicidad ancha entera -->
+<div *ngIf="!this.anuncios[0].img2">
+    <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link4}}" style="margin-bottom: 20px;">
+      <img class="quitar600 imagenAnuncio" *ngIf="!loader" src="{{ this.anuncios[0]?.img4}}"
+        (click)="sumarContadorAunciante(4)" alt="" style="height: auto; " />
+    </a>
+  </div>
+<!-- Publicidad ancha entera -->
+
+
     <!-- INICIO "2DO BLOQUE" -->
     <div *ngIf="!loader" class="row quitar600">
-      <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 " style="margin-top: 20px; padding-right: 1px">
-        <app-card-bajopublix3
-          [data]="portadaTrio"
-         
-        ></app-card-bajopublix3>
-         <!-- | posiciones: 3 -->
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 " style="margin-top: 20px; padding-right: 1px">
+        <app-card-bajopublix3 [data]="portadaTrio"></app-card-bajopublix3>
+        <!-- | posiciones: 3 -->
       </div>
 
-      <div *ngIf="!loader" class="col-3 quitar810 " style="margin:0px; margin-top: 20px">
+      <div *ngIf="!loader" class="col-4 quitar810 " style="margin:0px; margin-top: 20px">
         <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link5}}">
-        <img src="{{ this.anuncios[0]?.img5 }}" width="109%" height="400px"
-        (click)="sumarContadorAunciante(5)"
-          alt=""
-          style="padding-right: 6px;"
-        />
+          <img src="{{ this.anuncios[0]?.img5 }}" width="109%" height="400px" (click)="sumarContadorAunciante(5)" alt=""
+            style="padding-right: 20px;padding-left: 10px;" />
         </a>
 
         <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link6}}">
-        <img
-        src="{{ this.anuncios[0]?.img6 }}"
-        (click)="sumarContadorAunciante(6)"
-          width="109%"
-          height="390px"
-          alt=""
-          style="margin-top: 15px; object-fit: cover; padding-right: 6px;"
-        />
+          <img src="{{ this.anuncios[0]?.img6 }}" (click)="sumarContadorAunciante(6)" width="109%" height="390px" alt=""
+            style="margin-top: 15px; object-fit: fill; padding-right: 20px; padding-left: 10px;" />
         </a>
         <!-- <img src="../../../assets/image 26.png" width="100%" height="200px" alt=""
             style="margin-top:10px; object-fit: cover;"> -->
@@ -167,20 +131,20 @@
         [data]="articulos"
         style="margin-top: 20px"
       ></app-triple-card> -->
-  <h1></h1>
+      <h1></h1>
 
     </div>
     <!-- FIN "2DO BLOQUE" -->
 
 
-<!-- <div style="background-color: rgb(50, 50, 50);">
+    <!-- <div style="background-color: rgb(50, 50, 50);">
       <h6 style="color: rgb(185, 185, 185);margin-top:10px; font-size:12px">© 2022 Company, Inc</h6>
     </div> -->
-   
+
     <app-carousel-categorias style="margin-bottom: 20px;"></app-carousel-categorias>
     <br>
   </div>
-  
 
-  <app-footer *ngIf="!aux && !loader" ></app-footer>
+
+  <app-footer *ngIf="!aux && !loader"></app-footer>
 </div>

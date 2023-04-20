@@ -26,8 +26,8 @@
   padding-top:5px;
 }
 
-.fondo{background-image: url('../../../assets/fondotrasparente.png'); margin-top:-4px; min-height: 130px; }
-
+.fondo{ margin-top:-4px; min-height: 130px;background-color: white;}
+/* background-image: url('../../../assets/fondotrasparente.png'); */
 /* color y altura de la primera barra negra con el buscador */
 .barra{
     background-color: rgb(51, 51, 51);
@@ -42,14 +42,14 @@
 }
 a{color:rgb(255, 187, 61) ; font-size: 13px;}
 .texto{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   font-weight: 800;
   line-height: 25px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0px;
   font-size:13px;
   color:rgba(0, 0, 0, 0.527);
   margin-right: 17px;
-  text-shadow: 1px 1px 5px #a8a8a849;
+  text-shadow: 1px 1px 5px #0000001c;
   transition: all 100ms ease-in;cursor: pointer;
   user-select: none;
 
@@ -312,7 +312,20 @@ ul{margin:0px; padding:5px;margin-left: 15px}
   @media (max-width:1000px)
   {.margenL{ margin-left: 2%; }
   .margenR{margin-right: 2%; }
+
+  
   }
+
+  
+
+  @media (max-width:1080px)
+  {
+    .quitar1000{display:none!important}
+  .correcion{margin-left:-22px!important}
+  }
+
+
+
   @media (max-width: 1009px)
   {
     .quitarMenu{

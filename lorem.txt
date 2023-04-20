@@ -1,3 +1,16 @@
+hostinger
+contrasea root : CCAMsistemas.12
+nombre vps: ccam.sistemas
+contasea ubuntu: u@x6YfpqhjLuc2B
+http://191.101.18.184/
+
+
+borrar apache2
+sudo apt remove apache2
+sudo apt purge apache2
+
+
+
 66.97.44.139
 TFcu4J8gNDYY
 

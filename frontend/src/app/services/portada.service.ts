@@ -10,7 +10,7 @@ export class PortadaService {
 
   //portada:PortadaModel[]=[];
   portada = new PortadaModel
-  public URL ="http://66.97.44.139/portada"
+  public URL ="http://191.101.18.184/portada"
   usuario=""
 
 
