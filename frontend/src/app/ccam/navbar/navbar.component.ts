@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BuscadorObservableService } from 'src/app/services/buscador-observable.service';
-import { LoadingObservableService } from 'src/app/services/loading-observable.service';
+import { BuscadorObservableService } from '../../services/buscador-observable.service';
+import { LoadingObservableService } from '../../services/loading-observable.service';
 import {Subject} from 'rxjs';
 @Component({
   selector: 'app-navbar',

@@ -1,8 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
-import * as ClassicEditor from 'src/app/ckeditor2/';
-import { Revista } from 'src/app/modelos/revista';
-import { CrudService } from 'src/app/services/crud.service';
+import * as ClassicEditor from '../../ckeditor2/';
+import { Revista } from '../../modelos/revista';
+import { CrudService } from '../../services/crud.service';
 
 
 @Component({

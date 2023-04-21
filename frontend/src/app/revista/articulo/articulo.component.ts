@@ -3,10 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { CrudService } from '../../services/crud.service';
 import { Location } from '@angular/common';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { CrudAnuncioService } from 'src/app/services/crud-anuncio.service';
-import { Articulos } from 'src/app/modelos/articulos';
-import { CarouselServiceService } from 'src/app/services/carousel-service.service';
-import { LoadingObservableService } from 'src/app/services/loading-observable.service';
+import { CrudAnuncioService } from '../../services/crud-anuncio.service';
+import { Articulos } from '../../modelos/articulos';
+import { CarouselServiceService } from '../../services/carousel-service.service';
+import { LoadingObservableService } from '../../services/loading-observable.service';
 
 @Component({
   selector: 'app-articulo',

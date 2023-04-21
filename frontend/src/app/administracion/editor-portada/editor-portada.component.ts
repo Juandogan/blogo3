@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortadaModel } from 'src/app/modelos/portada';
-import { CrudService } from 'src/app/services/crud.service';
-import { PortadaService } from 'src/app/services/portada.service';
+import { PortadaModel } from '../../modelos/portada';
+import { CrudService } from '../../services/crud.service';
+import { PortadaService } from '../../services/portada.service';
 import { Location } from '@angular/common';
 
 @Component({

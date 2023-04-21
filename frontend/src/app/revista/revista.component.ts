@@ -40,7 +40,7 @@ export class RevistaComponent implements OnInit {
     this.pedirAnuncios()
 
     this.ruta.data.subscribe((data) => {
-      if(data === []){
+      if(data = []){
       this.articulos = Object.entries(data).map((i) => i[1]);
       // console.log('entro con id')
       this.crudService.unRevista = this.articulos[0]

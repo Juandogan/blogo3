@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Articulos } from 'src/app/modelos/articulos';
-import { CrudService } from 'src/app/services/crud.service';
+import { Articulos } from '../../modelos/articulos';
+import { CrudService } from '../../services/crud.service';
 @Component({
   selector: 'app-editorArticulo',
   templateUrl: './editorArticulo.component.html',

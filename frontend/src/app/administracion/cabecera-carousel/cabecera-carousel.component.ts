@@ -2,9 +2,9 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { CarouselModel } from 'src/app/modelos/userCarousel';
-import { CarouselServiceService } from 'src/app/services/carousel-service.service';
-import { CrudService } from 'src/app/services/crud.service';
+import { CarouselModel } from '../../modelos/userCarousel';
+import { CarouselServiceService } from '../../services/carousel-service.service';
+import { CrudService } from '../../services/crud.service';
 
 @Component({
   templateUrl: './cabecera-carousel.component.html',

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from '../../services/crud.service';
 import { Location } from '@angular/common';
-import { LoadingObservableService } from 'src/app/services/loading-observable.service';
-import { CrudAnuncioService } from 'src/app/services/crud-anuncio.service';
+import { LoadingObservableService } from '../../services/loading-observable.service';
+import { CrudAnuncioService } from '../../services/crud-anuncio.service';
 
 
 

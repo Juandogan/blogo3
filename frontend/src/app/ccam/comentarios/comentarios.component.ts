@@ -1,11 +1,11 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { Articulos } from 'src/app/modelos/articulos';
-import { CrudService } from 'src/app/services/crud.service';
+import { Articulos } from '../../modelos/articulos';
+import { CrudService } from '../../services/crud.service';
 import * as moment from 'moment';
 
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { GuiaServiceService } from 'src/app/services/guia-service.service';
-import { GuiaModel } from 'src/app/modelos/guia';
+import { GuiaServiceService } from '../../services/guia-service.service';
+import { GuiaModel } from '../../modelos/guia';
 
 @Component({
   selector: 'app-comentarios',

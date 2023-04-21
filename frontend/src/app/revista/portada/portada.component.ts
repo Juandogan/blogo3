@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from '../../services/crud.service';
 
 @Component({
   selector: 'app-portada',

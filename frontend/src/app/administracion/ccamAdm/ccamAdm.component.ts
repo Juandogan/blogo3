@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Clipboard } from '@angular/cdk/clipboard';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from '../../services/crud.service';
 import {  timer  } from 'rxjs';
 
 @Component({

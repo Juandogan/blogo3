@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarouselServiceService } from 'src/app/services/carousel-service.service';
+import { CarouselServiceService } from '../../services/carousel-service.service';
 import { SwiperOptions } from 'swiper';
 import { carouselDataItems } from '../../modelos/dataCarousel';
 

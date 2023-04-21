@@ -1,8 +1,8 @@
 import {Component, OnInit,ChangeDetectionStrategy,Input,} from '@angular/core';
-import { Revista } from 'src/app/modelos/revista';
-import { CarouselModel } from 'src/app/modelos/userCarousel';
-import { CarouselServiceService } from 'src/app/services/carousel-service.service';
-import { CrudService } from 'src/app/services/crud.service';
+import { Revista } from '../../modelos/revista';
+import { CarouselModel } from '../../modelos/userCarousel';
+import { CarouselServiceService } from '../../services/carousel-service.service';
+import { CrudService } from '../../services/crud.service';
 
 @Component({
   selector: 'app-carousel1',

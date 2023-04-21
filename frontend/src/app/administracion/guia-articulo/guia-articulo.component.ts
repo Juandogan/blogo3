@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Articulos } from 'src/app/modelos/articulos';
-import { GuiaServiceService } from 'src/app/services/guia-service.service';
+import { Articulos } from '../../modelos/articulos';
+import { GuiaServiceService } from '../../services/guia-service.service';
 
 @Component({
   selector: 'app-guia-articulo',

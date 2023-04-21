@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { LoadingObservableService } from 'src/app/services/loading-observable.service';
+import { LoadingObservableService } from '../../services/loading-observable.service';
 import { Articulos } from '../../modelos/articulos';
 import { CarouselModel } from '../../modelos/userCarousel'
 

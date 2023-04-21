@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Articulos } from 'src/app/modelos/articulos';
-import { CrudService } from 'src/app/services/crud.service';
+import { Articulos } from '../../modelos/articulos';
+import { CrudService } from '../../services/crud.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Clipboard } from '@angular/cdk/clipboard';
 import {Location} from '@angular/common';
-import { Revista } from 'src/app/modelos/revista';
+import { Revista } from '../../modelos/revista';
 
 import {  timer  } from 'rxjs';
 

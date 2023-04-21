@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CarouselServiceService } from 'src/app/services/carousel-service.service';
-import { CrudAnuncioService } from 'src/app/services/crud-anuncio.service';
+import { CarouselServiceService } from '../../services/carousel-service.service';
+import { CrudAnuncioService } from '../../services/crud-anuncio.service';
 import { SwiperOptions } from 'swiper';
 
 @Component({

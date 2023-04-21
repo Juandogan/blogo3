@@ -1,9 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
-import * as ClassicEditor from 'src/app/ckeditor2/';
-import { Articulos } from 'src/app/modelos/articulos';
-import { CrudService } from 'src/app/services/crud.service';
-import { GuiaServiceService } from 'src/app/services/guia-service.service';
+import * as ClassicEditor from '../../ckeditor2/';
+import { Articulos } from '../../modelos/articulos';
+import { CrudService } from '../../services/crud.service';
+import { GuiaServiceService } from '../../services/guia-service.service';
 
 
 

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Subject} from 'rxjs';
-import { BuscadorObservableService } from 'src/app/services/buscador-observable.service';
-import { LoadingObservableService } from 'src/app/services/loading-observable.service';
+import { BuscadorObservableService } from '../app/services/buscador-observable.service';
+import { LoadingObservableService } from '../app/services/loading-observable.service';
 //import { LoadingObservableService } from 'src/app/service/loading-observable.service';
 
 

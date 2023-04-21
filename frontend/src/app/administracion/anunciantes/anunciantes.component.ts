@@ -1,10 +1,10 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { anunciante } from 'src/app/modelos/anunciante';
+import { anunciante } from '../../modelos/anunciante';
 
-import { CrudAnuncioService } from 'src/app/services/crud-anuncio.service';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudAnuncioService } from '../../services/crud-anuncio.service';
+import { CrudService } from '../../services/crud.service';
 
 @Component({
   templateUrl: './anunciantes.component.html',

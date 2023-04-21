@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BuscadorObservableService } from 'src/app/services/buscador-observable.service';
+import { BuscadorObservableService } from '../../services/buscador-observable.service';
 
 
 

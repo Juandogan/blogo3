@@ -6,7 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { BarraNegraComponent } from 'src/barra-negra/barra-negra.component';
+import { BarraNegraComponent } from '../barra-negra/barra-negra.component';
 import { ComponentesCompartidosModule } from './componentes-compartidos/componentes-compartidos.module';
 import { ResolveNotaService } from './services/resolve-nota.service';
 import { ResolveRevistaService } from './services/resolve-revista.service';

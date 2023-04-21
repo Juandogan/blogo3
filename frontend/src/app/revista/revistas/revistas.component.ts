@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LoadingObservableService } from 'src/app/services/loading-observable.service';
+import { LoadingObservableService } from '../../services/loading-observable.service';
 import { anunciante } from '../../modelos/anunciante';
 import { Revista } from '../../modelos/revista';
 import { CarouselModel } from '../../modelos/userCarousel';

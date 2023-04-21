@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BuscadorObservableService } from 'src/app/services/buscador-observable.service';
-import { LoadingObservableService } from 'src/app/services/loading-observable.service';
+import { BuscadorObservableService } from '../../services/buscador-observable.service';
+import { LoadingObservableService } from '../../services/loading-observable.service';
 import { Subject} from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import {Location} from '@angular/common';
 @Component({

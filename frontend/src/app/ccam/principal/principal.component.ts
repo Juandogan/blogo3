@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {  timer  } from 'rxjs';
-import { anunciante } from 'src/app/modelos/anunciante';
-import { CrudAnuncioService } from 'src/app/services/crud-anuncio.service';
-import { CrudService } from 'src/app/services/crud.service';
-import { LoadingObservableService } from 'src/app/services/loading-observable.service';
-import { PortadaService } from 'src/app/services/portada.service';
+import { anunciante } from '../../modelos/anunciante';
+import { CrudAnuncioService } from '../../services/crud-anuncio.service';
+import { CrudService } from '../../services/crud.service';
+import { LoadingObservableService } from '../../services/loading-observable.service';
+import { PortadaService } from '../../services/portada.service';
 
 @Component({
   selector: 'app-principal',

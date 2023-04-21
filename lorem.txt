@@ -9,6 +9,27 @@ borrar apache2
 sudo apt remove apache2
 sudo apt purge apache2
 
+------------ Config nginx 
+server {
+    listen 80;
+    server_name www.revistadigital.culturademontania.org.ar;
+    root /var/www/revista;
+
+    location /revista {
+        # Configuración para el subdominio
+    }
+}
+
+server {
+    listen 80;
+    server_name culturademontania.org.ar;
+    root /var/www/sitio;
+
+    location / {
+        # Configuración para el dominio
+    }
+}
+----------------------------
 
 
 66.97.44.139

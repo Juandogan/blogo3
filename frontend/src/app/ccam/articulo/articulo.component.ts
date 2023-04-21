@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CrudService } from '../../services/crud.service';
 import { Location } from '@angular/common';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { CrudAnuncioService } from 'src/app/services/crud-anuncio.service';
-import { Articulos } from 'src/app/modelos/articulos';
+import { CrudAnuncioService } from '../../services/crud-anuncio.service';
+import { Articulos } from '../../modelos/articulos';
 
 @Component({
   selector: 'app-articulo',

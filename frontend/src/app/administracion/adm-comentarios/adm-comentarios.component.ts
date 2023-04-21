@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CrudService } from 'src/app/services/crud.service';
-import { GuiaServiceService } from 'src/app/services/guia-service.service';
+import { CrudService } from '../../services/crud.service';
+import { GuiaServiceService } from '../../services/guia-service.service';
 
 @Component({
   templateUrl: './adm-comentarios.component.html',
