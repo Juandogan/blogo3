@@ -17,7 +17,7 @@ export class GuiaServiceService {
 
   //public URL ="http://168.197.50.191/api"
   // public URL ="http://localhost:3000/carousel"
-  public URL ="http://191.101.18.184/guia"
+  public URL ="http://191.101.18.184:3000/guia"
 
   usuario=""
 
