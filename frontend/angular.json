@@ -19,7 +19,8 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "options": {
+          "options": {           
+              "baseHref": "/ccam/",            
             "outputPath": "dist/frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -109,5 +110,6 @@
       }
     }
   },
+  
   "defaultProject": "frontend"
 }
