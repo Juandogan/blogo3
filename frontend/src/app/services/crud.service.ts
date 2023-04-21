@@ -14,15 +14,15 @@ import { Revista } from '../modelos/revista';
 export class CrudService {
 
 
-   readonly URL_API  = "http://191.101.18.184/ccam";
+   readonly URL_API  = "http://191.101.18.184:3000/ccam";
    
   // readonly URL_AP3  = "http://localhost:3000/revista";
   // readonly URL_API2  = "http://localhost:3000/upload";
 
   //readonly URL_API  = "http://66.97.44.139/ccam";
-  readonly URL_AP3  = "http://191.101.18.184/revista";
-  readonly URL_API2  = "http://191.101.18.184/upload";
-  readonly URL_API4  = "http://191.101.18.184/categorias";
+  readonly URL_AP3  = "http://191.101.18.184:3000/revista";
+  readonly URL_API2  = "http://191.101.18.184:3000/upload";
+  readonly URL_API4  = "http://191.101.18.184:3000/categorias";
   
 
 
