@@ -147,6 +147,7 @@ export class AnunciantesComponent implements OnInit {
       this.anuncianteService.unAnunciante = this.anunciantes[0];
       this.seleccion = 1
       this.imagenVista = this.anunciantes[0].img1
+      console.log(this.imagenVista)
       this.link = this.anunciantes[0].link1
       this.contador = this.anunciantes[0]?.contador1
 

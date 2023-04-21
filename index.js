@@ -33,7 +33,7 @@ app.use('/revista', require('./routers/routerRevista'))
 app.use('/anunciante', require('./routers/routerAnunciante'))
 app.use('/carousel', require('./routers/routerCarousel'))  //nuevo
 app.use('/guia', require('./routers/routerGuia'))  //nuevo
-app.use('/upload', express.static(path.resolve('./subidas')))
+app.use('/ccam/upload', express.static(path.resolve('./subidas')))
 app.use('/portada', require('./routers/routerPortada'))  //nuevo
 app.use('/categorias', require('./routers/routerCategorias'))  //nuevo
 
@@ -43,7 +43,7 @@ app.post('/upload', multiPartMiddleware, (req,res)=>{
     var link = req.files['archivos'].path
       
 // var url = 'http://localhost:3000/upload/'+ link.slice(8) 
-var url = 'http://191.101.18.184/upload/'+ link.slice(8) 
+var url = 'http://191.101.18.184:3000/ccam/upload/'+ link.slice(8) 
 
 console.log({'url': url })
     res.json({'url':url });
