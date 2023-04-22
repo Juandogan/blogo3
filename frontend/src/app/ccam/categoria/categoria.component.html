@@ -23,8 +23,9 @@
 <div class="row mt-2"  style="margin-left: 0px;" >
 
 
-    <div  class="col-12	col-sm-12	col-md-9 col-lg-9	col-xl-9 fondoCol ">
-      <h1 class=" titulo mt-3">{{this.categoria}} ({{this.categoria.length}})</h1>
+    <div  class="col-12	col-sm-12	col-md-8 col-lg-8	col-xl-8 fondoCol ">
+      <h1 class=" titulo mt-3">{{this.categoria}} </h1>
+      <!-- ({{this.categoria.length}}) -->
      <hr>
  
      <div class="row">
@@ -38,24 +39,26 @@
 
      </div>
  <br>
+ <div style="margin-left: -10px; margin-bottom: 20px; margin-top: -5px;">
      <app-card-bajopublix3  [data]="articulos"></app-card-bajopublix3>
+    </div>
     
     </div>
 
 
-    <div  *ngIf="loader2" class="col-3 quitar768" style=" margin-top: 0px;">
+    <div  *ngIf="loader2" class="col-4 quitar768" style=" margin-top: 0px;">
     <div *ngIf="!loader"   style="margin-top: 0px; padding-right: 0px;">
       <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0]?.link1}}">
         <img src="{{ this.anuncios[0]?.img1 }}"
         (click)="sumarContadorAunciante(1)"
           width="100%"
-          height="245px"
+          height="auto"
           alt=""
-          style="margin-top: 20px;object-fit: cover;  "
+          style="margin-top: 20px; "
         />
       </a>
 
-      <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link2}}">
+      <!-- <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link2}}">
         <img src="{{ this.anuncios[0]?.img2 }}"
         (click)="sumarContadorAunciante(2)"
           width="100%"
@@ -63,14 +66,14 @@
           alt=""
           style="margin-top: 20px;object-fit: cover;  "
         />
-      </a>
+      </a> -->
       <div style="margin-top: 20px;">
       <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link3}}">
         <img src="{{ this.anuncios[0]?.img3 }}"
         (click)="sumarContadorAunciante(3)"
           width="100%"
           alt=""
-          style="margin-top: 0px; object-fit: cover; height: 439px"
+          style="margin-top: 0px; object-fit: cover; height: auto"
         />
       </a>
     </div>
@@ -80,7 +83,7 @@
         (click)="sumarContadorAunciante(5)"
           width="100%"
           alt=""
-          style="margin-top: 0px; object-fit: cover; height: 439px"
+          style="margin-top: 0px; object-fit: cover; height: auto"
         />
       </a>
     </div>  

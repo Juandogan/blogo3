@@ -83,13 +83,13 @@ this.caurosel.unAnunciante._id = this._id
   if(this._id === "62f53d844166e4933d7be0f3"){
     console.log('crea')
    this.caurosel.crearAnuncio(this.caurosel.unAnunciante).subscribe(res =>{
-   this.crudService.snack(res)
+   alert(res)
    this.location.back();
    })
   } else {
     console.log('modifica')
     this.caurosel.modify(this.caurosel.unAnunciante._id, this.caurosel.unAnunciante).subscribe(res =>{
-     this.crudService.snack(res)
+     alert(res)
       this.location.back();
       })
 

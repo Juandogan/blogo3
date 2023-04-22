@@ -226,7 +226,7 @@
 
 
                 }
-                @media (max-width: 675px)
+                @media (max-width: 665px)
                 {
                     .quitar675{display: none;}
                 }
@@ -252,12 +252,7 @@
               @media (max-width: 860px)
               {
 
-            @media (max-width: 829px)
-              {
-
-                .quitar829{display:none}
-              }
-
+         
                 .mobile{
                   display:inline}
                   .textUp{font-size:40px; margin-top:-30px; margin-left: -25px; letter-spacing: -1px;}
@@ -318,6 +313,12 @@
   @media (max-width:1000px)
   {.margenL{ margin-left: 2%; }
   .margenR{margin-right: 2%; }
+  }
+
+  @media (max-width: 1065px)
+  {
+    .quitar829{display:none}
+ 
   }
 
   @media (max-width:600px){

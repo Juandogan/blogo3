@@ -34,7 +34,7 @@
   padding-top:5px;
 }
 
-.fondo{background-image: url('../../../assets/fondotrasparente.png'); margin-top:-4px; min-height: 130px; }
+.fondo{background-color: white; margin-top:-4px; min-height: 130px; }
 
 /* color y altura de la primera barra negra con el buscador */
 .barra{

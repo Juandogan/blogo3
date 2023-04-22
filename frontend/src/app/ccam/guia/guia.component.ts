@@ -19,7 +19,10 @@ export class GuiaComponent implements OnInit {
   ngOnInit(): void {
     this.pedirGuias()
 
-    this.ruta.params.subscribe(params=>{this.provincia = params['_id']; })
+    this.ruta.params.subscribe(params=>{this.provincia = params['_id'];
+  console.log(this.provincia)
+  
+   })
 
 
   }

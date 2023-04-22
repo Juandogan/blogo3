@@ -53,7 +53,7 @@ console.log({'url': url })
 
 app.post('/upload2', multiPartMiddleware, (req,res)=>{   
     var link = req.files['upload'].path      
-    var url = 'http://191.101.18.184/upload/'+ link.slice(8) 
+    var url = 'http://191.101.18.184:3000/ccam/upload/'+ link.slice(8) 
     console.log({'url': url })
     res.json({'url':url });
     

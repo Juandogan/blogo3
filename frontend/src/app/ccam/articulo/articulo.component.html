@@ -85,10 +85,10 @@
 
     <app-articulo-relacionado  *ngIf="loader2"class="poner600" [data]="this.dataRelacionado" [estado]="false"></app-articulo-relacionado>
 
-<div style="background-color: rgb(255, 255, 255);">
+<div style="background-color: rgb(255, 255, 255);margin-left: 10px; margin-right: 10px;">
   <div class="row">
     <div class="col-9">
-    <h2  class="titulo" style="margin-left:0px;margin-bottom: 10px; color:orange; font-size: 28px; ">| ULTIMAS NOVEDADES</h2>
+    <h2  class="titulo" style="margin-left:10px;margin-bottom: 10px; color:orange; font-size: 28px; ">| ULTIMAS NOVEDADES</h2>
 
       <app-carousel [items]="dataRelacionado" [data]="dataRelacionado" [height]="200"></app-carousel>
     </div>
@@ -105,7 +105,10 @@
   </div>
 </div>
 <hr>
-
+<div style=" margin-left: 0px!important">
+  <app-carousel-categorias></app-carousel-categorias>
+<app-carousel-revista></app-carousel-revista>
+</div>
 <div style="text-align: left ; margin-top:10px" >
 
 <button (click)="subir()" class="btn "  style="margin-right:10px; border-radius:5px; background-color: rgba(255, 166, 0, 0.719);;">
@@ -136,9 +139,6 @@
   background-image: url('../../../assets/articuloFooter.png');
 background-size: 1421px;
 filter:saturate(1);
-
-
-
 ">
 <app-footer></app-footer>
 

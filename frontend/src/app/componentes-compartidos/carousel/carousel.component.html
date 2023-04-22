@@ -6,15 +6,16 @@
     <div class="dsc-carousel__content">
         <ng-container *ngFor="let section of data;" style="width:100px">
             <div class="dsc-carousel__content-item" [ngStyle]="{'background-image': 'url(' + section.imagen1 + ')', 'margin-left': section.marginLeft + '%', 'object-fit':'cover'}">
+                
                 <h2 *ngIf="section.categoria1" class="categoria">{{section.categoria1}}</h2>
                 <h2 *ngIf="section.categoria" class="categoria">{{section.categoria}}</h2>
-
-                    <h1 *ngIf="section.titulo2" class="truncar2"><a (click)="pasar()" 
+            
+                    <h1 *ngIf="section.titulo2" class="truncar2"><a  (click)="pasar()" 
                         routerLink="/articulo/{{section?.titulo2}}"   style="color:rgb(253, 226, 226);  "
                         > {{section.titulo1}}    </a></h1>
 
 
-                        <h1 *ngIf="section.titulo" class="truncar2"><a (click)="pasar()" 
+                        <h1 *ngIf="section.titulo" class="truncar2"><a  (click)="pasar()" 
                             routerLink="/articulo/{{section?._id}}"   style="color:rgb(253, 226, 226);  "
                             > {{section.titulo}}    </a></h1>
 

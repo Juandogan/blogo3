@@ -374,12 +374,12 @@ console.log(this.Portada.portada._id)
     
         if(  this._id  ){
           console.log('aaaaaaaa',this.Portada.portada)
-      this.Portada.modify(this._id,  this.Portada.portada).subscribe(res=>{console.log(res) })
+      this.Portada.modify(this._id,  this.Portada.portada).subscribe(res=>{alert(res) })
   
      }
 else{
- this.Portada.crearAnuncio(this.Portada.portada).subscribe(res=>{console.log(res) })
-  alert('guardado')
+ this.Portada.crearAnuncio(this.Portada.portada).subscribe(res=>{ alert(res)})
+ 
     }
  
     //  this.Portada.crearAnuncio(this.portada).subscribe(res=>{console.log(res) })}
