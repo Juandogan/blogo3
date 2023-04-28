@@ -9,6 +9,15 @@ borrar apache2
 sudo apt remove apache2
 sudo apt purge apache2
 
+Gmail.com
+ccambasesdedatos@gmail.com
+UNdianuevo.12
+
+Mongo db
+ccambasesdedatos@gmail.com
+CEntrocultural.12
+
+
 ------------ Config nginx 
 server {
     listen 80;
@@ -85,8 +94,6 @@ Poner un mapa que se pueda agrandar
 10 imágenes con epígrafes
 
 
-ccambasesdedatos@gmail.com
-centrocultural.12
 
 
 Links:

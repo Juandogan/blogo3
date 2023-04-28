@@ -34,9 +34,17 @@ export class ArticuloComponent implements OnInit {
 
   ngOnInit(): void {
     window.scroll(0, 0);
-    this.ruta.data.subscribe((data) => {
-      
+    this.ruta.data.subscribe((data) => {      
       this.nota = Object.entries(data).map((i) => i[1]);
+
+if(this.nota[0].art1){
+console.log("***",this.nota[0])
+}else{
+  
+
+}
+
+
       this.crudService.unArticulo = this.nota[0];
       var aux = Number(this.crudService.unArticulo.vistas)
       var aux2 = aux + 1
@@ -53,17 +61,18 @@ export class ArticuloComponent implements OnInit {
     });
 
     this.crudService.getCategorias(this.crudService.unArticulo.categoria).subscribe(res=>{
-      this.dataRelacionado = this.randomNoRepeat(res);  
-      
-   
- 
+      this.dataRelacionado = this.randomNoRepeat(res);
+      this.loader2=true});
 
 
-      
-      // console.log(this.dataRelacionado)
-      this.loader2=true})
-    this.anunciosService.pedirUsuarios().subscribe(res=>{this.anuncios = res; this.loader=false})
-  }
+
+      this.anunciosService.pedirUsuarios().subscribe(res=>{
+        this.anuncios = res; 
+        this.loader=false});
+    
+     
+    
+    }
   
 
 //   saltos(data: any) {

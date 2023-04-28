@@ -48,23 +48,8 @@
                     </div>
              </div>
              <div class="col-3 quitar900">
-                <div style="margin-top:20px">
-                  <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link11}}" (click)="sumarContadorAunciante(11)">
-                    <img src="{{this.anuncios[0]?.img11}}" width="100%"  alt="">
-                  </a>
-                    <hr>
-                    <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link12}}" (click)="sumarContadorAunciante(12)">
-                    <img src="{{this.anuncios[0]?.img12}}"  width="100%"  alt=""
-                      style="margin-top:10px; object-fit: cover;">
-                    </a>
-                      <hr>
-                      <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link13}}" (click)="sumarContadorAunciante(13)">
-                    <img src="{{this.anuncios[0]?.img13}}" width="100%"  alt=""
-                      style="margin-top:10px; object-fit: cover;">
-                    </a>
-                </div>
-                <hr>
-                <app-articulo-relacionado  [data]="dataRelacionado" [estado]="false"></app-articulo-relacionado>
+                
+                <app-lateral-intercalado  [data]="dataRelacionado" [estado]="false" [anuncios]="this.anuncios"></app-lateral-intercalado>
             </div>
 
 <div class="col-12">
@@ -87,12 +72,12 @@
 
 <div style="background-color: rgb(255, 255, 255);margin-left: 10px; margin-right: 10px;">
   <div class="row">
-    <div class="col-9">
+    <div class="col-8">
     <h2  class="titulo" style="margin-left:10px;margin-bottom: 10px; color:orange; font-size: 28px; ">| ULTIMAS NOVEDADES</h2>
 
       <app-carousel [items]="dataRelacionado" [data]="dataRelacionado" [height]="200"></app-carousel>
     </div>
-    <div class="col-3" >
+    <div class="col-4" >
       <div style="margin-top: 38px;">
         <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link13}}" (click)="sumarContadorAunciante(13)">
       <img src="{{this.anuncios[0]?.img13}}" width="100%"  alt="" 

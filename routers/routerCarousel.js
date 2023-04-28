@@ -30,7 +30,7 @@ router.get('/' ,  async (req, res)=>{
 
     });
        await CarouselModelq.save();
-       res.json('Anunciante creado!');
+       res.json('Carouusel creado!');
        
 
     
