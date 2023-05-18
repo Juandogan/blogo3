@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
-import * as ClassicEditor from '../../ckeditor2/';
+import * as ClassicEditor from '../../ckeditor4/';
 import { Articulos } from '../../modelos/articulos';
 import { CrudService } from '../../services/crud.service';
 
@@ -38,7 +38,7 @@ export class EditorComponent implements OnInit {
 
      simpleUpload: {
        // The URL that the images are uploaded to.
-       uploadUrl: "http://168.197.50.191/upload2",
+       uploadUrl: "http://191.101.18.184:3000/upload",
           // Headers sent along with the XMLHttpRequest to the upload server.
        headers: {
          'X-CSRF-TOKEN': 'CSFR-Token',
@@ -67,47 +67,16 @@ export class EditorComponent implements OnInit {
 console.log(this.data)
     this.Editor.create( document.querySelector( '.document-editor__editable' ), {
 
-      toolbar: {
-        items: [
-          'heading',
-          // '|',
-          // 'fontSize',
-          // 'fontFamily',
-          // '|',
-          // 'fontColor',
-          // 'fontBackgroundColor',
-          // '|',
-           'bold',
-          // 'italic',
-          // 'underline',
-          // 'strikethrough',
-          // '|',
-
-          // '|',
-          // 'numberedList',
-          // 'bulletedList',
-          // // '|',
-          // 'outdent',
-          // 'indent',
-          // '|',
-          // // 'todoList',
-           'link',
-          // // 'blockQuote',
-          'imageUpload',
-          'insertTable',
-          'mediaEmbed',
-          '|',
-          'undo',
-          'redo'
-        ]
-      },
+     
 
       heading: {
         options: [
             { model: 'paragraph', title: 'Parrafos', class: 'ck-heading_paragraph' },
             { model: 'heading1', view: 'h1', title: 'Titulo', class: 'ck-heading_heading1' },
-            { model: 'heading2', view: 'h2', title: 'Subtitulo', class: 'ck-heading_heading2' },
-            { model: 'heading3', view: 'h4', title: 'Pie de foto', class: 'ck-heading_heading3' },
+            { model: 'heading2', view: 'h2', title: 'Titulo2', class: 'ck-heading_heading1' },    
+            { model: 'heading3', view: 'h3', title: 'Subtitulo', class: 'ck-heading_heading3' },
+            { model: 'heading4', view: 'h4', title: 'Pie de foto', class: 'ck-heading_heading4' },
+
 
         ]
     },
@@ -122,7 +91,7 @@ console.log(this.data)
 
 
       simpleUpload: {
-      uploadUrl: "http://168.197.50.191/upload2",
+      uploadUrl: "http://191.101.18.184:3000/upload2/",
 
       headers: {
         'X-CSRF-TOKEN': 'CSFR-Token',
@@ -136,7 +105,8 @@ console.log(this.data)
 
       const toolbarContainer = document.querySelector( '.document-editor__toolbar' );
       toolbarContainer.appendChild( editor.ui.view.toolbar.element );
-      this.myEditor = editor
+           this.myEditor = editor
+      this.myEditor.setData(this.data.nota)
 
   } )
   .catch( err => {

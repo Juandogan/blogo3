@@ -20,7 +20,7 @@ export class ArticuloRelacionadoComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+console.log('articuloRelacionado',this.nota)
   }
 
 

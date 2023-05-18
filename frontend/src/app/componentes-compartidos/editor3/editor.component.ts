@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
-import * as ClassicEditor from '../../ckeditor2/';
+import * as ClassicEditor from '../../ckeditor4/';
 import { Articulos } from '../../modelos/articulos';
 import { CrudService } from '../../services/crud.service';
 import { GuiaServiceService } from '../../services/guia-service.service';
@@ -67,40 +67,7 @@ export class Editor3Component implements OnInit {
 
     this.Editor.create( document.querySelector( '.document-editor__editable' ), {
 
-      toolbar: {
-        items: [
-          'heading',
-          // '|',
-          // 'fontSize',
-          // 'fontFamily',
-          // '|',
-          // 'fontColor',
-          // 'fontBackgroundColor',
-          // '|',
-           'bold',
-          // 'italic',
-          // 'underline',
-          // 'strikethrough',
-          // '|',
-
-          // '|',
-          // 'numberedList',
-          // 'bulletedList',
-          // // '|',
-          // 'outdent',
-          // 'indent',
-          // '|',
-          // // 'todoList',
-           'link',
-          // // 'blockQuote',
-          'imageUpload',
-          'insertTable',
-          'mediaEmbed',
-          '|',
-          'undo',
-          'redo'
-        ]
-      },
+     
 
       heading: {
         options: [
@@ -122,7 +89,7 @@ export class Editor3Component implements OnInit {
 
 
       simpleUpload: {
-      uploadUrl: "http://168.197.50.191/upload2",
+      uploadUrl: "http://191.101.18.184:3000/upload2/",
 
       headers: {
         'X-CSRF-TOKEN': 'CSFR-Token',
@@ -137,7 +104,7 @@ export class Editor3Component implements OnInit {
       const toolbarContainer = document.querySelector( '.document-editor__toolbar' );
       toolbarContainer.appendChild( editor.ui.view.toolbar.element );
       this.myEditor = editor
-
+      this.myEditor.setData(this.data.nota)
   } )
   .catch( err => {
       console.error( err );

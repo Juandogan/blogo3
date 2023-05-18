@@ -92,10 +92,10 @@ Preserve the relative scale, though. */
 /* Set the styles for "Heading 1". */
 .document-editor .ck-content h1,
 .document-editor .ck-heading-dropdown .ck-heading_heading1 .ck-button__label {
-    /* font-size: 1.18em;
+    font-size: 1.18em;
     font-weight: normal;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important; */
-color:#0a0a0a
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
+    color:#0a0a0a
 
 }
 
@@ -114,7 +114,7 @@ color:#0a0a0a
     font-size: 1.75em;
     font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:orange
+    /* color:orange */
 
 
 }
@@ -294,17 +294,27 @@ h4{color:red!important}
 
 
 :host ::ng-deep .ck-content h2 {
-  font-weight: 700;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 28px;
-  letter-spacing: -1px;
-  font-size: 20px!important;
-  color: rgb(75, 75, 75);
-  margin-bottom: 5px;
-
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -1px;
+    font-size: 30px!important;
+    color: orange;
+    margin-bottom: 10px;
 
 }
 
+:host ::ng-deep .ck-content h3 {
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -1px;
+    font-size: 20px!important;
+    color: rgb(63, 63, 63);
+    margin-bottom: 10px;
+
+}
 
 :host ::ng-deep .ck-content h4 {
 
@@ -318,6 +328,20 @@ h4{color:red!important}
 
 
 }
+
+:host ::ng-deep .ck-content p{
+
+
+  font-weight: 400;
+  margin-top:-10px;
+  font-size: 18px; 
+  line-height: 28px;
+  color:rgb(68, 68, 68);
+  text-align:justify;  
+  text-justify:inter-character;
+
+}
+
 
 
 :host ::ng-deep .ck-content strong {

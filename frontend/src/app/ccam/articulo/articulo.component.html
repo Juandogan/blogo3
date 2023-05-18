@@ -19,9 +19,8 @@
               <div class="col-12 col-sm-12 col-md-9 col-lg-9	col-xl-9 margenMobileDocu"  >
                     <div>
 
-                        <h5 class="categoria" >{{cut(nota[0]?.categoria)}}</h5>
+                        <h5 class="categoria" >{{nota[0]?.categoria}}</h5>
                         <h1 class="titulo" >{{nota[0]?.titulo}}</h1>
-
                         <h2 class="subtitulo">{{nota[0]?.subtitulo}}</h2>
 
 
@@ -66,7 +65,7 @@
 </div>
 
   <!-- col-sm-12 col-sm-12 col-md-4 col-lg-3	col-xl-3	col-xxl-3 -->
-    <app-articulo-relacionado *ngIf="loader2" class="quitar600"  [data]="this.dataRelacionado" [estado]="true"></app-articulo-relacionado>
+    <app-articulo-relacionado *ngIf="loader2"  class="quitar600"  [data]="this.dataRelacionado" [estado]="true"></app-articulo-relacionado>
 
     <app-articulo-relacionado  *ngIf="loader2"class="poner600" [data]="this.dataRelacionado" [estado]="false"></app-articulo-relacionado>
 
@@ -75,7 +74,7 @@
     <div class="col-8">
     <h2  class="titulo" style="margin-left:10px;margin-bottom: 10px; color:orange; font-size: 28px; ">| ULTIMAS NOVEDADES</h2>
 
-      <app-carousel [items]="dataRelacionado" [data]="dataRelacionado" [height]="200"></app-carousel>
+      <app-carousel [items]="dataRelacionado2" [data]="dataRelacionado2" [height]="200"></app-carousel>
     </div>
     <div class="col-4" >
       <div style="margin-top: 38px;">

@@ -2,7 +2,7 @@
 const { Schema, model } = require('mongoose');
 
 
-const articuloSchema = new Schema({
+const articuloSchema2 = new Schema({
     
   
   
@@ -107,6 +107,6 @@ const articuloSchema = new Schema({
 })
 
 
-module.exports =  model('articuloSchema', articuloSchema)
+module.exports =  model('articuloSchema2', articuloSchema2)
 
 

@@ -31,47 +31,46 @@ export class ArticuloComponent implements OnInit {
   anuncios:any
   auxContador: number = 0;
   dataRelacionado:any
+  dataRelacionado2:any
 
   ngOnInit(): void {
     window.scroll(0, 0);
     this.ruta.data.subscribe((data) => {      
       this.nota = Object.entries(data).map((i) => i[1]);
-
-if(this.nota[0].art1){
-console.log("***",this.nota[0])
-}else{
-  
-
-}
-
-
-      this.crudService.unArticulo = this.nota[0];
+      this.crudService.unArticulo = this.nota[0];  
+      
+      // this.dataRelacionado = this.nota[0]
       var aux = Number(this.crudService.unArticulo.vistas)
       var aux2 = aux + 1
       this.crudService.unArticulo.vistas = aux2
-      // console.log(this.crudService.unArticulo.vistas , 'mod')
       this.crudService.modificarArticulo(this.crudService.unArticulo)
       .subscribe(res => {
-
-     }
-
-    )
+        
+     })
     // fragmento incrementa contador
+    if(this.nota[0].art1){
+      this.dataRelacionado = this.nota[0];
+      this.loader2=true
+    }else{
+      this.crudService.getCategorias(this.crudService.unArticulo.categoria).subscribe(res=>{
+        var aux = res     
+        this.dataRelacionado = this.randomNoRepeat(res);  
+        this.loader2=true});
+  
 
+    }
     });
-
-    this.crudService.getCategorias(this.crudService.unArticulo.categoria).subscribe(res=>{
-      this.dataRelacionado = this.randomNoRepeat(res);
-      this.loader2=true});
-
 
 
       this.anunciosService.pedirUsuarios().subscribe(res=>{
         this.anuncios = res; 
         this.loader=false});
-    
-     
-    
+
+        this.crudService.getCategorias(this.crudService.unArticulo.categoria).subscribe(res=>{
+          var aux = res     
+          this.dataRelacionado2 = this.randomNoRepeat(res);  
+          this.loader2=true});
+          
     }
   
 
@@ -152,6 +151,10 @@ console.log("***",this.nota[0])
 //   }
 
  randomNoRepeat(arr){
+
+console.log(arr)
+
+
   let newArr = [];
   while(arr.length > 0) {
     let randomIndex = Math.floor(Math.random() * arr.length);
@@ -163,22 +166,34 @@ console.log("***",this.nota[0])
 }
 
 saltos(data:string){
-  var aux2 = data.split('<h2>').join(`<h2 style=" font-weight: 700; 
+  var aux2 = data.split('<h1>').join(`<h1 style=" font-weight: 700; 
 line-height: 32px;
 letter-spacing: -1px;
-font-size:25px!important;
+font-size:30px!important;
+color:orange;
+margin-bottom:15px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;};">
+`)
+aux2 = aux2.split('<h2>').join(`<h2 style=" font-weight: 700; 
+line-height: 32px;
+letter-spacing: -1px;
+font-size:30px!important;
 color:orange;
 margin-bottom:15px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;};">
 `)
    
-aux2 = aux2.split('<h3').join(`<h3 style="font-weight: 400; 
-line-height: 30px;
-letter-spacing: 0px;
-font-size:22px;
-color:orange;
-margin-bottom:10px;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"`)
+aux2 = aux2.split('<h3').join(`<h3 style="
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: 500;
+line-height: 32px;
+letter-spacing: -1px;
+font-size: 20px!important;
+color: rgb(63, 63, 63);
+margin-bottom: 10px;
+
+
+"`)
 
 aux2 = aux2.split('<p').join(`<p style="
                               font-weight: 400;
@@ -200,7 +215,7 @@ aux2 = aux2.split('<p').join(`<p style="
 
                                     aux2 = aux2.split('<img').join('<img style="width:100%; margin-top:10px; margin-bottom:10px"')
                                     
-                                    aux2 = aux2.split('<strong>').join('<strong style="font-size:16px;line-height: 0px!important; ">')
+                                    aux2 = aux2.split('<strong>').join('<strong style="line-height: 0px!important; ">')
                                     aux2 = aux2.split('https://www.youtube.com/watch?v=').join('https://www.youtube.com/embed/')
                                     aux2 = aux2.split(' ,').join(', ')
                                     aux2 = aux2.split(' .').join('. ')

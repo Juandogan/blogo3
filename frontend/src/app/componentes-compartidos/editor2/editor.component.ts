@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
-import * as ClassicEditor from '../../ckeditor2/';
+import * as ClassicEditor from '../../ckeditor4/';
 import { Revista } from '../../modelos/revista';
 import { CrudService } from '../../services/crud.service';
 
@@ -33,7 +33,7 @@ export class Editor2Component implements OnInit {
 
      simpleUpload: {
        // The URL that the images are uploaded to.
-       uploadUrl: "http://168.197.50.191/upload2",
+       uploadUrl: "http://191.101.18.184:3000/upload",
           // Headers sent along with the XMLHttpRequest to the upload server.
        headers: {
          'X-CSRF-TOKEN': 'CSFR-Token',
@@ -117,7 +117,7 @@ export class Editor2Component implements OnInit {
 
 
       simpleUpload: {
-      uploadUrl: "http://168.197.50.191/upload2",
+      uploadUrl: "http://191.101.18.184:3000/upload2/",
 
       headers: {
         'X-CSRF-TOKEN': 'CSFR-Token',
@@ -132,6 +132,7 @@ export class Editor2Component implements OnInit {
       const toolbarContainer = document.querySelector( '.document-editor__toolbar' );
       toolbarContainer.appendChild( editor.ui.view.toolbar.element );
       this.myEditor = editor
+      this.myEditor.setData(this.data.nota)
 
   } )
   .catch( err => {
