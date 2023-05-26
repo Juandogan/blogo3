@@ -25,6 +25,8 @@ export class EditorCabeceraComponent implements OnInit {
   public articuloBusqueda: any
   loaderModal = false
   aux:Number = 1
+
+  aux2= false
   //variables de la busqueda de articulos relacionados
   fecha =""
   nota:any
@@ -196,7 +198,7 @@ window.scroll(0,0)
    agregarPublicacion(){
     this.loader =true
     this.crudService.unArticulo = this.test
-
+    console.log('antes de guardar', this.test)
     this.crudService.unArticulo.art1 = this.resultadoTitulo
     this.crudService.unArticulo.art2 = this.resultadoTitulo2
     this.crudService.unArticulo.art3 = this.resultadoTitulo3
@@ -219,6 +221,10 @@ window.scroll(0,0)
       this.crudService.unArticulo.fechaMod = String(new Date())
       this.crudService.modificarArticulo(this.crudService.unArticulo)
       .subscribe(res => { this.loader=false
+        alert('Articulo Modificado')
+        
+        this.guardando = false
+        
 
    })
 
@@ -233,10 +239,12 @@ window.scroll(0,0)
         this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => {
           this.guardado = true;
         this.guardando = false
+
           timer(3000).subscribe(res=>{
             this.guardado = false;
             this.loader=false;
-           
+            this.location.back()
+        
            });
 
         })

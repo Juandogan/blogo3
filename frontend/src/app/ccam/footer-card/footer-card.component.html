@@ -1,0 +1,47 @@
+   
+<div class="clasePrincipal"  >
+    <div style="margin-right: 5px">
+       <div class="primerIcon" >
+           <mat-icon class="mr-2 stilo ml-2 " style="color:rgb(136, 136, 136)">account_circle</mat-icon>
+           <div >
+                   <h3  class="subtituloResposive2 vistas"  style="color:(136, 136, 136); margin-top:1px">{{nota.autor}}</h3>
+           </div>
+           
+       </div>
+   </div>
+
+  <div  class="quitar600" style="margin-top:-1px; margin-right: 5px; ">
+ 
+       <div  class="tercerIcon" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="rgb(136, 136, 136)" class="bi bi-camera-fill" viewBox="0 0 16 16">
+            <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+            <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
+          </svg> 
+           <div style="margin-left: 4px"> 
+           <h3 class="subtituloResposive2  fecha" style="margin-top:1px">{{nota.fotografia}}</h3>
+           <h3 *ngIf="!nota.fotografia" class="subtituloResposive2  fecha"  style="color:rgb(136, 136, 136)">CCAM</h3>
+           </div>
+       </div>
+   </div>
+
+
+
+
+ 
+  <div  class="segundoIcon quitar600">
+ 
+       <div  class="divSegundoIcon" >
+   
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="rgb(136, 136, 136)" class="bi bi-image" viewBox="0 0 16 16">
+            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+          </svg>
+            <div style="margin-top: 1px; margin-left:4px;" >
+                    <h3  class="subtituloResposive2 vistas">Edición: {{nota.edicionFotografia}}</h3>
+            </div>
+       </div>
+   </div>  
+ 
+ 
+   </div>
+ 

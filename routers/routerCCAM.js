@@ -262,7 +262,7 @@ router.get('/:_id' , async(req,res) => {
               };
     
        await articuloModel.findByIdAndUpdate(_id, {$set: articulo}, {new: true});
-       res.json('Articulo modificado!');
+       res.json({"_id":_id});
 
 });
 
