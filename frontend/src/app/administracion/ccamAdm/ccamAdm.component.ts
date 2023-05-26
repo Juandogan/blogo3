@@ -48,7 +48,7 @@ export class CcamAdmComponent implements OnInit {
 this.notas = res
 this.cantArt = this.notas.length;
 this.loader = false;
-console.log(res)
+console.log('esto',res)
 
     })
 

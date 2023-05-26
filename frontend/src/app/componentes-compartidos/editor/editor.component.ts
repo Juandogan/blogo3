@@ -145,8 +145,9 @@ this.loader1 = true
 
       this.guardando = false
       this.guardado = true
+      this.loader1 = false
       timer(3000).subscribe(res=>{this.guardado = false; this.loader=false;
-        this.location.back()
+
        });
 
     });

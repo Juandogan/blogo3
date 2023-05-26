@@ -46,7 +46,7 @@ this.guiaService.pedirGuia(id).subscribe(res=>{
   var aux = this.articulos.comentarios;
   if (aux) {
     this.comentarios = aux.split('<div>');
-      this.comentarios = this.comentarios.reverse()
+      this.comentarios = this.comentarios
 
   } else {
     this.comentarios = [];

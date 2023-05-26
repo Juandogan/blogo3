@@ -22,12 +22,14 @@
           <div class="col-12">
               <h5 class="textoInput " style="margin-top:3px">Categoría</h5>
 
-              <select  [(ngModel)]="this.test.categoria" class="form-select form-control-sm" style="width: 100%; height: 38px;">
-
+              <select  [(ngModel)]="this.test.categoria" (change)="cambiar()" class="form-select form-control-sm" style="width: 100%; height: 38px;">
+                <option>Cultura · La montañana y el Hombre</option>
                 <option>Cultura · La montañana y el Hombre</option>
                 <option>Cultura · Pueblos y tradiciones</option>
                 <option>Cultura · Literatura y libros</option>
                 <option>Cultura · Museo de Montaña</option>
+
+                <option>FICHA</option>
 
                 <option>Actividades · Viajes y expediciones</option>
                 <option>Actividades · Espeleología</option>
@@ -430,7 +432,228 @@
     <h1 style="color:brown;   margin-top:-40px">6</h1>
   </div>
   </div>
-  <!-- comiexo3  -->
+  <!-- FINAL6  -->
+  <div *ngIf="ficha">
+    <!-- comiexo7  -->
+    <div  class="form-group" style="margin-top:35px" >
+      <div class="input-group"  >
+      <input  [(ngModel)]="resultadoTitulo7" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput7}}" autocomplete="false">
+      <div class="input-group-append">
+        <button  [disabled]="bt7Borrar" style="margin-right:5px" class="btn btn-danger" type="button" (click)="selection(7)"  (click)="resultadoTitulo7 = ''" >
+  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+          </svg>
+  
+        </button>
+        <button  [disabled]="bt6Editar" style="margin-right:5px" class="btn btn-danger ml-1" type="button"   (click)="openInput7=!openInput7">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+          </svg>
+        </button>
+        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <button [disabled]="bt7Buscar"  class="btn btn-danger ml-1" type="button"  (click)="openInput7=true;openInputBuscar=true; this.aux = 7">
+            <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+                         <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">
+  
+            </button>
+        </a>
+      </div>
+    </div>
+      <div style="float:left">
+      <h1 style="color:brown;   margin-top:-40px">7</h1>
+    </div>
+    </div>
+    <!-- FINAL7  -->
+
+   <!-- comiexo8  -->
+   <div  class="form-group" style="margin-top:35px" >
+    <div class="input-group"  >
+    <input  [(ngModel)]="resultadoTitulo8" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput8}}" autocomplete="false">
+    <div class="input-group-append">
+      <button  [disabled]="bt8Borrar" style="margin-right:5px" class="btn btn-danger" type="button" (click)="selection(8)"  (click)="resultadoTitulo8 = ''" >
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+        </svg>
+
+      </button>
+      <button  [disabled]="bt8Editar" style="margin-right:5px" class="btn btn-danger ml-1" type="button"   (click)="openInput8=!openInput8">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+        </svg>
+      </button>
+      <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button [disabled]="bt8Buscar"  class="btn btn-danger ml-1" type="button"  (click)="openInput7=true;openInputBuscar=true; this.aux = 8">
+          <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+                       <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">
+
+          </button>
+      </a>
+    </div>
+  </div>
+    <div style="float:left">
+    <h1 style="color:brown;   margin-top:-40px">8</h1>
+  </div>
+  </div>
+  <!-- FINAL8  -->
+
+   <!-- comiexo9  -->
+   <div  class="form-group" style="margin-top:35px" >
+    <div class="input-group"  >
+    <input  [(ngModel)]="resultadoTitulo9" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput9}}" autocomplete="false">
+    <div class="input-group-append">
+      <button  [disabled]="bt9Borrar" style="margin-right:5px" class="btn btn-danger" type="button" (click)="selection(9)"  (click)="resultadoTitulo9 = ''" >
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+        </svg>
+
+      </button>
+      <button  [disabled]="bt9Editar" style="margin-right:5px" class="btn btn-danger ml-1" type="button"   (click)="openInput9=!openInput9">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+        </svg>
+      </button>
+      <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button [disabled]="bt9Buscar"  class="btn btn-danger ml-1" type="button"  (click)="openInput9=true;openInputBuscar=true; this.aux = 9">
+          <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+                       <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">
+
+          </button>
+      </a>
+    </div>
+  </div>
+    <div style="float:left">
+    <h1 style="color:brown;   margin-top:-40px">9</h1>
+  </div>
+  </div>
+  <!-- FINAL9  -->
+
+
+   <!-- comiexo10  -->
+   <div  class="form-group" style="margin-top:35px" >
+    <div class="input-group"  >
+    <input  [(ngModel)]="resultadoTitulo10" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput10}}" autocomplete="false">
+    <div class="input-group-append">
+      <button  [disabled]="bt10Borrar" style="margin-right:5px" class="btn btn-danger" type="button" (click)="selection(10)"  (click)="resultadoTitulo10 = ''" >
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+        </svg>
+
+      </button>
+      <button  [disabled]="bt10Editar" style="margin-right:5px" class="btn btn-danger ml-1" type="button"   (click)="openInput9=!openInput10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+        </svg>
+      </button>
+      <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button [disabled]="bt10Buscar"  class="btn btn-danger ml-1" type="button"  (click)="openInput10=true;openInputBuscar=true; this.aux = 10">
+          <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+                       <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">
+
+          </button>
+      </a>
+    </div>
+  </div>
+    <div style="float:left">
+    <h1 style="color:brown;   margin-top:-40px">10</h1>
+  </div>
+  </div>
+  <!-- FINAL10  -->
+
+   <!-- comiexo11  -->
+   <div  class="form-group" style="margin-top:35px" >
+    <div class="input-group"  >
+    <input  [(ngModel)]="resultadoTitulo11" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput11}}" autocomplete="false">
+    <div class="input-group-append">
+      <button  [disabled]="bt11Borrar" style="margin-right:5px" class="btn btn-danger" type="button" (click)="selection(11)"  (click)="resultadoTitulo11 = ''" >
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+        </svg>
+
+      </button>
+      <button  [disabled]="bt11Editar" style="margin-right:5px" class="btn btn-danger ml-1" type="button"   (click)="openInput9=!openInput11">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+        </svg>
+      </button>
+      <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button [disabled]="bt11Buscar"  class="btn btn-danger ml-1" type="button"  (click)="openInput11=true;openInputBuscar=true; this.aux = 11">
+          <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+                       <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">
+
+          </button>
+      </a>
+    </div>
+  </div>
+    <div style="float:left">
+    <h1 style="color:brown;   margin-top:-40px">11</h1>
+  </div>
+  </div>
+  <!-- FINAL11  -->
+
+
+     <!-- comiexo12  -->
+     <div  class="form-group" style="margin-top:35px" >
+      <div class="input-group"  >
+      <input  [(ngModel)]="resultadoTitulo12" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput12}}" autocomplete="false">
+      <div class="input-group-append">
+        <button  [disabled]="bt12Borrar" style="margin-right:5px" class="btn btn-danger" type="button" (click)="selection(12)"  (click)="resultadoTitulo12 = ''" >
+  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+          </svg>
+  
+        </button>
+        <button  [disabled]="bt12Editar" style="margin-right:5px" class="btn btn-danger ml-1" type="button"   (click)="openInput12=!openInput12">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+          </svg>
+        </button>
+        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <button [disabled]="bt12Buscar"  class="btn btn-danger ml-1" type="button"  (click)="openInput12=true;openInputBuscar=true; this.aux = 12">
+            <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+                         <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">
+  
+            </button>
+        </a>
+      </div>
+    </div>
+      <div style="float:left">
+      <h1 style="color:brown;   margin-top:-40px;margin-right: 10px;">12</h1>
+    </div>
+    </div>
+    <!-- FINAL12  -->
+
+</div>
+
+
+
+
+
+
+
           </div>
 
         </div>

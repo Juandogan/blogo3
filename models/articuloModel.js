@@ -2,11 +2,9 @@
 const { Schema, model } = require('mongoose');
 
 
-const articuloSchema2 = new Schema({
-    
+const articuloSchema = new Schema({ 
   
-  
-  
+   
   indice:{type: String, required : false},
   contadorComentarios:{type: String, required : false},
   comentarios:{type: String, required : false},
@@ -87,11 +85,6 @@ const articuloSchema2 = new Schema({
   resultadoCategoria11:{type: String, required : false},
   resultadoCategoria12:{type: String, required : false},
 
-
-
-
-
-
   resultadoImagen:{type: String, required : false},
   resultadoImagen2:{type: String, required : false},
   resultadoImagen3:{type: String, required : false},
@@ -107,6 +100,6 @@ const articuloSchema2 = new Schema({
 })
 
 
-module.exports =  model('articuloSchema2', articuloSchema2)
+module.exports =  model('articuloSchema', articuloSchema)
 
 

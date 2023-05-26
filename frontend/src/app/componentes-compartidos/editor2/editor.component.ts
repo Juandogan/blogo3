@@ -132,7 +132,8 @@ export class Editor2Component implements OnInit {
       const toolbarContainer = document.querySelector( '.document-editor__toolbar' );
       toolbarContainer.appendChild( editor.ui.view.toolbar.element );
       this.myEditor = editor
-      this.myEditor.setData(this.data.nota)
+      console.log(this.data.nota)
+      this.myEditor.setData(this.data.editorial)
 
   } )
   .catch( err => {

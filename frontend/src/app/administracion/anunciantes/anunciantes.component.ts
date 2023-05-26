@@ -318,7 +318,7 @@ export class AnunciantesComponent implements OnInit {
         this.link =  this.anuncianteService.unAnunciante.link6
         break;
       case 7:
-        this.contador = Number(this.anuncianteService.unAnunciante.contador6)
+        this.contador = Number(this.anuncianteService.unAnunciante.contador7)
         this.imagenVista =  this.anuncianteService.unAnunciante.img7
         this.link =  this.anuncianteService.unAnunciante.link7
         break;

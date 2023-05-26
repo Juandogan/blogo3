@@ -49,10 +49,10 @@ export class ArticuloComponent implements OnInit {
      })
     // fragmento incrementa contador
     if(this.nota[0].art1){
-      this.dataRelacionado = this.nota[0];
+      this.dataRelacionado = this.crudService.unArticulo;
       this.loader2=true
     }else{
-      this.crudService.getCategorias(this.crudService.unArticulo.categoria).subscribe(res=>{
+      this.crudService.getCategorias(this.crudService.unArticulo[0].categoria).subscribe(res=>{
         var aux = res     
         this.dataRelacionado = this.randomNoRepeat(res);  
         this.loader2=true});
