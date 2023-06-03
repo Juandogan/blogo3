@@ -27,11 +27,12 @@ import { CarouselServiceService } from './services/carousel-service.service';
 import { GuiaServiceService } from './services/guia-service.service';
 import { ResolveGuiaService } from './services/resolve-guia.service';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+
  
 
 @NgModule({
   declarations: [
-    AppComponent,  BarraNegraComponent, PromoRevistaComponent,
+    AppComponent,  BarraNegraComponent, PromoRevistaComponent, 
 
   ],
   imports: [

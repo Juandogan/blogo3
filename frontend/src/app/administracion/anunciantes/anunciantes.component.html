@@ -6,31 +6,32 @@
       <h4>Anunciantes</h4>
 <hr>
 <select  [(ngModel)]="this.seleccion" (change)="selectChange()" class="form-select form-control-sm" style="width: 100%; height: 38px;">
-  <option value=1 selected >1er CCAM LATERAL largo (revista)400X500</option>
-  <!-- <option value=2>2do CCAM - LATERAL Corto 245X200</option> -->
-  <option value=3>3er CCAM - LATERAL Largo  245X200</option>
-  <option value=4>4er CCAM - ANCHO  </option>
-  <option value=2>4er CCAM - ANCHO DOBLE*</option>  
-  <option value=5>5er CCAM - LATERAL Largo  1200x400</option>
-  <option value=6>6er CCAM - LATERAL Largo  270x390</option>
+  
+  <option value=1 selected >CCAM LATERAL (Portada revista)</option>
+  <option value=3>CCAM - LATERAL </option>
+  <option value=4>CCAM - ANCHO  1</option>
+  <option value=2>CCAM - ANCHO DOBLE*</option>  
+  <option value=5>CCAM - LATERAL </option>
+  <option value=6>CCAM - LATERAL </option>
   <hr>
-  <option value=7>1er REVISTA Portada 1200x460</option>
-  <option value=8>2do REVISTA Vertical Largo 1  350x500</option>
-  <option value=9>3er REVISTA Vertical Largo 2  350x500 </option>
-  <option value=10>4to REVISTA Vertical Largo 3 350x500</option>
-  <option value=11>3er REVISTA Vertical Largo 2  350x500 </option>
-  <option value=12>4to REVISTA Vertical Largo 3 350x500</option>
+  <option value=7> REVISTA Portada / Mobile POPUP </option>
+  <option value=8> REVISTA Vertical 1 / Mobile</option>
+  <option value=9> REVISTA Vertical 2 / Mobile</option>
+  <option value=10>REVISTA Vertical 3 / Mobile</option>
+  <option value=11>Horizontal /No Mobile  </option>
+  <option value=12>Horizontal /No Mobile  </option>
 
   <hr>
-  <option value=13>1ro Artículo Lateral </option>
-  <option value=14>2to Artículo Lateral </option>
-  <option value=15>3er Artículo Lateral </option>
-  <option value=16>4do Artículo Lateral </option>
-  <option value=17>5er Artículo Lateral </option>
-  <option value=18>6do Articulo Lateral </option>
-  <option value=19>7er Articulo Lateral </option>
-  <option value=20>8er Articulo Lateral </option>
+  <option value=13>1 Artículo Lateral </option>
+  <option value=14>2 Artículo Lateral </option>
+  <option value=15>3 Artículo Lateral </option>
+  <option value=16>4 Artículo Lateral </option>
+  <option value=17>5 Artículo Lateral </option>
+  <option value=18>6 Articulo Lateral </option>
+  <option value=19>7 Articulo Lateral </option>
+  <option value=20>8 Articulo Lateral </option>
   <hr>
+
   <option value=21>1er Carousel Promos</option>
   <option value=22>2do Carousel Promos </option>
   <option value=23>3er Carousel Promos </option>
@@ -55,7 +56,7 @@
                 <button class="btn btn-danger btn-upload" (click)="this.loadingSubir=false" (click)="onUpload()"
                     style="margin-top:0px" [disabled]=this.SubirEstado>
 
-                    <img *ngIf="!loadingSubir" src="../../../assets/loader.gif" alt="" width="20px">
+                    <img *ngIf="!loadingSubir" src="../../../ccam/assets/loader.gif" alt="" width="20px">
 
                     <svg *ngIf="loadingSubir" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                         fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
@@ -98,9 +99,13 @@
       <h4>Vista Previa </h4>
 
       <hr>
-
-      <a target="_blank" rel="noopener noreferrer" [href]=this.link >
-      <img src="{{imagenVista}}" width="270px" alt="" style="cursor:pointer ;">
+<div style="text-align: center; margin-top: 40px;">
+      <div *ngIf="loading" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+      <a   target="_blank" rel="noopener noreferrer" [href]=this.link >
+      <img src="{{imagenVista}}"    appImageLoad loading="loading" (loadingChange)="onLoadingChange($event)"  width="270px" alt="" style="cursor:pointer ;">
     </a>
 </div>
 <div style="margin-top: 20px;">

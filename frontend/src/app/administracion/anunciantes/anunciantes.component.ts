@@ -24,7 +24,7 @@ export class AnunciantesComponent implements OnInit {
   imgPortada = '';
   anunciantes: any;
   contador=0
-
+  loading = true
   imagenVista =""
   link=""
 
@@ -277,120 +277,154 @@ export class AnunciantesComponent implements OnInit {
 
     console.log('y estio', this.anuncianteService.unAnunciante);
   }
+  onLoadingChange(x:any) {
+ this.loading= x
+  console.log(x,'imagen cargada')
 
+  }
+  onImageLoad2() {
+    this.loading= true
+     console.log('CAMBIOOOO')
+     }
 
   selectChange(){
 
-
+    
    var  x = Number(this.seleccion)
 
 
     switch (x) {
 
       case 1:
+        this.loading = true
         this.imagenVista =  this.anuncianteService.unAnunciante.img1
         this.link =  this.anuncianteService.unAnunciante.link1
         this.contador = Number(this.anuncianteService.unAnunciante.contador1)
+        
+   
         break;
       case 2:
         this.imagenVista =  this.anuncianteService.unAnunciante.img2
         this.link =  this.anuncianteService.unAnunciante.link2
         this.contador = Number(this.anuncianteService.unAnunciante.contador2)
+        this.loading = true
+
         break;
       case 3:
+        this.loading = true
         this.contador = Number(this.anuncianteService.unAnunciante.contador3)
         this.imagenVista =  this.anuncianteService.unAnunciante.img3
         this.link =  this.anuncianteService.unAnunciante.link3
+  
         break;
       case 4:
+        this.loading = true
         this.contador = Number(this.anuncianteService.unAnunciante.contador4)
         this.imagenVista =  this.anuncianteService.unAnunciante.img4
         this.link =  this.anuncianteService.unAnunciante.link4
+        
         break;
       case 5:
+        this.loading = true
         this.contador = Number(this.anuncianteService.unAnunciante.contador5)
         this.imagenVista =  this.anuncianteService.unAnunciante.img5
         this.link =  this.anuncianteService.unAnunciante.link5
         break;
       case 6:
+        this.loading = true
         this.contador = Number(this.anuncianteService.unAnunciante.contador6)
         this.imagenVista =  this.anuncianteService.unAnunciante.img6
         this.link =  this.anuncianteService.unAnunciante.link6
         break;
       case 7:
+        this.loading = true
         this.contador = Number(this.anuncianteService.unAnunciante.contador7)
         this.imagenVista =  this.anuncianteService.unAnunciante.img7
         this.link =  this.anuncianteService.unAnunciante.link7
         break;
       case 8:
+        this.loading = true
         this.contador = Number(this.anuncianteService.unAnunciante.contador8)
         this.imagenVista =  this.anuncianteService.unAnunciante.img8
         this.link =  this.anuncianteService.unAnunciante.link8
         break;
       case 9:
+        this.loading = true
         this.contador = Number(this.anuncianteService.unAnunciante.contador9)
         this.imagenVista =  this.anuncianteService.unAnunciante.img9
         this.link =  this.anuncianteService.unAnunciante.link9
         break;
       case 10:
+        this.loading = true
         this.contador = Number(this.anuncianteService.unAnunciante.contador10)
         this.imagenVista =  this.anuncianteService.unAnunciante.img10
         this.link =  this.anuncianteService.unAnunciante.link10
         break;
 
         case 11:
+          this.loading = true
           this.contador = Number(this.anuncianteService.unAnunciante.contador11)
           this.imagenVista =  this.anuncianteService.unAnunciante.img11
         this.link =  this.anuncianteService.unAnunciante.link11
           break;
         case 12:
+          this.loading = true
           this.contador = Number(this.anuncianteService.unAnunciante.contador12)
           this.imagenVista =  this.anuncianteService.unAnunciante.img12
         this.link =  this.anuncianteService.unAnunciante.link12
           break;
         case 13:
+          this.loading = true
           this.contador = Number(this.anuncianteService.unAnunciante.contador13)
           this.imagenVista =  this.anuncianteService.unAnunciante.img13
         this.link =  this.anuncianteService.unAnunciante.link13
           break;
         case 14:
+          this.loading = true
           this.contador = Number(this.anuncianteService.unAnunciante.contador14)
           this.imagenVista =  this.anuncianteService.unAnunciante.img14
         this.link =  this.anuncianteService.unAnunciante.link14
           break;
         case 15:
+          this.loading = true
           this.contador = Number(this.anuncianteService.unAnunciante.contador15)
           this.imagenVista =  this.anuncianteService.unAnunciante.img15
         this.link =  this.anuncianteService.unAnunciante.link15
           break;
         case 16:
+          this.loading = true
           this.contador = Number(this.anuncianteService.unAnunciante.contador16)
           this.imagenVista =  this.anuncianteService.unAnunciante.img16
         this.link =  this.anuncianteService.unAnunciante.link16
           break;
         case 17:
+          this.loading = true
           this.contador = Number(this.anuncianteService.unAnunciante.contador17)
           this.imagenVista =  this.anuncianteService.unAnunciante.img17
         this.link =  this.anuncianteService.unAnunciante.link17
 
           break;
         case 18:
+          this.loading = true
           this.contador = Number(this.anuncianteService.unAnunciante.contador18)
           this.imagenVista =  this.anuncianteService.unAnunciante.img18
         this.link =  this.anuncianteService.unAnunciante.link18
           break;
         case 19:
+          this.loading = true
           this.contador = Number(this.anuncianteService.unAnunciante.contador19)
           this.imagenVista =  this.anuncianteService.unAnunciante.img19
         this.link =  this.anuncianteService.unAnunciante.link19
           break;
         case 20:
+          this.loading = true
           this.contador = Number(this.anuncianteService.unAnunciante.contador20)
           this.imagenVista =  this.anuncianteService.unAnunciante.img20
           this.link =  this.anuncianteService.unAnunciante.link20
           break;
 
           case 21:
+            this.loading = true
             this.contador = Number(this.anuncianteService.unAnunciante.contador21)
             this.imagenVista =  this.anuncianteService.unAnunciante.img21
             this.link =  this.anuncianteService.unAnunciante.link21
@@ -444,6 +478,7 @@ export class AnunciantesComponent implements OnInit {
           default:
           console.log('no agarra')
             break;
+            this.loading = true
     }
 
 
@@ -744,6 +779,7 @@ export class AnunciantesComponent implements OnInit {
         case 2:
 
           this.img2 = String(link);
+         
           break;
         case 3:
 
@@ -856,7 +892,7 @@ export class AnunciantesComponent implements OnInit {
             console.log('no agarra')
               break;
       }
-
+      this.loading = false
       this.loadingSubir = true;
       this.imagenSubida = true;
       this.SubirEstado = true;

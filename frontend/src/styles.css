@@ -43,6 +43,8 @@ body {
 .modal-backdrop.show {
   overflow: hidden;
   padding-right: 0px !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 @media (max-width: 3000px) {

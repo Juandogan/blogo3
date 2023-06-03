@@ -31,6 +31,7 @@ import { EditorRevistaComponent } from './editor-revista/editor-revista.componen
 
 import { TesteMensajesComponent } from './teste-mensajes/teste-mensajes.component';
 import { EditorPortadaComponent } from './editor-portada/editor-portada.component';
+import { ImageLoadDirective } from '../directivas/image-load.directive';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { EditorPortadaComponent } from './editor-portada/editor-portada.componen
      AdmComentariosComponent,
      NavbarComponent,
      AutofocusDirective,
+   
      AdmRevistaFormComponent,
      UsuariosComponent,
      ComentariosEditorComponent,
@@ -59,7 +61,7 @@ import { EditorPortadaComponent } from './editor-portada/editor-portada.componen
      EditorRevistaComponent,
      TesteMensajesComponent,
      EditorPortadaComponent,
-
+     ImageLoadDirective,
 
 
 
@@ -71,6 +73,7 @@ import { EditorPortadaComponent } from './editor-portada/editor-portada.componen
     FormsModule,
     MatIconModule,
     ComponentesCompartidosModule,
+
 
 
 
