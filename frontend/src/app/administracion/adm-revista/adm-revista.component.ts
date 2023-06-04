@@ -15,6 +15,7 @@ import {  timer  } from 'rxjs';
 })
 export class AdmRevistaComponent implements OnInit {
   // public Editor = ClassicEditor;
+  
   guardando = false
   guardado = false
   borrado = false
@@ -268,6 +269,10 @@ autor8:string =""
     this.location.back()
   }
 
+  abrirVistaprevia (x:any){
+    
+      window.open('http://revistadigital.culturademontania.org.ar/ediciones/' + x , "_blank")
+  }
    cargarEdit(x){
          this.crudService.getOneArticulo(x).subscribe(res=>{this.articuloBusqueda = res as Articulos[]
 

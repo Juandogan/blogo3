@@ -10,6 +10,9 @@ res.json(productos);
 
 
 
+
+
+
 hostinger
 contrasea root : CCAMsistemas.12
 nombre vps: ccam.sistemas
