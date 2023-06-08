@@ -32,6 +32,7 @@ import { EditorRevistaComponent } from './editor-revista/editor-revista.componen
 import { TesteMensajesComponent } from './teste-mensajes/teste-mensajes.component';
 import { EditorPortadaComponent } from './editor-portada/editor-portada.component';
 import { ImageLoadDirective } from '../directivas/image-load.directive';
+import { FiltroPipe } from './pipes/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { ImageLoadDirective } from '../directivas/image-load.directive';
      TesteMensajesComponent,
      EditorPortadaComponent,
      ImageLoadDirective,
+     FiltroPipe,
 
 
 

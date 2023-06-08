@@ -10,6 +10,7 @@ import {  timer  } from 'rxjs';
   styleUrls: ['./ccamAdm.component.css'],
 })
 export class CcamAdmComponent implements OnInit {
+  estado = ""
   borrando = false
   borrado = false
   copiado = false
@@ -17,6 +18,9 @@ export class CcamAdmComponent implements OnInit {
   notas: any;
   loader = false;
   buscar = '';
+  page=0
+  pageCount=1
+  search=""
   cantArt: number = 0;
   estadoFiltro = true
   estadoFiltro2 = true
@@ -46,6 +50,7 @@ export class CcamAdmComponent implements OnInit {
 
     this.crudService.getArticulos().subscribe(res=>{
 this.notas = res
+this.notas = this.notas.reverse()
 this.cantArt = this.notas.length;
 this.loader = false;
 console.log('esto',res)
@@ -53,7 +58,32 @@ console.log('esto',res)
     })
 
   }
+  buscar2(x:string){  
+    this.page = 0
+    this.search = x
+  }
+  abrirVistaprevia (x:any){
+    
+    window.open('http://revistadigital.culturademontania.org.ar/articulo/' + x , "_blank")
+}
+  
+  nextPage(){
+    this.page += 5
+    this.pageCount ++
 
+  }
+
+  
+
+ 
+  
+  prevPage(){
+    if(this.page > 0)
+    {
+     this.page -=5 
+     this.pageCount --  
+    }
+  }
   CambiarFiltro(z:string){
     this.filtro =z
 

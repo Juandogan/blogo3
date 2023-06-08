@@ -9,7 +9,7 @@ const router = Router()
                  //verifyToken
 router.get('/' ,  async (req, res)=>{ 
     const articulo = await articuloModel.find({},{_id:1, titulo:1, imagen1:1, posicion:1, categoria:1, vistas:1, fecha:1, fechaMod:1, 
-        correos:1, subtitulo:1, comentarios:1, contadorComentarios:1, indice:1, autor:1
+        correos:1, subtitulo:1, comentarios:1, contadorComentarios:1, indice:1, autor:1, fotografia:1
         });
         res.json(articulo);
 });

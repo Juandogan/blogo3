@@ -21,19 +21,23 @@
 
 <br>
 
-<div style="margin-left:10px; margin-right:10px">
+<div style="margin-left:10px; margin-right:10px;; margin-top: -20px ;">
 <div  *ngIf="!loader" class="margenL margenR">
 
   <h6>Buscar</h6>
   <input class="form-input" type="text" [(ngModel)]="this.buscar" >
+  <span class="btn btn-danger" style="margin-right: 4px;" (click)="this.search = '0'">Nuevos</span>
+  <span class="btn btn-danger" style="margin-right: 4px;"  (click)="this.search = '5'">Revisión</span>
+  <span class="btn btn-danger" style="margin-right: 4px;" (click)="this.search = '1'">Completos</span>
+  <span class="btn btn-danger" style="margin-right: 4px;" (click)="this.search = ''">Todos</span>
 
   <h5 class="textoChico" >en un total de {{this.cantArt}} Artículos</h5>
-
+  
   <table  class="table table-light"   style="margin-top:20px">
     <thead class="thead-dark">
       <tr >
         <!-- <th scope="col">#</th> -->
-        <th scope="col" style="width:3%;">ID</th>
+        <th scope="col" style="width:3%;">ID</th> 
         <th scope="col">Título</th>
 
         <!-- (click)="filtro = !filtro -->
@@ -54,7 +58,7 @@
         <th scope="col" style="width:12%; text-align: left"><a style="cursor:pointer;">Mod
             </a></th>
 
-        <th scope="col" style="width:3%;"class="text-center">Posición</th>
+        <th scope="col" style="width:3%;"class="text-center">Estado</th>
         <th scope="col" style="width:3%;"class="text-center">Cabecera</th>
         <th scope="col" style="width:3%;"class="text-center">Artículo</th>
         <th scope="col" style="width:5%;"class="text-center">Borrar</th>
@@ -77,18 +81,21 @@
     <tbody>
 
       <!-- |buscar:filterPost |filtrarFecha:filtro  -->
-      <tr *ngFor="let articulo of notas|buscar:buscar |filtroFecha:filtro :estadoFiltro " >
+
+      <tr *ngFor="let articulo of notas |buscar:this.buscar  | filtro:page:search " >
         <!-- <th scope="row">1</th> -->
 
         <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
         <!-- <td class="textoTableTitulo" > {{articulo?.titulo | truncate:'100'}}</td> -->
-        <td class="textoTableTitulo" style="width:40% ;"> {{articulo?.titulo}}</td>
+        <td class="textoTableTitulo truncar" > {{articulo?.titulo}}</td>
 
         <td style="text-align:left; font-size: 14px;"> {{articulo?.fecha| date: 'dd/MM/yy hh:mm' }}</td>
 
         <td  style="text-align: left;font-size: 14px;">{{articulo?.fechaMod| date: 'dd/MM/yy hh:mm'}}</td>
         <td style="text-align: center;">
-         <p style="margin-top:0px">{{articulo?.posicion}}</p>
+         <p *ngIf="articulo?.posicion === 1" style="margin-top:0px"><span class="badge bg-success" >Completo</span></p>
+         <p *ngIf="articulo?.posicion === 5" style="margin-top:0px"><span class="badge bg-danger" >Revision</span></p>
+         <p *ngIf="articulo?.posicion === 0" style="margin-top:0px"><span class="badge bg-primary" >Nuevo</span></p>
 
         </td>
         <td class="text-center">
@@ -116,7 +123,7 @@
 
               <td class="text-center">{{articulo?.vistas}}</td>
               <!-- routerLink="../articulo/{{this.articulo?._id}}" target="_blank" -->
-              <td class="text-center"><a  routerLink="/articulo/{{articulo?._id}}" target="_blank" >
+              <td class="text-center"><a (click)="abrirVistaprevia(this.articulo._id)"  target="_blank" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-easel2-fill" viewBox="0 0 16 16">
                   <path d="M8.447.276a.5.5 0 0 0-.894 0L7.19 1H2.5A1.5 1.5 0 0 0 1 2.5V10h14V2.5A1.5 1.5 0 0 0 13.5 1H8.809L8.447.276Z"/>
                   <path fill-rule="evenodd" d="M.5 11a.5.5 0 0 0 0 1h2.86l-.845 3.379a.5.5 0 0 0 .97.242L3.89 14h8.22l.405 1.621a.5.5 0 0 0 .97-.242L12.64 12h2.86a.5.5 0 0 0 0-1H.5Zm3.64 2 .25-1h7.22l.25 1H4.14Z"/>
@@ -126,6 +133,23 @@
 
     </tbody>
   </table>
+
+  <div *ngIf="!loader" class="text-center">
+    <button class="btn btn-primary btn-sm" (click)="prevPage()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+      </svg>
+    </button>
+     <span style="margin-left: 10px;margin-right: 10px;"> {{pageCount}} </span>
+    <button class="btn btn-primary btn-sm" (click)="nextPage()"
+    [disabled]="(notas | filtro:page:search ).length === 0 ">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+  
+  </button>
+</div>
+<br><br><br><br><br>  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 <div>
 

@@ -221,7 +221,7 @@ window.scroll(0,0)
       this.crudService.unArticulo.fechaMod = String(new Date())
       this.crudService.modificarArticulo(this.crudService.unArticulo)
       .subscribe(res => { this.loader=false
-        alert('Articulo Modificado')
+        
         
         this.guardando = false
         

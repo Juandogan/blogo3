@@ -12,6 +12,17 @@ outline: none;}
     font-size: 30px;
 }
 
+.truncar {
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
+  overflow: hidden!important;
+  line-height: 40px;
+  /*si no se declara añade los ... pero muestra todo el texto*/
+}
+
 
 .mouseOver{cursor:pointer}
 
