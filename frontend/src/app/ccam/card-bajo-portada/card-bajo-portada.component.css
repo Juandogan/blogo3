@@ -33,7 +33,7 @@ a{color:white}
   font-size: 17px;
 
   font-weight: 400;
-  line-height: 19px;
+  line-height: 21px;
   letter-spacing: 0em;
   text-align: left;
   margin-top:0px;
@@ -51,7 +51,7 @@ a{text-decoration: none;}
     letter-spacing: -1px;
     text-align: left;
     color: rgb(255, 255, 255);
-    margin-top:11px;
+    margin-top:17px;
     text-shadow: 2px 2px 2px  rgb(58, 58, 58);
     text-shadow: 1px 1px 5px rgb(24, 24, 24);
     }

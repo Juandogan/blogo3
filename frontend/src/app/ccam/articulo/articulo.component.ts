@@ -39,6 +39,22 @@ export class ArticuloComponent implements OnInit {
       this.nota = Object.entries(data).map((i) => i[1]);
       this.crudService.unArticulo = this.nota[0];  
       
+
+      if(this.nota[0].art2){
+        this.dataRelacionado = this.crudService.unArticulo;
+        this.loader2=true
+   
+      }else{
+        this.crudService.getCategorias(this.crudService.unArticulo.categoria).subscribe(res=>{
+          var aux = res     
+          this.dataRelacionado = this.randomNoRepeat(aux);  
+          this.loader2=true
+          console.log(this.dataRelacionado,"+++++++")
+        });
+  
+    
+  
+      }
       // this.dataRelacionado = this.nota[0]
       var aux = Number(this.crudService.unArticulo.vistas)
       var aux2 = aux + 1
@@ -48,17 +64,7 @@ export class ArticuloComponent implements OnInit {
         
      })
     // fragmento incrementa contador
-    if(this.nota[0].art1){
-      this.dataRelacionado = this.crudService.unArticulo;
-      this.loader2=true
-    }else{
-      this.crudService.getCategorias(this.crudService.unArticulo[0].categoria).subscribe(res=>{
-        var aux = res     
-        this.dataRelacionado = this.randomNoRepeat(res);  
-        this.loader2=true});
-  
-
-    }
+    
     });
 
 

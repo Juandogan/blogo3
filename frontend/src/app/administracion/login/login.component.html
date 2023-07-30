@@ -25,8 +25,8 @@
    </div>
    <div class="d-grid gap-2">
    <button (click)="loader=!loader; signIn()" class="btn btn-danger btn-sm btn-block mt-3" type="button">
-    <img *ngIf="loader" src="../../../assets/loader.gif" alt="" width="20px" style="margin-top:-3px">
-    Ingresar</button>
+    <img *ngIf="loader" src="../../../ccam/assets/loader.gif" alt="" width="20px" style="margin-top:-3px">
+   <span *ngIf="!loader">Ingresar</span></button>
  </div>
 
    <p class="small mt-4 mb-2 pb-lg-2"><a class="link-danger text-muted"  >Olvidaste tu contraseña?</a></p>

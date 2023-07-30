@@ -4,6 +4,7 @@ import { CrudService } from '../../services/crud.service';
 import { Location } from '@angular/common';
 import { LoadingObservableService } from '../../services/loading-observable.service';
 import { CrudAnuncioService } from '../../services/crud-anuncio.service';
+import { CrudVariosService } from 'src/app/services/crud-varios.service';
 
 
 
@@ -21,30 +22,32 @@ export class CategoriaComponent implements OnInit {
     public crudService:CrudService,
     private location: Location,
     private observableLoading:LoadingObservableService,
-    private anunciosService:CrudAnuncioService
+    private anunciosService:CrudAnuncioService,
+    private variosService:CrudVariosService
     ) {
 
 
   }
   nota:any;
+  data:any
   aux:any;
   articulos:any
 
   ngOnInit(): void {
 
     this.observableLoading.loading$.subscribe(res => {
+
       this.aux = res})
       
 
     window.scroll(0,0)
-
-
     // this.ruta.data.subscribe((data:any)=>{this.nota = data.data; console.log(data)})
     this.ruta.params.subscribe(params=>{this.categoria = params['_id'];      
       this.observableLoading.loading$.emit(false)
+      console.log(this.categoria,'antes de pedir')
       this.crudService.getCategorias(this.categoria).subscribe(res  => {
         this.articulos = res;
-        console.log(this.articulos, 'ds')
+        console.log(this.articulos, 'resultado de busqueda')
           this.anunciosService.pedirUsuarios().subscribe(res  => {
             this.anuncios = res
             this.loader2 = true
@@ -55,7 +58,11 @@ export class CategoriaComponent implements OnInit {
       
     })
 
+    this.variosService.pedirVario('64a57bafdb19809b9d482ece').subscribe(res=>{ 
 
+      this.data = res 
+      console.log(res)
+    }) 
 
   }
 

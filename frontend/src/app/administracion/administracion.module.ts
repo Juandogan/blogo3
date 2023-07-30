@@ -33,6 +33,8 @@ import { TesteMensajesComponent } from './teste-mensajes/teste-mensajes.componen
 import { EditorPortadaComponent } from './editor-portada/editor-portada.component';
 import { ImageLoadDirective } from '../directivas/image-load.directive';
 import { FiltroPipe } from './pipes/filtro.pipe';
+import { DateSortPipe } from './pipes/date-sort.pipe';
+import { EditorCategoriasComponent } from './editor-categorias/editor-categorias.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,9 @@ import { FiltroPipe } from './pipes/filtro.pipe';
      EditorPortadaComponent,
      ImageLoadDirective,
      FiltroPipe,
+     DateSortPipe,
+     EditorCategoriasComponent,
+     
 
 
 

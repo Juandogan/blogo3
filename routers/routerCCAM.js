@@ -14,6 +14,18 @@ router.get('/' ,  async (req, res)=>{
         res.json(articulo);
 });
 
+router.post('/actualizar' , async (req, res)=>{ 
+        console.log("Actualizando")
+
+        const filtro = { categoria: { $regex: '^· Educacion · Entrenamiento' } }; 
+
+        const actualizacion = { $set: { categoria: 'Entrenamiento' } };
+
+  const articulo = await articuloModel.updateMany(filtro, actualizacion);
+  console.log("actualizado!")
+      
+});
+
  // ++++++++++++++++++++++   POST NUEVO ARTICULO  ++++++++++++++++++++++++++++++++++++
 
  router.post('/' ,   async (req, res)=>{ 

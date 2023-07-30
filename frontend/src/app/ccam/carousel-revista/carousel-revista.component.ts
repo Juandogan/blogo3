@@ -56,6 +56,7 @@ export class CarouselRevistaComponent implements OnInit {
     this.dataCarouselRevista.pedirUsuarios().subscribe(res=>{
       this.slideData = res.slice(3,res.lenght) 
       console.log('aasas', this.slideData)
+      this.slideData = this.slideData.reverse()
       this.carga=true
      })
      

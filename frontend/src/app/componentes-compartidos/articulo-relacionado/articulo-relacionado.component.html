@@ -17,7 +17,7 @@
           <img  *ngIf="this.nota[0]?.imagen1"class="card-img-top sombra"src="{{this.nota[0].imagen1}}" alt="" height="200px" style="object-fit: cover;">
          </a>
          <div class="card-body" >
-            <h6 *ngIf="nota?.resultadoCategoria" class="categoria"><b>{{cut(nota?.resultadoCategoria)}}</b></h6>
+            <h6 *ngIf="nota?.resultadoCategoria" class="categoria"><b>{{nota?.resultadoCategoria}}</b></h6>
             <h6 *ngIf="this.nota[0]?.categoria" class="categoria"><b>{{this.nota[0].categoria}}</b></h6>
             <a routerLink="../../articulo/{{this.nota.resultadoID}}"  target="_blank">
             <h1 *ngIf="nota?.art1" class="card-title titulo" >{{nota?.art1}}test</h1>

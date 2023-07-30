@@ -27,6 +27,7 @@ import { EditorGuiaComponent } from './editor-guia/editor-guia.component';
 import { GuiaArticuloComponent } from './guia-articulo/guia-articulo.component';
 import { EditorRevistaComponent } from './editor-revista/editor-revista.component';
 import { EditorPortadaComponent } from './editor-portada/editor-portada.component';
+import { EditorCategoriasComponent } from './editor-categorias/editor-categorias.component';
 
 
 
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path:'guiaArticulos/:_id', component: GuiaArticuloComponent , resolve: {data: ResolveGuiaService}, canActivate: [AuthGuard] },
   { path:'editorRevista/:_id', component: EditorRevistaComponent , resolve: {data: ResolveRevistaService}, canActivate: [AuthGuard] },
   { path:'ccamPortada', component:  EditorPortadaComponent },
+  { path:'editorCategorias', component:  EditorCategoriasComponent },
 
 
 ];

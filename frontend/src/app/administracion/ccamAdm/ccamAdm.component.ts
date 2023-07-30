@@ -11,6 +11,7 @@ import {  timer  } from 'rxjs';
 })
 export class CcamAdmComponent implements OnInit {
   estado = ""
+  ultimaMod=true
   borrando = false
   borrado = false
   copiado = false

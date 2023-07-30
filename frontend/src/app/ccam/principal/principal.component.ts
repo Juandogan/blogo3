@@ -52,7 +52,7 @@ window.scroll(0,0)
       this.portada = res.slice(10,12)
       this.portadaCarousel = res.slice(0,9)
       this.portadaTrio = res.slice(12,15)
-   console.log(this.portadaCarousel)
+   console.log(this.portadaTrio,'++++++++++++++++++')
       
     })
    }

@@ -26,10 +26,12 @@
 
   <h6>Buscar</h6>
   <input class="form-input" type="text" [(ngModel)]="this.buscar" >
-  <span class="btn btn-danger" style="margin-right: 4px;" (click)="this.search = '0'">Nuevos</span>
-  <span class="btn btn-danger" style="margin-right: 4px;"  (click)="this.search = '5'">Revisión</span>
-  <span class="btn btn-danger" style="margin-right: 4px;" (click)="this.search = '1'">Completos</span>
-  <span class="btn btn-danger" style="margin-right: 4px;" (click)="this.search = ''">Todos</span>
+  <span class="btn btn-danger" style="margin-right: 4px;" (click)="this.search = '0'; ultimaMod = true ">Nuevos</span>
+  <span class="btn btn-danger" style="margin-right: 4px;"  (click)="this.search = '5';ultimaMod = true">Revisión</span>
+  <span class="btn btn-danger" style="margin-right: 4px;" (click)="this.search = '1';ultimaMod = true">Completos</span>
+  <span class="btn btn-danger" style="margin-right: 4px;" (click)="this.search = ''; ultimaMod = true; ">Todos</span>
+   
+  <span class="btn btn-danger" style="margin-right: 4px;" (click)="this.ultimaMod = false">Ultimas Modificaciones</span>
 
   <h5 class="textoChico" >en un total de {{this.cantArt}} Artículos</h5>
   
@@ -41,17 +43,9 @@
         <th scope="col">Título</th>
 
         <!-- (click)="filtro = !filtro -->
-        <th scope="col" style="width:15%; text-align: left;"><a style="cursor:pointer" (click)="CambiarFiltro('creacion');estadoFiltro = !estadoFiltro"(click)="estadoFiltro3 = !estadoFiltro3">Creación
-        <span *ngIf="estadoFiltro3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-          </svg>
-        </span>
-        <span *ngIf="!estadoFiltro3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-            <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
-          </svg>
-        </span>
+        <th scope="col" style="width:15%; text-align: left;"><a style="cursor:pointer" (click)="CambiarFiltro('creacion');estadoFiltro = !estadoFiltro"(click)="estadoFiltro3 = !estadoFiltro3">
+          Creación
+ 
 </a>
 
         </th>
@@ -78,11 +72,11 @@
 
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="ultimaMod">
 
       <!-- |buscar:filterPost |filtrarFecha:filtro  -->
-
-      <tr *ngFor="let articulo of notas |buscar:this.buscar  | filtro:page:search " >
+ 
+      <tr *ngFor="let articulo of notas  |buscar:this.buscar  | filtro:page:search " >
         <!-- <th scope="row">1</th> -->
 
         <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
@@ -130,6 +124,60 @@
                 </svg>
               </a></td>
       </tr>
+</tbody>
+
+<tbody *ngIf="!ultimaMod">
+
+  <tr *ngFor="let articulo of notas |dateSort |buscar:this.buscar  | filtro:page:search " >
+    <!-- <th scope="row">1</th> -->
+
+    <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
+    <!-- <td class="textoTableTitulo" > {{articulo?.titulo | truncate:'100'}}</td> -->
+    <td class="textoTableTitulo truncar" > {{articulo?.titulo}}</td>
+
+    <td style="text-align:left; font-size: 14px;"> {{articulo?.fecha| date: 'dd/MM/yy hh:mm' }}</td>
+
+    <td  style="text-align: left;font-size: 14px;">{{articulo?.fechaMod| date: 'dd/MM/yy hh:mm'}}</td>
+    <td style="text-align: center;">
+     <p *ngIf="articulo?.posicion === 1" style="margin-top:0px"><span class="badge bg-success" >Completo</span></p>
+     <p *ngIf="articulo?.posicion === 5" style="margin-top:0px"><span class="badge bg-danger" >Revision</span></p>
+     <p *ngIf="articulo?.posicion === 0" style="margin-top:0px"><span class="badge bg-primary" >Nuevo</span></p>
+
+    </td>
+    <td class="text-center">
+      <!-- (click)="editar()" -->
+    <a >
+      <!-- data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true" -->
+      <!-- routerLink="../editorCabecera/{{articulo?._id}}" -->
+   <mat-icon style="cursor:pointer" (click)="loading()" routerLink="../editorCabecera/{{articulo?._id}}" >edit</mat-icon>
+  </a></td>
+
+
+    <td class="text-center">
+      <!-- <a  (click)="id = articulo._id" (click)='editarArticulo(articulo)'(click)="this.crudService.cambioPantalla = false" > <mat-icon  style="color: green; cursor:pointer">article</mat-icon>
+      </a> </td>
+     -->
+     <mat-icon style="cursor:pointer"(click)="loading()"  routerLink="../editorArticulo/{{articulo?._id}}" >description</mat-icon>
+      <td class="text-center">
+        <a data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="id = articulo._id">
+          <div>
+           <mat-icon style="cursor:pointer; ">delete</mat-icon>
+          </div>
+
+
+          </a>
+
+          <td class="text-center">{{articulo?.vistas}}</td>
+          <!-- routerLink="../articulo/{{this.articulo?._id}}" target="_blank" -->
+          <td class="text-center"><a (click)="abrirVistaprevia(this.articulo._id)"  target="_blank" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-easel2-fill" viewBox="0 0 16 16">
+              <path d="M8.447.276a.5.5 0 0 0-.894 0L7.19 1H2.5A1.5 1.5 0 0 0 1 2.5V10h14V2.5A1.5 1.5 0 0 0 13.5 1H8.809L8.447.276Z"/>
+              <path fill-rule="evenodd" d="M.5 11a.5.5 0 0 0 0 1h2.86l-.845 3.379a.5.5 0 0 0 .97.242L3.89 14h8.22l.405 1.621a.5.5 0 0 0 .97-.242L12.64 12h2.86a.5.5 0 0 0 0-1H.5Zm3.64 2 .25-1h7.22l.25 1H4.14Z"/>
+            </svg>
+          </a></td>
+  </tr>
+
+
 
     </tbody>
   </table>

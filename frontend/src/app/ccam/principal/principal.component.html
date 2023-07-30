@@ -22,23 +22,27 @@
 
         <!-- <h3 style="margin-top: 20px;">Artículos de Montaña</h3> -->
 
-        <div *ngFor="let articulo of portadaCarousel" class="cardMobile">
-          <app-card-mobile [data]="articulo"></app-card-mobile>
+        <div class="cardMobile">
+          <app-card-mobile [data]="portada"></app-card-mobile>
           <br />
         </div>
         <div class="onlyMobile " [ngClass]="{'margenTop':this.anuncios[0]?.img15 }">
-          <img *ngIf="this.anuncios[0]?.img15" src="{{this.anuncios[0]?.img15}}" (click)="sumarContadorAunciante(15)"
+          <img *ngIf="this.anuncios[0]?.img1" src="{{this.anuncios[0]?.img1}}" (click)="sumarContadorAunciante(1)"
             alt="" style="object-fit: cover; width: 99%" />
         </div>
         <div style="margin-top:60px ;">
 
-          <div *ngFor="let articulo of portadaCarousel" class="cardMobile">
-            <app-card-mobile [data]="articulo"></app-card-mobile>
-            <br />
+          <div class="cardMobile">
+            <app-card-mobile [data]="portadaTrio"></app-card-mobile>
+            <br>
+            <br>
           </div>
           <div class="onlyMobile" style="margin-top: -25px">
-            <img (click)="sumarContadorAunciante(16)" src="{{this.anuncios[0].img16}}" alt=""
+            <img (click)="sumarContadorAunciante(3)" src="{{this.anuncios[0].img3}}" alt=""
               style="object-fit: cover; width: 99%" />
+              <br>
+              <br>
+              <br>
           </div>
 
         </div>

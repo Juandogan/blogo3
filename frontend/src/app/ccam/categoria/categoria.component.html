@@ -27,7 +27,31 @@
       <h1 class=" titulo mt-3">{{this.categoria}} </h1>
       <!-- ({{this.categoria.length}}) -->
      <hr>
- 
+      <p *ngIf="this.categoria.startsWith('Cult')">
+        {{data.categoria1}}         
+      </p>
+      <p *ngIf="this.categoria.startsWith('Ficha')">
+        {{data.categoria2}}         
+      </p>
+      <p *ngIf="this.categoria.startsWith('Activ')">
+        {{data.categoria3}}         
+      </p>
+      <p *ngIf="this.categoria.startsWith('Medio Ambiente')">
+        {{data.categoria4}}         
+      </p>
+      <p *ngIf="this.categoria.startsWith('Arqueologia')">
+        {{data.categoria5}}         
+      </p>
+      <p *ngIf="this.categoria.startsWith('Entrenamiento')">
+        {{data.categoria6}}         
+      
+      </p>
+      <p *ngIf="this.categoria.startsWith('Montañas')">
+        {{data.categoria7}}         
+      </p>
+      <p *ngIf="this.categoria.startsWith('Historia')">
+        {{data.categoria8}}         
+      </p>
      <div class="row">
       <app-carousel
       [items]="articulos"
