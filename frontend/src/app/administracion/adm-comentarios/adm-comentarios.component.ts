@@ -59,4 +59,9 @@ export class AdmComentariosComponent implements OnInit {
     });
 
   }
+
+
+  cut(x:any){ 
+    return x.substring(9)
+  }
 }

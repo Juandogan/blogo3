@@ -47,6 +47,7 @@ this.guiaService.pedirGuia(id).subscribe(res=>{
   if (aux) {
     this.comentarios = aux.split('<div>');
       this.comentarios = this.comentarios
+      console.log(this.comentarios)
 
   } else {
     this.comentarios = [];

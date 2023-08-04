@@ -106,6 +106,7 @@ var post =  this.nota.comentarios + '<div>' + moment(hoy).format("DD/MM/YY hh:mm
     this.nota.comentarios = post
     this.nota.contadorComentarios = 'Nuevo'
     //this.nota.comentarios =""  //borrar comentarios
+    
     this.loading = true
     this.crudService.modificarArticulo(this.nota).subscribe(res =>
     {this.comentario = "" ;this.nombre =""; this.email=""

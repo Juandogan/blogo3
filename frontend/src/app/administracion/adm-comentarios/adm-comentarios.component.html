@@ -27,6 +27,8 @@
 
           <!-- (click)="filtro = !filtro -->
           <th scope="col"><a style="cursor:pointer;width:1%;" >Fecha</a></th>
+          <th scope="col"><a style="cursor:pointer;width:1%;" >Correo</a></th>
+
 
           <th scope="col" style="width:1%;"class="text-center"  >Revisar</th>
 
@@ -45,6 +47,7 @@
           <td class="textoTableTitulo" > {{articulo?.titulo}}</td>
 
           <td> {{articulo?.fecha| date: 'dd/MM/yy  mm:ss'}}</td>
+          <td> {{cut(articulo?.correos)}}</td>
 
 
 
