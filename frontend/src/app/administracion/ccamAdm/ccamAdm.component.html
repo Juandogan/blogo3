@@ -51,7 +51,8 @@
         </th>
         <th scope="col" style="width:12%; text-align: left"><a style="cursor:pointer;">Mod
             </a></th>
-
+            
+            
         <th scope="col" style="width:3%;"class="text-center">Estado</th>
         <th scope="col" style="width:3%;"class="text-center">Cabecera</th>
         <th scope="col" style="width:3%;"class="text-center">Artículo</th>
@@ -86,6 +87,8 @@
         <td style="text-align:left; font-size: 14px;"> {{articulo?.fecha| date: 'dd/MM/yy hh:mm' }}</td>
 
         <td  style="text-align: left;font-size: 14px;">{{articulo?.fechaMod| date: 'dd/MM/yy hh:mm'}}</td>
+        
+        <!-- <td  style="text-align: left;font-size: 14px;">{{articulo?.categoria}}</td> -->
         <td style="text-align: center;">
          <p *ngIf="articulo?.posicion === 1" style="margin-top:0px"><span class="badge bg-success" >Completo</span></p>
          <p *ngIf="articulo?.posicion === 5" style="margin-top:0px"><span class="badge bg-danger" >Revision</span></p>
@@ -138,6 +141,7 @@
     <td style="text-align:left; font-size: 14px;"> {{articulo?.fecha| date: 'dd/MM/yy hh:mm' }}</td>
 
     <td  style="text-align: left;font-size: 14px;">{{articulo?.fechaMod| date: 'dd/MM/yy hh:mm'}}</td>
+    <td  style="text-align: left;font-size: 14px;">{{articulo?.categoria}}</td>
     <td style="text-align: center;">
      <p *ngIf="articulo?.posicion === 1" style="margin-top:0px"><span class="badge bg-success" >Completo</span></p>
      <p *ngIf="articulo?.posicion === 5" style="margin-top:0px"><span class="badge bg-danger" >Revision</span></p>

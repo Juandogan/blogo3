@@ -14,19 +14,255 @@ router.get('/' ,  async (req, res)=>{
         res.json(articulo);
 });
 
-router.post('/actualizar' , async (req, res)=>{ 
-        console.log("Actualizando")
+// router.post('/actualizar' , async (req, res)=>{ 
+//   const articulo2 = await articuloModel.find({},{_id:1, titulo:1, imagen1:1, posicion:1, categoria:1, vistas:1, fecha:1, fechaMod:1, 
+//     correos:1, subtitulo:1, comentarios:1, contadorComentarios:1, indice:1, autor:1, fotografia:1, nota:1  });
+//     res.json(articulo2);
 
-        const filtro = { categoria: { $regex: '^· Educacion · Entrenamiento' } }; 
 
-        const actualizacion = { $set: { categoria: 'Entrenamiento' } };
+//         console.log("Actualizando")
 
-  const articulo = await articuloModel.updateMany(filtro, actualizacion);
-  console.log("actualizado!")
+//         // {posicion: 5, "titulo": { $regex: '^Biogra' }}   
+
+//         const filtro = {imagen1:''} 
+
+
+//         const actualizacion = { $set: { categoria: 'Historia · Montañismo en Argentina'  } };
+
+//   const articulo = await articuloModel.updateMany(filtro, actualizacion);
+//   console.log("actualizado!")
       
-});
+// });
 
  // ++++++++++++++++++++++   POST NUEVO ARTICULO  ++++++++++++++++++++++++++++++++++++
+
+ router.post('/actualizar', async (req, res) => {
+  try {
+    console.log("revisando");
+
+    // Obtener hasta 10 documentos de la colección articuloModel que tengan imagen1 como null { $regex: '^http://66'}
+    const articulos = await articuloModel.find({autor : ''  , posicion:5  }, {
+      _id: 1,
+      nota:1,
+      autor:1
+    });
+
+    for (const articulo of articulos) {
+      const imageURL = extractCustomText(articulo.nota);
+      console.log("Autor:",imageURL)
+      if (imageURL) {
+        console.log("Actualizando artículo:", articulo._id);
+       
+        // Actualizar el campo imagen1 con la URL de la segunda imagen
+        // await articuloModel.updateOne({
+        //   _id: articulo._id
+        // }, {
+        //   $set: {
+        //     autor: imageURL
+        //   }
+        // });
+      }
+    }
+
+    console.log("Actualización completa!");
+    res.json({
+      message: "Actualización completa"
+    });
+  } catch (error) {
+    console.error("Error al actualizar:", error);
+    res.status(500).json({
+      error: "Error al actualizar"
+    });
+  }
+});
+
+
+
+
+
+
+
+ router.post('/actualizarCuentaRepetids', async (req, res) => {
+  try {
+    console.log("Actualizando");
+
+    // Encontrar registros duplicados por el campo "titulo"
+    const duplicates = await articuloModel.aggregate([
+      {
+        $group: {
+          _id: { titulo: "$titulo" },
+          count: { $sum: 1 }
+        }
+      },
+      {
+        $match: {
+          count: { $gt: 1 }
+        }
+      }
+    ]).exec();  // Utilizamos exec() para ejecutar la consulta de agregación
+
+    console.log("Cantidad de registros con título repetido:", duplicates.length);
+
+    console.log("Actualización completa!");
+    res.json({
+      message: "Actualización completa"
+    });
+  } catch (error) {
+    console.error("Error al actualizar:", error);
+    res.status(500).json({
+      error: "Error al actualizar"
+    });
+  }
+});
+
+
+
+ router.post('/actualizarrepetidosenposicioncinco', async (req, res) => {
+  try {
+    console.log("Actualizando");
+
+    // Encontrar registros duplicados por el campo "titulo"
+    const duplicates = await articuloModel.aggregate([
+      {
+        $group: {
+          _id: { titulo: "$titulo" },
+          count: { $sum: 1 },
+          docs: { $push: "$_id" } // Almacenar los IDs de los documentos duplicados
+        }
+      },
+      {
+        $match: {
+          count: { $gt: 1 }
+        }
+      }
+    ]).exec();  // Utilizamos exec() para ejecutar la consulta de agregación
+
+    console.log("Cantidad de registros duplicados:", duplicates.length);
+
+    // Iterar sobre los duplicados y eliminar los que tienen propiedad "posicion" igual a 5
+    for (const duplicate of duplicates) {
+      const duplicateIdsToDelete = duplicate.docs.slice(1); // Mantener solo los IDs excepto el primero
+      await articuloModel.deleteMany({ _id: { $in: duplicateIdsToDelete }, posicion: 5 });
+    }
+
+    console.log("Registros duplicados con posición 5 eliminados");
+
+    console.log("Actualización completa!");
+    res.json({
+      message: "Actualización completa"
+    });
+  } catch (error) {
+    console.error("Error al actualizar:", error);
+    res.status(500).json({
+      error: "Error al actualizar"
+    });
+  }
+});
+
+ router.post('/actualizarImagen', async (req, res) => {
+   try {
+     console.log("Actualizando");
+ 
+     // Obtener hasta 10 documentos de la colección articuloModel que tengan imagen1 como null { $regex: '^http://66'}
+     const articulos = await articuloModel.find({ imagen1: '', position:5}, {
+       _id: 1,
+       nota: 1
+     });
+ 
+     for (const articulo of articulos) {
+       const imageURL = extractImageURL(articulo.nota);
+       if (imageURL) {
+         console.log("Actualizando artículo:", articulo._id);
+         // Actualizar el campo imagen1 con la URL de la segunda imagen
+         await articuloModel.updateOne({
+           _id: articulo._id
+         }, {
+           $set: {
+             imagen1: imageURL
+           }
+         });
+       }
+     }
+ 
+     console.log("Actualización completa!");
+     res.json({
+       message: "Actualización completa"
+     });
+   } catch (error) {
+     console.error("Error al actualizar:", error);
+     res.status(500).json({
+       error: "Error al actualizar"
+     });
+   }
+ });
+
+ function extractCustomText(code) {
+  let countValidRecords = 0; // Variable para contar registros válidos
+
+  const porIndex = code.indexOf('Por ');
+  if (porIndex !== -1) {
+    const endIndex = Math.min(
+      code.indexOf('-', porIndex),
+      code.indexOf('</', porIndex),
+      code.indexOf('<', porIndex),
+    );
+
+    if (endIndex !== -1) {
+      const extractedText = code.substring(porIndex + 4, endIndex).trim();
+      if (extractedText.length > 60) {
+        return "";
+      }
+      
+      if (extractedText !== "") {
+        countValidRecords++; // Aumentar el contador si el registro es válido y no está vacío
+      }
+
+      return extractedText;
+    }
+  }
+  return "";
+}
+
+// Llamada a la función con diferentes códigos y recuento total al final
+const codes = [
+  // ... códigos aquí ...
+];
+
+let totalCount = 0;
+for (const code of codes) {
+  const result = extractCustomText(code);
+  console.log(result);
+  if (result !== "") {
+    totalCount++;
+  }
+}
+
+console.log("Total de registros distintos a '':", totalCount);
+
+
+
+
+ 
+ function extractImageURL(code) {
+   const regex = /<img[^>]*src="([^"]+)"/g;
+   const matches = code.match(regex);
+ 
+   if (matches && matches.length >= 2) {
+     const match = matches[1];
+     if (match) {
+       const urlMatch = match.match(/src="([^"]+)"/);
+       if (urlMatch && urlMatch[1]) {
+         return urlMatch[1];
+       }
+     }
+   }
+ 
+   return null;
+ }
+ 
+ module.exports = router;
+ 
+
 
  router.post('/' ,   async (req, res)=>{ 
     const articulos = new articuloModel({
