@@ -36,31 +36,31 @@ router.get('/' ,  async (req, res)=>{
 
  // ++++++++++++++++++++++   POST NUEVO ARTICULO  ++++++++++++++++++++++++++++++++++++
 
- router.post('/actualizar', async (req, res) => {
+ router.post('/actualizarNOS', async (req, res) => {
   try {
     console.log("revisando");
 
     // Obtener hasta 10 documentos de la colección articuloModel que tengan imagen1 como null { $regex: '^http://66'}
-    const articulos = await articuloModel.find({autor : ''  , posicion:5  }, {
+    const articulos = await articuloModel.find({ _id : '' }, {
       _id: 1,
       nota:1,
       autor:1
     });
 
     for (const articulo of articulos) {
-      const imageURL = extractCustomText(articulo.nota);
-      console.log("Autor:",imageURL)
+      const imageURL = extractCustomText2(articulo.nota);
+      console.log("corte",imageURL)
       if (imageURL) {
         console.log("Actualizando artículo:", articulo._id);
        
         // Actualizar el campo imagen1 con la URL de la segunda imagen
-        // await articuloModel.updateOne({
-        //   _id: articulo._id
-        // }, {
-        //   $set: {
-        //     autor: imageURL
-        //   }
-        // });
+        await articuloModel.updateOne({
+          _id: articulo._id
+        }, {
+          $set: {
+            autor: imageURL
+          }
+        });
       }
     }
 
@@ -196,6 +196,100 @@ router.get('/' ,  async (req, res)=>{
    }
  });
 
+
+
+ router.post('/actualizardepura.encabezado', async (req, res) => {
+  try {
+    console.log("Actualizando");
+
+    const articulos = await articuloModel.find({ _id: '64df0ea75eccfa9ac2515aa3' });
+
+    // Utilizamos Promise.all para manejar múltiples operaciones asincrónicas de manera eficiente
+    await Promise.all(articulos.map(async (articulo) => {
+      var subtitulo = articulo.subtitulo;
+      var subtitulo = subtitulo.trim();
+      const nota = articulo.nota;
+
+
+      if (nota.includes(subtitulo)) {
+        const notaActualizada = nota.replace(subtitulo, '').trim();
+        
+        // Usamos try-catch dentro del ciclo para manejar errores de actualización individuales
+        try {
+          await articuloModel.updateOne({
+            _id: articulo._id
+          }, {
+            $set: {
+              nota: notaActualizada
+            }
+          });
+
+          console.log("Actualizando artículo:", articulo._id);
+        } catch (updateError) {
+          console.error("Error al actualizar artículo:", articulo._id, updateError);
+        }
+      }
+    }));
+
+    console.log("Actualización completa!");
+    res.json({
+      message: "Actualización completa"
+    });
+  } catch (error) {
+    console.error("Error al actualizar:", error);
+    res.status(500).json({
+      error: "Error al actualizar"
+    });
+  }
+});
+
+router.post('/actualizar', async (req, res) => {
+  try {
+    console.log("Actualizando");
+
+    const articulos = await articuloModel.find({ _id: '64df0ea75eccfa9ac2515aa3' });
+
+    // Utilizamos Promise.all para manejar múltiples operaciones asincrónicas de manera eficiente
+    await Promise.all(articulos.map(async (articulo) => {
+      const nota = articulo.nota;
+      const searchString = '"></h2>"';
+
+      const startIndex = nota.indexOf(searchString);
+      if (startIndex !== -1) {
+        const notaActualizada = nota.substring(0, startIndex).trim() + nota.substring(startIndex + searchString.length);
+
+        // Usamos try-catch dentro del ciclo para manejar errores de actualización individuales
+        try {
+          await articuloModel.updateOne({
+            _id: articulo._id
+          }, {
+            $set: {
+              nota: notaActualizada
+            }
+          });
+
+          console.log("Actualizando artículo:", articulo._id);
+        } catch (updateError) {
+          console.error("Error al actualizar artículo:", articulo._id, updateError);
+        }
+      }
+    }));
+
+    console.log("Actualización completa!");
+    res.json({
+      message: "Actualización completa"
+    });
+  } catch (error) {
+    console.error("Error al actualizar:", error);
+    res.status(500).json({
+      error: "Error al actualizar"
+    });
+  }
+});
+
+
+
+
  function extractCustomText(code) {
   let countValidRecords = 0; // Variable para contar registros válidos
 
@@ -222,6 +316,31 @@ router.get('/' ,  async (req, res)=>{
   }
   return "";
 }
+
+function extractCustomText2(code) {
+  let countValidRecords = 0; // Variable para contar registros válidos
+
+  const notasIndex = code.indexOf('Notas relacionadas');
+  if (notasIndex !== -1) {
+    const extractedText = code.substring(notasIndex, code.length).trim();
+    
+    if (extractedText.length > 60) {
+      return "";
+    }
+    
+    if (extractedText !== "") {
+      countValidRecords++; // Aumentar el contador si el registro es válido y no está vacío
+    }
+
+    return extractedText;
+  }
+
+  return "";
+}
+
+
+
+
 
 // Llamada a la función con diferentes códigos y recuento total al final
 const codes = [

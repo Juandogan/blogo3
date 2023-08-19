@@ -1,6 +1,6 @@
 <div class="flex-container">
   <div class="">
-    <div style="margin-bottom: 20px; color: rgb(117, 117, 117)">
+    <div *ngIf="data[0].autor " style="margin-bottom: 20px; color: rgb(117, 117, 117)">
       <svg style="margin-top:-2px"
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -20,7 +20,7 @@
 
 
   <div class="quitar800"style="margin-left: 20px;">
-    <div style="margin-bottom: 20px; color: rgb(117, 117, 117)">
+    <div  *ngIf="data[0].fotografia " style="margin-bottom: 20px; color: rgb(117, 117, 117)">
       <svg  style="margin-top:-4px"
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -41,7 +41,7 @@
 
 
   <div class="quitar800" style="margin-left: 20px;">
-    <div style="margin-bottom: 20px; color: rgb(117, 117, 117)">
+    <div *ngIf="data[0].edicionFotografia " style="margin-bottom: 20px; color: rgb(117, 117, 117)">
       <svg style="margin-top:-4px"
         xmlns="http://www.w3.org/2000/svg"
         width="20"

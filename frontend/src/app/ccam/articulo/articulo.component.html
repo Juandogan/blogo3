@@ -21,14 +21,14 @@
 
                         <h5 class="categoria" >{{nota[0]?.categoria}}</h5>
                         <h1 class="titulo" >{{nota[0]?.titulo}}</h1>
-                        <h2 class="subtitulo">{{nota[0]?.subtitulo}}</h2>
+                        <p class="subtitulo">{{nota[0]?.subtitulo}}<p>
 
 
                       <app-footer-card [data]="nota"></app-footer-card>
                         <hr style="margin-top: -10px;">
                         <br>
                         <!-- <p class="capital" >{{saltos(nota[0]?.nota)|sanetizer}}</p> para ver contenido html-->
-                         <h3  [innerHTML]=saltos(nota[0]?.nota)|sanetizer ></h3>
+                         <h3  [innerHTML]=saltos2(nota[0]?.nota)|sanetizer ></h3>
 
                        <div *ngIf="nota">
 
@@ -80,7 +80,7 @@
       <div style="margin-top: 38px;">
         <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link13}}" (click)="sumarContadorAunciante(13)">
       <img src="{{this.anuncios[0]?.img13}}" width="100%"  alt="" 
-      style="margin-top:10px; object-fit: cover; " height="499px">
+      style="margin-top:10px; " height="499px">
       </a>
     </div>
 

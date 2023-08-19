@@ -166,3 +166,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h3 { font-size: 16px!important; }
+h2 { font-size: 25px!important; color:orange;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;    letter-spacing: -1px;
+
+}
