@@ -16,9 +16,9 @@ export class CrudVariosService {
 
   
 
-      // public URL ="http://191.101.18.184:3000/varios"
+      public URL ="http://191.101.18.184:3000/varios"
     
-      public URL ="http://localhost:3000/varios"
+      // public URL ="http://localhost:3000/varios"
   
 
   constructor(private http:HttpClient, private router:Router) {
