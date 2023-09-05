@@ -247,24 +247,18 @@ router.post('/actualizar', async (req, res) => {
   try {
     console.log("Actualizando");
 
-    const articulos = await articuloModel.find({ _id: '64df0ea75eccfa9ac2515aa3' });
+    const articulos = await articuloModel.find({ posicion: '5' });
 
     // Utilizamos Promise.all para manejar múltiples operaciones asincrónicas de manera eficiente
     await Promise.all(articulos.map(async (articulo) => {
-      const nota = articulo.nota;
-      const searchString = '"></h2>"';
-
-      const startIndex = nota.indexOf(searchString);
-      if (startIndex !== -1) {
-        const notaActualizada = nota.substring(0, startIndex).trim() + nota.substring(startIndex + searchString.length);
-
+      if (!articulo.categoria || articulo.categoria.trim() === '') {
         // Usamos try-catch dentro del ciclo para manejar errores de actualización individuales
         try {
           await articuloModel.updateOne({
             _id: articulo._id
           }, {
             $set: {
-              nota: notaActualizada
+              categoria: "Montañas del mundo · Noticias"
             }
           });
 

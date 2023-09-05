@@ -51,9 +51,10 @@ export class CategoriaComponent implements OnInit {
           this.anunciosService.pedirUsuarios().subscribe(res  => {
             this.anuncios = res
             this.loader2 = true
+            this.loader= false
           })
 
-      this.loader= false})
+     })
       
       
     })

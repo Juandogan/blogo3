@@ -162,7 +162,9 @@
                      
          
                     
-                       <span routerLink="/administracion" class="texto quitar800"(click)="loading()" style="color:orange">ENLACES</span>
+                       <!-- <span routerLink="/administracion" class="texto quitar800" style="color:orange">ENLACES</span> -->
+                       <i  routerLink="/administracion" class="fas fa-user" (click)="loading()" style="cursor: pointer;"></i>
+
                        <!-- <span routerLink="/administracion" class="texto quitar800"(click)="loading()">ADMIN</span> -->
 
                    </a>
@@ -186,22 +188,43 @@
                     </span>
                     <ul class="dropdown-menu  " aria-labelledby="dropdownMenuButton1" style="margin-top: 10px!important;">
                       <li><a class="dropdown-item texto " routerLink='/' style="color:green;text-transform: uppercase; cursor:pointer; ">INICIO</a></li>
+                      <hr style="margin: 0px;">
                       <li><a class="dropdown-item texto" routerLink='/mapas' style="color:green;text-transform: uppercase; cursor:pointer; ">Montañas de Argentina</a></li>
+                      
+                      <hr style="margin: 0px;">
+                      <li><a routerLink="/categoria/Cultura" (click)="loading()" class="dropdown-item texto" style="color:rgb(255, 55, 55); cursor:pointer; text-transform: uppercase;">Cultura</a></li>
+                      
+
                     <li><a routerLink="/categoria/Cultura · La montañana y el Hombre" (click)="loading()" class="dropdown-item texto" style="color:rgb(255, 55, 55); cursor:pointer; text-transform: uppercase;">La montaña y el hombre (Filosofía)</a></li>
                     <li><a routerLink="/categoria/Cultura · Pueblos y tradiciones" (click)="loading()"class="dropdown-item texto"  style="color: rgb(255, 55, 55);text-transform: uppercase; cursor:pointer">Pueblos y tradiciones</a></li>
                     <li><a routerLink="/categoria/Cultura · Literatura y libros" (click)="loading()"class="dropdown-item texto"  style="color:rgb(255, 55, 55);text-transform: uppercase; cursor:pointer">Literatura y libros</a></li>
-                    <li><a routerLink="/categoria/Cultura · Museo de Montaña" (click)="loading()"class="dropdown-item texto"  style="color:rgb(255, 55, 55);text-transform: uppercase; cursor:pointer">Museo de montaña</a></li>
+                     <li><a routerLink="/categoria/Cultura · Museo de Montaña" (click)="loading()"class="dropdown-item texto" style="color:rgb(255, 55, 55);text-transform: uppercase; cursor:pointer">Museo de montaña</a></li>
+                     <hr style="margin: 0px;">
+                     <li><a routerLink="/categoria/Actividades" (click)="loading()"class="dropdown-item texto" style="color:green;text-transform: uppercase; cursor:pointer">Actividades</a></li>
                     <li><a routerLink="/categoria/Actividades · Viajes y expediciones" (click)="loading()"class="dropdown-item texto" style="color:green;text-transform: uppercase; cursor:pointer">Viajes y expediciones</a></li>
                     <li><a routerLink="/categoria/Actividades · Espeleología" (click)="loading()"class="dropdown-item texto"  style="color:green;text-transform: uppercase; cursor:pointer">Espeleología</a></li>
                     <li><a routerLink="/categoria/Actividades · Esquí" (click)="loading()"class="dropdown-item  texto"  style="color:green;text-transform: uppercase; cursor:pointer">Esquí</a></li>
                     <li><a routerLink="/categoria/Actividades · Kayak y Buceo"(click)="loading()" class="dropdown-item texto"  style="color:green;text-transform: uppercase; cursor:pointer">Kayak y Buceo</a></li>
+                    <hr style="margin: 0px;">
+                    <li><a routerLink="/categoria/Medio Ambiente"(click)="loading()"  class="dropdown-item texto" style="color:blue; cursor:pointer;text-transform: uppercase; ">Medio Ambiente</a></li>
                     <li><a routerLink="/categoria/Medio Ambiente · Impacto Ambiental"(click)="loading()"  class="dropdown-item texto" style="color:blue; cursor:pointer;text-transform: uppercase; ">Impacto ambiental</a></li>
                     <li><a routerLink="/categoria/Medio Ambiente · Flora y fauna " (click)="loading()" class="dropdown-item texto"  style="color:blue; cursor:pointer;text-transform: uppercase; ">Flora y fauna </a></li>
                     <li><a routerLink="/categoria/Medio Ambiente · Medicina natural" (click)="loading()" class="dropdown-item  texto"  style="color:blue; cursor:pointer;text-transform: uppercase; ">Medicina natural</a></li>
-                    <li><a  class="dropdown-item  texto" routerLink="/categoria/· Historia · Expediciones" (click)="loading()" style="margin-left: -4px;color:rgb(126, 126, 0)">ARQUEOLOGIA</a></li>
-                    <li><a routerLink="/categoria/Entrenamiento · Técnica" class="dropdown-item texto" (click)="loading()"style="color:brown; cursor:pointer; text-transform: uppercase;">Técnica</a></li>
+                    <hr style="margin: 0px;">
+                    <li><a  class="dropdown-item  texto" routerLink="/categoria/Arqueología" (click)="loading()" style="margin-left: -4px;color:rgb(126, 126, 0)">ARQUEOLOGÍA</a></li>
+                    <hr style="margin: 0px;">
+                    <li><a routerLink="/categoria/Entrenamiento · Técnica" class="dropdown-item texto" (click)="loading()"style="color:brown; cursor:pointer; text-transform: uppercase;">Entrenamientos</a></li>
+                    <li><a routerLink="/categoria/Entrenamiento" class="dropdown-item texto" (click)="loading()"style="color:brown; cursor:pointer; text-transform: uppercase;">Técnica</a></li>
                     <li><a routerLink="/categoria/Entrenamiento" class="dropdown-item texto" (click)="loading()" style="color:brown; cursor:pointer;text-transform: uppercase;">Entrenamientos</a></li>
                     <li><a routerLink="/categoria/Entrenamiento · Seguridad y rescate"(click)="loading()" class="dropdown-item  texto"  style="color:brown; cursor:pointer;text-transform: uppercase;">Seguridad y rescate</a></li>
+                    <hr style="margin: 0px;">
+                    <li><a routerLink="/categoria/Capacitaciones" class="dropdown-item texto" (click)="loading()" style="color:brown; cursor:pointer;text-transform: uppercase;">Capacitaciones</a></li>
+                    <li><a routerLink="/categoria/Capacitaciones · Talleres y seminarios" class="dropdown-item texto" (click)="loading()"style="color:brown; cursor:pointer; text-transform: uppercase;">Talleres y seminarios</a></li>
+                    <li><a routerLink="/categoria/Capacitaciones · Eventos educativos " class="dropdown-item texto" (click)="loading()"style="color:brown; cursor:pointer; text-transform: uppercase;">Eventos educativos</a></li>
+                    
+                    <hr style="margin: 0px;">
+
+                    <li><a routerLink="/categoria/Historia" (click)="loading()"class="dropdown-item texto" style="color:rgb(105, 0, 74); cursor:pointer;text-transform: uppercase">Historia</a></li>
                     <li><a routerLink="/categoria/Historia · Personajes" (click)="loading()"class="dropdown-item texto" style="color:rgb(105, 0, 74); cursor:pointer;text-transform: uppercase">Personajes (biografías y entrevistas)</a></li>
                     <li><a routerLink="/categoria/Historia · Montañismo en Argentina"(click)="loading()"  class="dropdown-item texto"  style="color:rgb(105, 0, 74); cursor:pointer;text-transform: uppercase">Montañismo en Argentina</a></li>
                     <li><a routerLink="/categoria/Historia · Montañismo en el Mundo" (click)="loading()"class="dropdown-item texto"  style="color:rgb(105, 0, 74); cursor:pointer;text-transform: uppercase">Montañismo en el mundo</a></li>
