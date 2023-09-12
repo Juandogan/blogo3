@@ -9,7 +9,7 @@ const router = Router()
                  //verifyToken
 router.get('/' ,  async (req, res)=>{ 
     const articulo = await articuloModel.find({},{_id:1, titulo:1, imagen1:1, posicion:1, categoria:1, vistas:1, fecha:1, fechaMod:1, 
-        correos:1, subtitulo:1, comentarios:1, contadorComentarios:1, indice:1, autor:1, fotografia:1
+        correos:1, subtitulo:1, comentarios:1, contadorComentarios:1, indice:1, autor:1, fotografia:1,popup:1
         });
         res.json(articulo);
 });
@@ -385,7 +385,7 @@ console.log("Total de registros distintos a '':", totalCount);
   correos:req.body.correos,
   id:req.body.id,
   marginLeft:req.body.marginLeft,
-
+  popup:req.body.popup,
   fecha:req.body.fecha,
   fechaMod:req.body.fechaMod,
 
@@ -530,7 +530,7 @@ router.get('/:_id' , async(req,res) => {
       
         fecha:req.body.fecha,
         fechaMod:req.body.fechaMod,
-      
+        popup:req.body.popup,
         art1:req.body.art1,
         art2:req.body.art2,
         art3:req.body.art3,

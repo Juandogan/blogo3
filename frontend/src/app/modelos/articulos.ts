@@ -5,7 +5,7 @@ export class Articulos {
         contadorComentarios="",
         comentarios="",
         indice='',
-
+        popup = '',
         resultadoCategoria = '',
         resultadoCategoria2='',
         resultadoCategoria3='',
@@ -80,7 +80,7 @@ this.art9 =  art9
 this.art10 =  art10
 this.art11 =  art11
 this.art12 =  art12
-
+this.popup = popup
  
 
 this.posicion =posicion
@@ -175,7 +175,7 @@ this.id = id
     _id: string
     fecha:string;
     fechaMod:string;
-
+    popup:string;
     art1:string;
     art2:string;
     art3:string;
@@ -263,8 +263,6 @@ this.id = id
     autor10:string;
     autor11:string;
     autor12:string;
-
-
 
 
 

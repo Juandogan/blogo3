@@ -12,11 +12,11 @@ import {  timer  } from 'rxjs';
 })
 export class EditorCabeceraComponent implements OnInit {
 
-
+  loadingSubir2 = false
 
   test:Articulos = new Articulos
 
-
+popup =""
   fechaPublicacion = new Date()
 
   //variables de la busqueda de articulos relacionados
@@ -77,7 +77,10 @@ export class EditorCabeceraComponent implements OnInit {
 
   loadingGuardar:Boolean = false
   loadingSubir:Boolean = true
+  
+  
   SubirEstado:Boolean = true
+  SubirEstado2:Boolean = true
 
   loading2:boolean = false;
   loading3:boolean = false;
@@ -134,6 +137,7 @@ export class EditorCabeceraComponent implements OnInit {
   
 
   public uploadedFiles: Array<File> = [];
+  public uploadedFiles2: Array<File> = [];
 
 
 
@@ -236,6 +240,7 @@ window.scroll(0,0)
         this.test.fechaMod = String(this.fechaPublicacion)
         this.test.vistas = 0
         this.test.fechaMod = String(this.fechaPublicacion)
+        console.log('this.crudService.unArticulo')
         this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => {
           this.guardado = true;
         this.guardando = false
@@ -267,6 +272,13 @@ window.scroll(0,0)
     this.uploadedFiles = e.target.files;
   };
 
+  onFileChange2(e:any){
+    this.SubirEstado = false;
+    this.uploadedFiles2 = e.target.files;
+  };
+
+  
+
   onUpload(){
     let formData = new FormData();
 
@@ -289,7 +301,27 @@ window.scroll(0,0)
 
    };
 
+   onUpload2(){
+    let formData = new FormData();
 
+     for (let i = 0 ; i  < this.uploadedFiles2.length; i++ ){
+
+     formData.append("archivos", this.uploadedFiles2[i], this.uploadedFiles2[i].name)
+
+     }
+     this.crudService.uploadFile(formData).subscribe(res => {
+      console.log("formdata", formData)
+        var popup = Object.values(res)
+       console.log(popup,"POPUP")
+
+      this.crudService.unArticulo.popup = String(popup) ;
+      this.test.popup  = String(popup) ;
+      this.loadingSubir2 = false
+
+
+     })
+
+   };
    pedirUnArticulo(){
 
 
