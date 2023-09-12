@@ -157,45 +157,34 @@
          <h6  class="textoInput" style ="text-align: left;margin-bottom: 0px;">IMAGEN DE PORTADA 1200X600</h6>
           <div class="input-group"  >
               <input class="form-control" type="file" id="formFile"  type="file"  style="  overflow: none"  (change)="onFileChange($event); " width="100%">
-              <div class="input-group-append">
+                          
+          </div>
+          <div *ngIf="!loadingSubir">          
+                 <img  src="../../../assets/loader.gif" alt="" width="30px" alt="HOla"><span style="font-size: 12px;">Cargado..</span>
+          </div>
+          <h3 *ngIf="this.test.imagen1" class="textoInput">{{this.test.imagen1}}</h3>
+          <h3 *ngIf="!this.test.imagen1" class="textoInput" style="margin-left:3px;margin-top:15px; color:rgb(124, 0, 0)">Sin Imagen</h3>
+      
 
+      <h6  class="textoInput" style ="text-align: left;margin-bottom: 0px;">IMAGEN POPUP</h6>
+      <div class="input-group"  >
+      <input class="form-control" type="file" id="formFile2"  style="overflow: none" (change)="onFileChange2($event); " width="100%">         </div>
 
-          <button class="btn btn-danger btn-upload" (click)="this.loadingSubir=false" (click)="onUpload()" style="margin-top:0px" [disabled]=this.SubirEstado>
+      <div *ngIf="loadingSubir2">          
+        <img  src="../../../assets/loader.gif" alt="" width="30px" alt="HOla"><span style="font-size: 12px;">Cargado..</span>
+ </div>
+ <h3 *ngIf="this.test.popup" class="textoInput">{{this.test.popup}}</h3>
+ <h3 *ngIf="!this.test.popup" class="textoInput" style="margin-left:3px;margin-top:15px; color:rgb(124, 0, 0)">Sin Imagen</h3>
 
-             <img *ngIf="!loadingSubir" src="../../../assets/loader.gif" alt="" width="20px">
-
-            <svg *ngIf="loadingSubir" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
-              <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2z"/>
-            </svg>
-            Subir</button>
 
         </div>
 
 
-      </div>
-
-      
-      <h6  class="textoInput" style ="text-align: left;margin-bottom: 0px;">IMAGEN POPUP</h6>
-      <div class="input-group"  >
-        <input class="form-control" type="file" id="formFile2"  style="overflow: none" (change)="onFileChange2($event); " width="100%">
-        <div class="input-group-append">
-
-
-    <button class="btn btn-danger btn-upload" (click)="this.loadingSubir2=false" (click)="onUpload2()" style="margin-top:0px" [disabled]=this.SubirEstado>
-
-       <img *ngIf="loadingSubir2" src="../../../assets/loader.gif" alt="" width="20px">
-
-      <svg *ngIf="loadingSubir" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
-        <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2z"/>
-      </svg>
-      Subir</button>
-
-  </div>
-
-
-</div>
-      <h3 *ngIf="this.test.imagen1" class="textoInput">Imagen: {{this.test.imagen1}}</h3>
-      <h3 *ngIf="!this.test.imagen1" class="textoInput" style="margin-left:3px;margin-top:15px; color:rgb(124, 0, 0)">Sin Imagen</h3>
+        
+        <div class="form-group">
+          <h5 class="textoInput" style="margin-top:18px">Link Popup</h5>
+          <input [(ngModel)]="this.test.popupLink" class="form-control" id="titulo" name="popupLink">
+             
         </div>
          <div *ngIf="this.loading2" >
                  <div style="text-align: left;">

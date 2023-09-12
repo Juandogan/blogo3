@@ -14,6 +14,7 @@ const articuloSchema = new Schema({
   fecha:{type: String, required : false},
   fechaMod:{type: String, required : false},
   popup:{type: String, required : false},
+  popupLink:{type: String, required : false},
 
   art1:{type: String, required : false},
   art2:{type: String, required : false},

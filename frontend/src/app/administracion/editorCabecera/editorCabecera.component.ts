@@ -16,7 +16,7 @@ export class EditorCabeceraComponent implements OnInit {
 
   test:Articulos = new Articulos
 
-popup =""
+  popup =""
   fechaPublicacion = new Date()
 
   //variables de la busqueda de articulos relacionados
@@ -240,7 +240,7 @@ window.scroll(0,0)
         this.test.fechaMod = String(this.fechaPublicacion)
         this.test.vistas = 0
         this.test.fechaMod = String(this.fechaPublicacion)
-        console.log('this.crudService.unArticulo')
+        console.log(this.test)
         this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => {
           this.guardado = true;
         this.guardando = false
@@ -268,13 +268,17 @@ window.scroll(0,0)
 
   }
   onFileChange(e:any){
+    this.loadingSubir = false
     this.SubirEstado = false;
     this.uploadedFiles = e.target.files;
+    this.onUpload()
   };
 
   onFileChange2(e:any){
-    this.SubirEstado = false;
+    this.SubirEstado2 = true;
     this.uploadedFiles2 = e.target.files;
+    this.loadingSubir2 = true
+    this.onUpload2()
   };
 
   
@@ -294,8 +298,8 @@ window.scroll(0,0)
 
       this.crudService.unArticulo.imagen1 = String(link) ;
       this.test.imagen1  = String(link) ;
+      
       this.loadingSubir = true
-
 
      })
 

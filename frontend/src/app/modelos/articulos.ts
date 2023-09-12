@@ -6,6 +6,7 @@ export class Articulos {
         comentarios="",
         indice='',
         popup = '',
+        popupLink = '',
         resultadoCategoria = '',
         resultadoCategoria2='',
         resultadoCategoria3='',
@@ -80,7 +81,7 @@ this.art9 =  art9
 this.art10 =  art10
 this.art11 =  art11
 this.art12 =  art12
-this.popup = popup
+this.popupLink  = popupLink
  
 
 this.posicion =posicion
@@ -176,6 +177,7 @@ this.id = id
     fecha:string;
     fechaMod:string;
     popup:string;
+    popupLink:string;
     art1:string;
     art2:string;
     art3:string;

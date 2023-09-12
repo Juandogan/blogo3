@@ -386,6 +386,7 @@ console.log("Total de registros distintos a '':", totalCount);
   id:req.body.id,
   marginLeft:req.body.marginLeft,
   popup:req.body.popup,
+  popupLink:req.body.popupLink,
   fecha:req.body.fecha,
   fechaMod:req.body.fechaMod,
 
@@ -530,7 +531,7 @@ router.get('/:_id' , async(req,res) => {
       
         fecha:req.body.fecha,
         fechaMod:req.body.fechaMod,
-        popup:req.body.popup,
+        popupLink:req.body.popupLink,
         art1:req.body.art1,
         art2:req.body.art2,
         art3:req.body.art3,
