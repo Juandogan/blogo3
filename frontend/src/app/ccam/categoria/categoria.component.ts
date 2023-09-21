@@ -47,6 +47,7 @@ export class CategoriaComponent implements OnInit {
       console.log(this.categoria,'antes de pedir')
       this.crudService.getCategorias(this.categoria).subscribe(res  => {
         this.articulos = res;
+        this.articulos = this.articulos.reverse()
         console.log(this.articulos, 'resultado de busqueda')
           this.anunciosService.pedirUsuarios().subscribe(res  => {
             this.anuncios = res

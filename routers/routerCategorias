@@ -12,7 +12,7 @@ router.get('/:_id' , async(req,res) => {
   console.log(aux)
 
     try {
-        const articulo = await articuloModel.find({categoria: { $regex: '^' + aux.slice(0, 4) } },{_id:1, titulo:1, imagen1:1, posicion:1, categoria:1, vistas:1, fecha:1, fechaMod:1, 
+        const articulo = await articuloModel.find({categoria: { aux } },{_id:1, titulo:1, imagen1:1, posicion:1, categoria:1, vistas:1, fecha:1, fechaMod:1, 
           correos:1, subtitulo:1, comentarios:1, contadorComentarios:1, indice:1, autor:1
           })      
 
