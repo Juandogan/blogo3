@@ -79,6 +79,34 @@ router.get('/' ,  async (req, res)=>{
 
 
 
+// router.post('/actualizarImagen1', async (req, res) => {
+//   try {
+//     console.log("Actualizando registros de imagen1...");
+
+//     // Utiliza el método updateMany para actualizar múltiples documentos
+//     const result = await articuloModel.updateMany(
+//       {
+//         imagen1: { $regex: /^http:\/\/www\.culturademontania\.org\.ar/ }
+//       },
+//       {
+//         $set: {
+//           imagen1: "http://old.culturademontania.org.ar/Historia/espana_naranjo_bulnes_2.jpg"
+//         }
+//       }
+//     );
+
+//     console.log("Registros actualizados:", result.modifiedCount);
+//     res.json({
+//       message: `Se actualizaron ${result.modifiedCount} registros de imagen1.`
+//     });
+//   } catch (error) {
+//     console.error("Error al actualizar:", error);
+//     res.status(500).json({
+//       error: "Error al actualizar"
+//     });
+//   }
+// });
+
 
 
 
@@ -164,7 +192,7 @@ router.get('/' ,  async (req, res)=>{
      console.log("Actualizando");
  
      // Obtener hasta 10 documentos de la colección articuloModel que tengan imagen1 como null { $regex: '^http://66'}
-     const articulos = await articuloModel.find({ imagen1: '', position:5}, {
+     const articulos = await articuloModel.find({ imagen1: 'http://culturademontania.org.ar'}, {
        _id: 1,
        nota: 1
      });
@@ -196,6 +224,39 @@ router.get('/' ,  async (req, res)=>{
    }
  });
 
+ router.post('/actualizarImagen1', async (req, res) => {
+  try {
+    console.log("Iniciando actualización de imagen1...");
+
+    const filter = {
+      imagen1: {
+        $regex: /www\.culturademontania/
+      }
+    };
+
+    const update = {
+      $set: {
+        imagen1: {
+          $regexFind: "www.culturademontania",
+          $regexReplace: "old.culturademontania"
+        }
+      }
+    };
+
+    const result = await articuloModel.updateMany(filter, update);
+
+    console.log("Número de registros actualizados:", result.nModified);
+    console.log("Actualización completa!");
+    res.json({
+      message: "Actualización completa"
+    });
+  } catch (error) {
+    console.error("Error al actualizar:", error);
+    res.status(500).json({
+      error: "Error al actualizar"
+    });
+  }
+});
 
 
  router.post('/actualizardepura.encabezado', async (req, res) => {
@@ -528,10 +589,10 @@ router.get('/:_id' , async(req,res) => {
         correos:req.body.correos,
         id:req.body.id,
         marginLeft:req.body.marginLeft,
-      
         fecha:req.body.fecha,
         fechaMod:req.body.fechaMod,
         popupLink:req.body.popupLink,
+        popup:req.body.popup,
         art1:req.body.art1,
         art2:req.body.art2,
         art3:req.body.art3,

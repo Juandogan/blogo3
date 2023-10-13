@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {           
-              "baseHref": "/ccam/",            
+              "baseHref": "/",            
             "outputPath": "dist/frontend",
             "index": "src/index.html",
             "main": "src/main.ts",

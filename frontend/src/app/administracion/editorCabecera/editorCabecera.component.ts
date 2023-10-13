@@ -202,7 +202,6 @@ window.scroll(0,0)
    agregarPublicacion(){
     this.loader =true
     this.crudService.unArticulo = this.test
-    console.log('antes de guardar', this.test)
     this.crudService.unArticulo.art1 = this.resultadoTitulo
     this.crudService.unArticulo.art2 = this.resultadoTitulo2
     this.crudService.unArticulo.art3 = this.resultadoTitulo3
@@ -216,23 +215,18 @@ window.scroll(0,0)
     this.crudService.unArticulo.art11 = this.resultadoTitulo11
     this.crudService.unArticulo.art12 = this.resultadoTitulo12
 
-
-
     if( this.crudService.unArticulo._id && this.crudService.unArticulo._id !=="62902088b69caf0a51c7e023" )//porque est id es un registro en blanco que se usa para crear un nuevo articulo
     {
       this.test.contadorComentarios = "NO"
       console.log(this.crudService.unArticulo)
       this.crudService.unArticulo.fechaMod = String(new Date())
+      console.log(this.crudService.unArticulo, 'antes de modificar')
       this.crudService.modificarArticulo(this.crudService.unArticulo)
       .subscribe(res => { this.loader=false
-        
-        
-        this.guardando = false
-        
+      this.guardando = false
+   })}
 
-   })
 
-    }
 
     else  {
         this.test.contadorComentarios = "NO"
@@ -240,12 +234,11 @@ window.scroll(0,0)
         this.test.fechaMod = String(this.fechaPublicacion)
         this.test.vistas = 0
         this.test.fechaMod = String(this.fechaPublicacion)
-        console.log(this.test)
+        
         this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => {
-          this.guardado = true;
+        this.guardado = true;
         this.guardando = false
-
-          timer(3000).subscribe(res=>{
+        timer(3000).subscribe(res=>{
             this.guardado = false;
             this.loader=false;
             this.location.back()
@@ -315,11 +308,9 @@ window.scroll(0,0)
      }
      this.crudService.uploadFile(formData).subscribe(res => {
       console.log("formdata", formData)
-        var popup = Object.values(res)
-       console.log(popup,"POPUP")
-
-      this.crudService.unArticulo.popup = String(popup) ;
+        var popup = Object.values(res)           
       this.test.popup  = String(popup) ;
+      this.crudService.unArticulo.popup = this.test.popup
       this.loadingSubir2 = false
 
 

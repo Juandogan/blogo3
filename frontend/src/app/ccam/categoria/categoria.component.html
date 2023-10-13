@@ -20,7 +20,7 @@
 <div *ngIf="!loader" class="margenL margenR" >
 
 
-<div class="row mt-2"  style="margin-left: 0px;" >
+<div class="row mt-2"  style="margin-left: 7px; margin-right: 7px;" >
 
 
     <div  class="col-12	col-sm-12	col-md-8 col-lg-8	col-xl-8 fondoCol ">
@@ -52,7 +52,7 @@
       <p *ngIf="this.categoria.startsWith('Historia')">
         {{data.categoria8}}         
       </p>
-     <div class="row">
+     <div class="row" >
       <app-carousel
       [items]="articulos"
       [data]="articulos"
@@ -63,7 +63,7 @@
 
      </div>
  <br>
- <div style="margin-left: -10px; margin-bottom: 20px; margin-top: -5px;">
+ <div  class="boxArticulos">
      <app-card-bajopublix3  [data]="articulos"></app-card-bajopublix3>
     </div>
     

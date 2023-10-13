@@ -15,7 +15,7 @@ import { MapasComponent } from './mapas/mapas.component';
 
 const routes: Routes = [
 
-{ path: '', component: CcamComponent },
+ {path: '', component: CcamComponent },
  {path:'articulo/:_id', component: ArticuloComponent, resolve: {data: ResolveNotaService}},
  {path:'buscador', component:  BuscadorComponent, resolve: {data: ResolveNotaService} },
  {path:'mapas', component: MapasComponent },

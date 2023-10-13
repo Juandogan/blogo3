@@ -328,6 +328,8 @@ aux2 = aux2.split('<p').join(`<p style="
 //regla pie de foto2
        aux2 = aux2.split('</a><strong>').join('</a><div style="text-align:center!important;"><strong>')      
          aux2 = aux2.split('</strong>').join('</strong></div>')
+         aux2 = aux2.split('https://www.culturademontania.org.ar').join('http://old.culturademontania.org.ar')
+         aux2 = aux2.split('http://www.culturademontania.org.ar').join('http://old.culturademontania.org.ar')
 
          aux2 = aux2.split('<div style="text-align:center!important;margin-top:-10px"><strong>').join('<div style="text-align:center!important;margin-top:-10px; font-size:14px!important"><strong>')      
          
