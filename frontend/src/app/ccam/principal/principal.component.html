@@ -22,7 +22,7 @@
 
         <!-- <h3 style="margin-top: 20px;">Artículos de Montaña</h3> -->
 
-        <div class="cardMobile">
+        <div *ngIf="portada" class="cardMobile">
           <app-card-mobile [data]="portada"></app-card-mobile>
           <br />
         </div>
@@ -111,7 +111,7 @@
 
 
     <!-- INICIO "2DO BLOQUE" -->
-    <div *ngIf="!loader" class="row quitar600">
+    <div *ngIf="!loader && portadaTrio" class="row quitar600">
       <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 " style="margin-top: 20px; padding-right: 1px">
         <app-card-bajopublix3 [data]="portadaTrio"></app-card-bajopublix3>
         <!-- | posiciones: 3 -->

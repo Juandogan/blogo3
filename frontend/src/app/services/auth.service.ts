@@ -10,7 +10,9 @@ import { TruncatePipe } from '../pipes/truncate.pipe';
 })
 export class AuthService {
    //public URL ="http://localhost:3000/api"
-  public URL = 'http://191.101.18.184:3000/api';
+  // public URL = 'http://191.101.18.184:3000/api';
+  public URL = 'https://www.culturademontania.org.ar/api';
+  
 
   usuario = '';
   role = '';

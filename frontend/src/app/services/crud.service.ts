@@ -14,15 +14,15 @@ import { Revista } from '../modelos/revista';
 export class CrudService {
 
 
-   readonly URL_API  = "http://191.101.18.184:3000/ccam";
+   readonly URL_API  = "https://www.culturademontania.org.ar/ccam";
    
   // readonly URL_AP3  = "http://localhost:3000/revista";
   // readonly URL_API2  = "http://localhost:3000/upload";
 
   //readonly URL_API  = "http://66.97.44.139/ccam";
-  readonly URL_AP3  = "http://191.101.18.184:3000/revista";
-  readonly URL_API2  = "http://191.101.18.184:3000/upload";
-  readonly URL_API4  = "http://191.101.18.184:3000/categorias";
+  readonly URL_AP3  = "https://www.culturademontania.org.ar/revista";
+  readonly URL_API2  = "https://www.culturademontania.org.ar/upload";
+  readonly URL_API4  = "https://www.culturademontania.org.ar/categorias";
   
 
 

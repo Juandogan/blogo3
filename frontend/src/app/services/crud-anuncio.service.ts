@@ -16,7 +16,7 @@ export class CrudAnuncioService {
 
   //public URL ="http://168.197.50.191/api"
   // public URL ="http://localhost:3000/anunciante"
-      public URL ="http://191.101.18.184:3000/anunciante"
+      public URL ="https://www.culturademontania.org.ar/anunciante"
     
 
   usuario=""

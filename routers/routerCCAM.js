@@ -79,34 +79,6 @@ router.get('/' ,  async (req, res)=>{
 
 
 
-// router.post('/actualizarImagen1', async (req, res) => {
-//   try {
-//     console.log("Actualizando registros de imagen1...");
-
-//     // Utiliza el método updateMany para actualizar múltiples documentos
-//     const result = await articuloModel.updateMany(
-//       {
-//         imagen1: { $regex: /^http:\/\/www\.culturademontania\.org\.ar/ }
-//       },
-//       {
-//         $set: {
-//           imagen1: "http://old.culturademontania.org.ar/Historia/espana_naranjo_bulnes_2.jpg"
-//         }
-//       }
-//     );
-
-//     console.log("Registros actualizados:", result.modifiedCount);
-//     res.json({
-//       message: `Se actualizaron ${result.modifiedCount} registros de imagen1.`
-//     });
-//   } catch (error) {
-//     console.error("Error al actualizar:", error);
-//     res.status(500).json({
-//       error: "Error al actualizar"
-//     });
-//   }
-// });
-
 
 
 
@@ -187,65 +159,26 @@ router.get('/' ,  async (req, res)=>{
   }
 });
 
- router.post('/actualizarImagen', async (req, res) => {
-   try {
-     console.log("Actualizando");
- 
-     // Obtener hasta 10 documentos de la colección articuloModel que tengan imagen1 como null { $regex: '^http://66'}
-     const articulos = await articuloModel.find({ imagen1: 'http://culturademontania.org.ar'}, {
-       _id: 1,
-       nota: 1
-     });
- 
-     for (const articulo of articulos) {
-       const imageURL = extractImageURL(articulo.nota);
-       if (imageURL) {
-         console.log("Actualizando artículo:", articulo._id);
-         // Actualizar el campo imagen1 con la URL de la segunda imagen
-         await articuloModel.updateOne({
-           _id: articulo._id
-         }, {
-           $set: {
-             imagen1: imageURL
-           }
-         });
-       }
-     }
- 
-     console.log("Actualización completa!");
-     res.json({
-       message: "Actualización completa"
-     });
-   } catch (error) {
-     console.error("Error al actualizar:", error);
-     res.status(500).json({
-       error: "Error al actualizar"
-     });
-   }
- });
 
- router.post('/actualizarImagen1', async (req, res) => {
+router.post('/actualizarImagen1', async (req, res) => {
   try {
     console.log("Iniciando actualización de imagen1...");
 
+    // Encuentra todos los documentos que contienen "www.cultura" en el campo imagen1
     const filter = {
-      imagen1: {
-        $regex: /www\.culturademontania/
-      }
+      imagen1: { $regex: /www\.cultura/ }
     };
 
-    const update = {
-      $set: {
-        imagen1: {
-          $regexFind: "www.culturademontania",
-          $regexReplace: "old.culturademontania"
-        }
-      }
-    };
+    // Recupera los documentos que coinciden con el filtro
+    const articulos = await articuloModel.find(filter);
 
-    const result = await articuloModel.updateMany(filter, update);
+    // Realiza la modificación en cada documento y guárdalo
+    for (const articulo of articulos) {
+      articulo.imagen1 = articulo.imagen1.replace(/www\.cultura/g, 'old.cultura');
+      await articulo.save();
+    }
 
-    console.log("Número de registros actualizados:", result.nModified);
+    console.log("Número de registros actualizados:", articulos.length);
     console.log("Actualización completa!");
     res.json({
       message: "Actualización completa"
@@ -259,50 +192,10 @@ router.get('/' ,  async (req, res)=>{
 });
 
 
- router.post('/actualizardepura.encabezado', async (req, res) => {
-  try {
-    console.log("Actualizando");
-
-    const articulos = await articuloModel.find({ _id: '64df0ea75eccfa9ac2515aa3' });
-
-    // Utilizamos Promise.all para manejar múltiples operaciones asincrónicas de manera eficiente
-    await Promise.all(articulos.map(async (articulo) => {
-      var subtitulo = articulo.subtitulo;
-      var subtitulo = subtitulo.trim();
-      const nota = articulo.nota;
 
 
-      if (nota.includes(subtitulo)) {
-        const notaActualizada = nota.replace(subtitulo, '').trim();
-        
-        // Usamos try-catch dentro del ciclo para manejar errores de actualización individuales
-        try {
-          await articuloModel.updateOne({
-            _id: articulo._id
-          }, {
-            $set: {
-              nota: notaActualizada
-            }
-          });
 
-          console.log("Actualizando artículo:", articulo._id);
-        } catch (updateError) {
-          console.error("Error al actualizar artículo:", articulo._id, updateError);
-        }
-      }
-    }));
 
-    console.log("Actualización completa!");
-    res.json({
-      message: "Actualización completa"
-    });
-  } catch (error) {
-    console.error("Error al actualizar:", error);
-    res.status(500).json({
-      error: "Error al actualizar"
-    });
-  }
-});
 
 router.post('/actualizar', async (req, res) => {
   try {

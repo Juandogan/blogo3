@@ -10,7 +10,7 @@ export class PortadaService {
 
   //portada:PortadaModel[]=[];
   portada = new PortadaModel
-  public URL ="http://191.101.18.184:3000/portada"
+  public URL ="https://www.culturademontania.org.ar/portada"
   usuario=""
 
 

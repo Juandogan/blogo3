@@ -33,7 +33,7 @@ export class Editor2Component implements OnInit {
 
      simpleUpload: {
        // The URL that the images are uploaded to.
-       uploadUrl: "http://191.101.18.184:3000/upload",
+       uploadUrl: "https://culturademontania.org.ar/upload",
           // Headers sent along with the XMLHttpRequest to the upload server.
        headers: {
          'X-CSRF-TOKEN': 'CSFR-Token',
@@ -117,7 +117,7 @@ export class Editor2Component implements OnInit {
 
 
       simpleUpload: {
-      uploadUrl: "http://191.101.18.184:3000/upload2/",
+      uploadUrl: "https://culturademontania.org.ar/upload2/",
 
       headers: {
         'X-CSRF-TOKEN': 'CSFR-Token',
