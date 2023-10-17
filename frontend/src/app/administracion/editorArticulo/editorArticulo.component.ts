@@ -25,7 +25,7 @@ test:Articulos = new Articulos
     this.loader = false})}
 
     saltos2(data: string) {
-      var aux =  data.split('http://191.101.18.184:3000/').join('https://191.101.18.184:3000/')
+      var aux =  data.split('http://191.101.18.184:3000/').join('https://www.culturademontania.org.ar/')
       console.log(aux)
      return aux
      
