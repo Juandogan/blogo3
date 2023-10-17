@@ -23,4 +23,11 @@ test:Articulos = new Articulos
     console.log(this.nota[0]?.nota)
     this.crudService.unArticulo = this.nota[0]
     this.loader = false})}
+
+    saltos2(data: string) {
+      var aux =  data.split('http://191.101.18.184:3000/').join('https://191.101.18.184:3000/')
+      console.log(aux)
+     return aux
+     
+     }
 };

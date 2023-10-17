@@ -64,6 +64,7 @@ export class EditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
 console.log(this.data)
     this.Editor.create( document.querySelector( '.document-editor__editable' ), {
 
@@ -130,9 +131,8 @@ console.log(this.data)
     this.location.back()
   }
 
-  saltos2(data: string) {
-    var aux2 = data.split('http://191.101.18.184:3000/').join('https://191.101.18.184:3000/')}
 
+     
 agregarPublicacion(){
 
 
