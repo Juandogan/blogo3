@@ -164,9 +164,9 @@ router.post('/actualizarImagen1', async (req, res) => {
   try {
     console.log("Iniciando actualización de imagen1...");
 
-    // Encuentra todos los documentos que contienen "www.cultura" en el campo imagen1
+    // Encuentra todos los documentos que contienen "http://191.101.18.184:3000/" en el campo img1
     const filter = {
-      imagen1: { $regex: /www\.cultura/ }
+      img1: { $regex: /http:\/\/191\.101\.18\.184:3000\// }
     };
 
     // Recupera los documentos que coinciden con el filtro
@@ -174,7 +174,7 @@ router.post('/actualizarImagen1', async (req, res) => {
 
     // Realiza la modificación en cada documento y guárdalo
     for (const articulo of articulos) {
-      articulo.imagen1 = articulo.imagen1.replace(/www\.cultura/g, 'old.cultura');
+      articulo.imagen1 = articulo.imagen1.replace(/http:\/\/191\.101\.18\.184:3000\//g, 'https://culturademontania.org.ar/');
       await articulo.save();
     }
 

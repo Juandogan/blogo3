@@ -16,7 +16,7 @@ export class CrudVariosService {
 
   
 
-      public URL ="http://191.101.18.184:3000/varios"
+      public URL ="https://www.culturademontania.org.ar/varios"
     
       // public URL ="http://localhost:3000/varios"
   
