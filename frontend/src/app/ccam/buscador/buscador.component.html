@@ -10,7 +10,7 @@
   <div  class="card" >
       <img class="card-img-top sombra"src="{{not.imagen1}}" alt="" height="200px" style="object-fit: cover;">
       <div class="card-body">
-          <h6 class="categoria"><b>{{cut(not?.categoria)}}</b></h6>
+          <h6 class="categoria"><b>{{not?.categoria}}</b></h6>
           <a style="color:brown" routerLink="../articulo/{{not?._id}}">
         <h2 class="card-title titulo">{{not?.titulo}}</h2></a>
         <p class="card-text truncar5" style="font-size: 16px; line-height: 22px;">{{not?.subtitulo}}</p>
