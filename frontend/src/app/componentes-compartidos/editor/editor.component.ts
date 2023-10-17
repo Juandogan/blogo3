@@ -91,7 +91,7 @@ console.log(this.data)
 
 
       simpleUpload: {
-      uploadUrl: "https://culturademontania.org.ar/upload2/",
+      uploadUrl: "https://www.culturademontania.org.ar/upload2/",
 
       headers: {
         'X-CSRF-TOKEN': 'CSFR-Token',

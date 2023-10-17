@@ -477,7 +477,7 @@ router.get('/:_id' , async(req,res) => {
     console.log("sasas")
     const { _id } = req.params;
     const articulo = { 
-                contadorComentarios:req.body.contadorComentarios,
+        contadorComentarios:req.body.contadorComentarios,
         comentarios:req.body.comentarios, 
         correos:req.body.correos,
         id:req.body.id,
