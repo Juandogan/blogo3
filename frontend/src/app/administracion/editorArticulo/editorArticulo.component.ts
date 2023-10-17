@@ -20,8 +20,9 @@ test:Articulos = new Articulos
     window.scroll(0,0)
     this.ruta.data.subscribe((data)=>{
     this.nota = Object.entries(data).map(i => i[1])
-    console.log(this.nota[0]?.nota)
+    this.nota[0].nota = this.saltos2(this.nota[0]?.nota)
     this.crudService.unArticulo = this.nota[0]
+    
     this.loader = false})}
 
     saltos2(data: string) {

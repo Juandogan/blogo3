@@ -10,6 +10,6 @@
 
     </div>
 
-<app-editor *ngIf="!loader"  [data]="this.nota[0]" [art]='saltos2(this.nota[0]?.nota)' [id]='this.nota[0]?._id'></app-editor>
+<app-editor *ngIf="!loader"  [data]="this.nota[0]" [art]='this.nota[0]?.nota' [id]='this.nota[0]?._id'></app-editor>
 </div>
 
