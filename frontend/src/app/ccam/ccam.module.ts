@@ -34,6 +34,7 @@ import { CarouselRevistaComponent } from './carousel-revista/carousel-revista.co
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { CarouselCategoriasComponent } from './carousel-categorias/carousel-categorias.component';
 import { LateralIntercaladoComponent } from './lateral-intercalado/lateral-intercalado.component';
+import { CardCategoriaComponent } from './card-categoria/card-categoria.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { LateralIntercaladoComponent } from './lateral-intercalado/lateral-inter
     FooterComponent,
     CarouselRevistaComponent,
     CarouselCategoriasComponent,
-    LateralIntercaladoComponent
+    LateralIntercaladoComponent,
+    CardCategoriaComponent
   ],
   imports: [
     CommonModule,

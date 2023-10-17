@@ -164,17 +164,19 @@ router.post('/actualizarImagen1', async (req, res) => {
   try {
     console.log("Iniciando actualización de imagen1...");
 
-    // Encuentra todos los documentos que contienen "http://191.101.18.184:3000/" en el campo img1
+    // Encuentra todos los documentos que contienen "http://168.197.50.191/" en el campo img1
     const filter = {
-      img1: { $regex: /http:\/\/191\.101\.18\.184:3000\// }
+      imagen2: { $regex: /http:\/\/168\.197\.50\.191\// }
     };
 
     // Recupera los documentos que coinciden con el filtro
-    const articulos = await articuloModel.find(filter);
+    const articulos = await articuloModel.find(filter).limit(300);
 
     // Realiza la modificación en cada documento y guárdalo
     for (const articulo of articulos) {
-      articulo.imagen1 = articulo.imagen1.replace(/http:\/\/191\.101\.18\.184:3000\//g, 'https://culturademontania.org.ar/');
+      console.log(articulo.imagen2)
+      articulo.imagen2 = await articulo.imagen1.replace(/http:\/\/168\.197\.50\.191\//g, 'https://www.culturademontania.org.ar/ccam/');
+       console.log(articulo.imagen2)
       await articulo.save();
     }
 
@@ -190,7 +192,6 @@ router.post('/actualizarImagen1', async (req, res) => {
     });
   }
 });
-
 
 
 
