@@ -2,12 +2,12 @@
   <div [ngClass]="{'margen':estado}">
      <div class="flex-container">
         <h4  [ngClass]="{'margenL':!estado}">
-        <a><b class="suscribirse"> SUSCRIBIRSE</b></a> |
+        <a><b class="suscribirse" routerLink="subscripcion"> SUSCRIBIRSE</b></a> |
         <a><b class="contactar">CONTACTAR</b></a></h4>
 
         <div style="margin-top:10px">
-        <h4 class="margenL quitar800 quienesSomos quitar675">✉ ¿QUIÉNES SOMOS?</h4>
-        <h4 class="margenL quitar800 formarParte quitar675" >✉ ¿CÓMO FORMAR PARTE DEL CCAM?</h4>
+        <h4 class="margenL quitar800 quienesSomos quitar675" >✉ ¿QUIÉNES SOMOS?</h4>
+        <h4 class="margenL quitar800 formarParte quitar675" routerLink="equipo" >✉ ¿CÓMO FORMAR PARTE DEL CCAM?</h4>
              <!-- <h4 class="margenL quitar800 ccam2 quitar829" (click)="estado = false" routerLink="" >| CCAM </h4> -->
              <a class="margenL  revista quitar829" style="margin-top: -2px;" href="http://revistadigital.culturademontania.org.ar">REVISTA DIGITAL</a>
     </div>
