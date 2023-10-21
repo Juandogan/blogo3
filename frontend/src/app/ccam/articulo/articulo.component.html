@@ -6,7 +6,7 @@
 
   <div  class="alturaDocu" style="text-align: center;">
     <div
-      *ngIf="loader"
+      *ngIf="loader;" (active)="subir()"
       class="loadingio-spinner-dual-ring-xg1vnrf2b6o"
       style="margin-top: 150px; min-height: 500px">
       <div class="ldio-z7fu6e1den">
@@ -73,12 +73,12 @@
 
 <div style="background-color: rgb(255, 255, 255);margin-left: 10px; margin-right: 10px;">
   <div class="row">
-    <div class="col-8">
+    <div class="col-sm-12	col-md-8 col-lg-8	col-xl-8">
     <h2  class="titulo" style="margin-left:10px;margin-bottom: 10px; color:orange; font-size: 28px; ">| ULTIMAS NOVEDADES</h2>
 
       <app-carousel [items]="dataRelacionado2" [data]="dataRelacionado2" [height]="200"></app-carousel>
     </div>
-    <div class="col-4" >
+    <div class="col-sm-12	col-md-4 col-lg-4	col-xl-4" >
       <div style="margin-top: 38px;">
         <a target="_blank" rel="noopener noreferrer" href="{{this.anuncios[0].link13}}" (click)="sumarContadorAunciante(13)">
       <img src="{{this.anuncios[0]?.img13}}" width="100%"  alt="" 

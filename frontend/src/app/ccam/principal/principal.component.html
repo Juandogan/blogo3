@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-  <div *ngIf="loader" class="loadingio-spinner-dual-ring-xg1vnrf2b6o" style="margin-top: 150px; min-height: 110vh">
+  <div *ngIf="loader" (active)="subir()" class="loadingio-spinner-dual-ring-xg1vnrf2b6o" style="margin-top: 150px; min-height: 110vh">
     <div class="ldio-z7fu6e1den">
       <div></div>
       <div>
@@ -27,8 +27,10 @@
           <br />
         </div>
         <div class="onlyMobile " [ngClass]="{'margenTop':this.anuncios[0]?.img15 }">
+          <a href="{{this.anuncios[0]?.link1}}" target="_blank">
           <img *ngIf="this.anuncios[0]?.img1" src="{{this.anuncios[0]?.img1}}" (click)="sumarContadorAunciante(1)"
             alt="" style="object-fit: cover; width: 99%" />
+          </a>
         </div>
         <div style="margin-top:60px ;">
 
@@ -38,8 +40,10 @@
             <br>
           </div>
           <div class="onlyMobile" style="margin-top: -25px">
+            <a href="{{this.anuncios[0].link3}}" target="_blank">
             <img (click)="sumarContadorAunciante(3)" src="{{this.anuncios[0].img3}}" alt=""
               style="object-fit: cover; width: 99%" />
+            </a>
               <br>
               <br>
               <br>

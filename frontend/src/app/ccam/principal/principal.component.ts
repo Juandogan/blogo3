@@ -47,6 +47,10 @@ window.scroll(0,0)
 
   }
 
+  subir(){
+    window.scroll(0,0)
+  }
+
   pedirPortada() {
     this.PortadaCrud.pedirUsuarios().subscribe(res=>{ 
       this.portada = res.slice(10,12)
