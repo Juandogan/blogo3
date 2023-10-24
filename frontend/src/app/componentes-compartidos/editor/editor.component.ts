@@ -3,11 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import * as ClassicEditor from '../../ckeditor4/';
 import { Articulos } from '../../modelos/articulos';
 import { CrudService } from '../../services/crud.service';
-
 import {  timer  } from 'rxjs';
-
-
-
 
 @Component({
   selector: 'app-editor',
