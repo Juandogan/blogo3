@@ -196,6 +196,34 @@
          <div *ngIf="this.loading3">
           <h6 style="  margin-left: -351px;    margin-top: -26px;color:green; font-size: 15px;">✓ Subida! </h6>
             </div>
+
+            <h6  class="textoInput" style ="text-align: left;margin-bottom: 0px;">Provincia:</h6>
+            <select [(ngModel)]="this.test.provincia" id="provincia" name="posicion" class="form-select form-control-sm">
+              <option value="BUENOS AIRES">BUENOS AIRES</option>
+              <option value="CATAMARCA">CATAMARCA</option>
+              <option value="CHACO">CHACO</option>
+              <option value="CHUBUT">CHUBUT</option>
+              <option value="CIUDAD AUTONOMA DE Bs As">CIUDAD AUTONOMA DE Bs As</option>
+              <option value="CORDOBA">CORDOBA</option>
+              <option value="CORRIENTES">CORRIENTES</option>
+              <option value="ENTRE RIOS">ENTRE RIOS</option>
+              <option value="FORMOSA">FORMOSA</option>
+              <option value="JUJUY">JUJUY</option>
+              <option value="LA PAMPA">LA PAMPA</option>
+              <option value="LA RIOJA">LA RIOJA</option>
+              <option value="MENDOZA">MENDOZA</option>
+              <option value="MISIONES">MISIONES</option>
+              <option value="NEUQUEN">NEUQUEN</option>
+              <option value="RIO NEGRO">RIO NEGRO</option>
+              <option value="SALTA">SALTA</option>
+              <option value="SAN LUIS">SAN LUIS</option>
+              <option value="SANTA CRUZ">SANTA CRUZ</option>
+              <option value="SANTA FE">SANTA FE</option>
+              <option value="SANTIAGO DEL ESTERO">SANTIAGO DEL ESTERO</option>
+              <option value="TIERRA DEL FUEGO">TIERRA DEL FUEGO</option>
+              <option disabled="true" selected="true" value="">Seleccionar una Provincia</option>
+          </select>
+
        </div>
 
      </div>

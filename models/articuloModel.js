@@ -15,6 +15,7 @@ const articuloSchema = new Schema({
   fechaMod:{type: String, required : false},
   popup:{type: String, required : false},
   popupLink:{type: String, required : false},
+  provincia:{type: String, required : false},
 
   art1:{type: String, required : false},
   art2:{type: String, required : false},
@@ -103,5 +104,4 @@ const articuloSchema = new Schema({
 
 
 module.exports =  model('articuloSchema', articuloSchema)
-
 

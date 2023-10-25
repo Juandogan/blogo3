@@ -178,6 +178,7 @@ this.id = id
     fechaMod:string;
     popup:string;
     popupLink:string;
+    provincia:string;
     art1:string;
     art2:string;
     art3:string;
