@@ -22,6 +22,8 @@ const routes: Routes = [
  {path:'guia_/:_id', component: GuiaComponent, resolve: {data: ResolveGuiaService} },
  {path:'guias/:_id', component:  GuiaArticuloComponent, resolve: {data: ResolveGuiaService} },
  {path:'categoria/:_id', component:  CategoriaComponent, resolve: {data: ResolveNotaService} },
+ {path:'Noticias/:_id', component:  ArticuloComponent, resolve: {data: ResolveNotaService} },
+ {path:'**', component:  CcamComponent},
 ];
 
 @NgModule({

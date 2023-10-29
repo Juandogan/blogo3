@@ -26,9 +26,17 @@ test:Articulos = new Articulos
     this.loader = false})}
 
     saltos2(data: string) {
-      var aux =  data.split('http://191.101.18.184:3000/').join('https://www.culturademontania.org.ar/')
-      console.log(aux)
-     return aux
+      
+ var data = data.split('https://www.culturademontania.org.ar/').join('https://old.culturademontania.org.ar/')
+ data = data.split('https://culturademontania.org.ar/').join('https://old.culturademontania.org.ar/')
+ data = data.split('http://www.culturademontania.org.ar/').join('https://old.culturademontania.org.ar/')
+ data = data.split('http://191.101.18.184:3000/').join('https://www.culturademontania.org.ar/')
+ data = data.split('https://old.culturademontania.org.ar/ccam/').join('https://www.culturademontania.org.ar/ccam/') 
+
+
+
+      console.log(data)
+     return data
      
      }
 };

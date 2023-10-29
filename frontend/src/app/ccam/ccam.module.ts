@@ -39,6 +39,7 @@ import { SubscripcionComponent } from './subscripcion/subscripcion.component';
 import { EntrenamientosComponent } from './entrenamientos/entrenamientos.component';
 import { TalleresComponent } from './talleres/talleres.component';
 import { EquipoComponent } from './equipo/equipo.component';
+import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { EquipoComponent } from './equipo/equipo.component';
     SubscripcionComponent,
     EntrenamientosComponent,
     TalleresComponent,
-    EquipoComponent
+    EquipoComponent,
+    QuienesSomosComponent
   ],
   imports: [
     CommonModule,

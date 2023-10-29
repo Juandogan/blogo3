@@ -23,7 +23,8 @@ export class CrudService {
   readonly URL_AP3  = "https://www.culturademontania.org.ar/revista";
   readonly URL_API2  = "https://www.culturademontania.org.ar/upload";
   readonly URL_API4  = "https://www.culturademontania.org.ar/categorias";
-  
+  readonly URL_API5  = "https://www.culturademontania.org.ar/ccam/provincia";
+  readonly URL_API7  = "https://www.culturademontania.org.ar/ccam/buscar";
 
 
   Articulos:Articulos[]=[];
@@ -73,6 +74,9 @@ export class CrudService {
     return this.http.get(this.URL_API + `/${_id}`);
   };
 
+  getProvincia(_id){
+    return this.http.get(this.URL_API5 + `/${_id}`);
+  };
   getCategorias(_id){
     return this.http.get(this.URL_API4 + `/${_id}`);
   };
@@ -80,6 +84,15 @@ export class CrudService {
   getOneRevista(_id:any){
     return this.http.get(this.URL_AP3 + `/${_id}`);
   };
+
+
+  /// WOOOOORK
+  getSitioViejo(_id:any){
+    console.log(_id)
+    return this.http.get(this.URL_API7 + `/${_id}`);
+  };
+
+
 
   getUltimaRevista(){
     return this.http.get(this.URL_AP3);

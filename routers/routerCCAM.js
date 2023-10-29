@@ -442,6 +442,60 @@ console.log("Total de registros distintos a '':", totalCount);
 
 });
 
+ // ++++++++++++++++++++++   GET Articulo provincia  ++++++++++++++++++++++++++++++++++++
+ 
+ router.get('/provincia/:_id' , async(req,res) => { 
+  var aux = String(req.params._id)
+  
+
+    try {
+        const articulo = await articuloModel.find({provincia : aux})       
+
+          res.json(articulo)  
+         
+               
+      } catch (err) {
+        res.json('ID no encontrado..')
+      }
+
+});
+
+// aca vamos hacer la parte de que busca los articulos viejos
+router.get('/buscar/:_id', async (req, res) => {
+
+  const aux = String(req.params._id);
+  const palabras = aux.split('-'); // Dividir las palabras por el '+'
+console.log(aux)
+  if (palabras.length < 2) {
+    return res.status(400).json('Se requieren al menos dos palabras separadas por un "+"');
+  }
+
+  try {
+    const palabra1 = palabras[0];
+    const palabra2 = palabras[1];
+    
+
+    // Utiliza una expresión regular para buscar títulos que contengan ambas palabras
+    const articulo = await articuloModel.find({
+      titulo: { $regex: `${palabra1}.*${palabra2}`, $options: 'i' }, // El uso de $options: 'i' hace que la búsqueda sea insensible a mayúsculas y minúsculas
+    });
+
+    if (articulo.length > 0) {
+      console.log(articulo)
+      res.json(articulo[0]);
+    } else {
+      res.json('No se encontraron resultados.');
+    }
+  } catch (err) {
+    res.status(500).json('Error en el servidor.');
+  }
+});
+
+
+
+
+
+
 
  // ++++++++++++++++++++++   GET ONEEEE  ++++++++++++++++++++++++++++++++++++
  

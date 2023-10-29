@@ -169,4 +169,11 @@ this.loader1 = true
   scrollReset(){
     window.scroll(0,0)
   }
+
+
+
+
+
+  
+ 
 }

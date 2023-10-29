@@ -584,6 +584,9 @@ aux2 = aux2.split('</strong>').join('</strong></div>')
  aux2 = aux2.split('http://www.culturademontania.org.ar/').join('https://old.culturademontania.org.ar/')
  aux2 = aux2.split('http://191.101.18.184:3000/').join('https://www.culturademontania.org.ar/')
  aux2 = aux2.split('https://old.culturademontania.org.ar/ccam/').join('https://www.culturademontania.org.ar/ccam/') 
+ aux2 = aux2.split('http://old.culturademontania.org.ar/ccam/').join('https://www.culturademontania.org.ar/ccam/') 
+ aux2 = aux2.split('https://old.culturademontania.org.ar/articulo/').join('https://www.culturademontania.org.ar/articulo/') 
+ aux2 = aux2.split('http://old.culturademontania.org.ar/articulo/').join('https://www.culturademontania.org.ar/articulo/') 
 
 
 
@@ -591,7 +594,7 @@ aux2 = aux2.split('</strong>').join('</strong></div>')
 
 
 
-      console.log(aux2)
+      // console.log(aux2)
     
     return (aux2)
   }

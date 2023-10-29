@@ -40,7 +40,18 @@
 
                   
                        <!-- [ngClass]="{'animaNav':  claseAnima }" -->
+                       <span class="dropdown">
 
+                        <span  class="texto quitar800" style="display:inline; margin-left:-4px; color:rgb(105, 0, 74) " 
+                          type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" >MUSEO</span>
+                        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton4" style="margin-top: 10px!important;">
+                        <li><a routerLink="/articulo/653abeb9992aba2b1bc8fd3f" (click)="loading()"class="dropdown-item texto" style="color:rgb(105, 0, 74); cursor:pointer;text-transform: uppercase">NUESTRO MUSEO</a></li>
+                        <li><a routerLink="/categoria/Historia · Montañismo en Argentina" (click)="loading()"class="dropdown-item texto"  style="color:rgb(105, 0, 74); cursor:pointer;text-transform: uppercase">MUESTRA EN EL MAAM</a></li>
+                        <li><a routerLink="/articulo/653bd27f992aba2b1bc90f51" (click)="loading()"class="dropdown-item texto"  style="color:rgb(105, 0, 74); cursor:pointer;text-transform: uppercase">MUSEO VIRTUAL</a></li>
+                        <li><a routerLink="/articulo/653bae94992aba2b1bc90a6c" (click)="loading()"class="dropdown-item texto"  style="color:rgb(105, 0, 74); cursor:pointer;text-transform: uppercase">PUBLICIDAD DE MONTAÑA</a></li>
+                        </ul>
+                         
+                    </span>
 
 
                       <span>
