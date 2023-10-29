@@ -166,7 +166,7 @@ router.post('/actualizarImagen1', async (req, res) => {
 
     // Encuentra todos los documentos que contienen "http://168.197.50.191/" en el campo img1
     const filter = {
-      imagen2: { $regex: /http:\/\/168\.197\.50\.191\// }
+      resultadoImagen12: { $regex: /http:\/\/168\.197\.50\.191\// }
     };
 
     // Recupera los documentos que coinciden con el filtro
@@ -174,9 +174,9 @@ router.post('/actualizarImagen1', async (req, res) => {
 
     // Realiza la modificación en cada documento y guárdalo
     for (const articulo of articulos) {
-      console.log(articulo.imagen2)
-      articulo.imagen2 = await articulo.imagen1.replace(/http:\/\/168\.197\.50\.191\//g, 'https://www.culturademontania.org.ar/ccam/');
-       console.log(articulo.imagen2)
+      console.log(articulo.resultadoImagen12)
+      articulo.resultadoImagen12 = await articulo.resultadoImagen12.replace(/http:\/\/168\.197\.50\.191\//g, 'https://www.culturademontania.org.ar/ccam/');
+       console.log(articulo.resultadoImagen12)
       await articulo.save();
     }
 

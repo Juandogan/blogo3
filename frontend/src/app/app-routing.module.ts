@@ -26,7 +26,7 @@ const routes: Routes = [
 { path: 'administracion', loadChildren: () => import('./administracion/administracion.module').then(m => m.AdministracionModule) },
 
 
-
+{ path: '**',  loadChildren: () => import('./ccam/ccam.module').then(m => m.CcamModule) },
 
 ];
 
