@@ -28,7 +28,8 @@ aux:any
          console.log(this.link)
       if (this.link.length > 28 ) {
         
-        return  this.crudService.getSitioViejo(this.link)
+        // return  this.crudService.getSitioViejo(this.link)
+        return  this.crudService.getOneArticulo(route.paramMap.get('_id'))
         
       } 
       else {

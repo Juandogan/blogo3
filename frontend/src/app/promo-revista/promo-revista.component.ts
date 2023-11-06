@@ -17,6 +17,7 @@ export class PromoRevistaComponent implements OnInit {
 
     this.ruta.data.subscribe((data) => {
       this.articulos = Object.entries(data).map((i) => i[1]);
+      console.log(this.articulos)
       }
 
 
